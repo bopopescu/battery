@@ -1,0 +1,169 @@
+[2018-10-01 15:59:28,707] [WARNING] warning again
+[2018-10-01 16:00:31,528] [INFO] --------------socketClient.py start listening--------------
+[2018-10-01 16:16:35,070] [DEBUG] --------------socketClient.py start listening--------------
+[2018-10-01 16:16:36,072] [DEBUG] --------start loop--------
+[2018-10-01 16:16:36,072] [DEBUG] init database
+[2018-10-01 16:16:37,107] [DEBUG] --------start loop--------
+[2018-10-01 16:16:37,107] [DEBUG] init database
+[2018-10-01 16:26:16,647] [DEBUG] --------------socketClient.py start listening--------------
+[2018-10-01 16:26:17,647] [DEBUG] --------start loop--------
+[2018-10-01 16:26:17,648] [DEBUG] initializing dbClass
+[2018-10-01 16:26:17,648] [ERROR] division by zero
+[2018-10-01 16:26:17,652] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:17,652] [ERROR] division by zero
+[2018-10-01 16:26:18,653] [DEBUG] --------start loop--------
+[2018-10-01 16:26:18,653] [DEBUG] initializing dbClass
+[2018-10-01 16:26:18,653] [ERROR] division by zero
+[2018-10-01 16:26:18,653] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:18,653] [ERROR] division by zero
+[2018-10-01 16:26:19,654] [DEBUG] --------start loop--------
+[2018-10-01 16:26:19,655] [DEBUG] initializing dbClass
+[2018-10-01 16:26:19,655] [ERROR] division by zero
+[2018-10-01 16:26:19,655] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:19,655] [ERROR] division by zero
+[2018-10-01 16:26:20,656] [DEBUG] --------start loop--------
+[2018-10-01 16:26:20,656] [DEBUG] initializing dbClass
+[2018-10-01 16:26:20,656] [ERROR] division by zero
+[2018-10-01 16:26:20,656] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:20,656] [ERROR] division by zero
+[2018-10-01 16:26:21,657] [DEBUG] --------start loop--------
+[2018-10-01 16:26:21,657] [DEBUG] initializing dbClass
+[2018-10-01 16:26:21,657] [ERROR] division by zero
+[2018-10-01 16:26:21,657] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:21,657] [ERROR] division by zero
+[2018-10-01 16:26:22,658] [DEBUG] --------start loop--------
+[2018-10-01 16:26:22,658] [DEBUG] initializing dbClass
+[2018-10-01 16:26:22,658] [ERROR] division by zero
+[2018-10-01 16:26:22,659] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:22,659] [ERROR] division by zero
+[2018-10-01 16:26:23,660] [DEBUG] --------start loop--------
+[2018-10-01 16:26:23,660] [DEBUG] initializing dbClass
+[2018-10-01 16:26:23,660] [ERROR] division by zero
+[2018-10-01 16:26:23,660] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:23,660] [ERROR] division by zero
+[2018-10-01 16:26:24,661] [DEBUG] --------start loop--------
+[2018-10-01 16:26:24,661] [DEBUG] initializing dbClass
+[2018-10-01 16:26:24,661] [ERROR] division by zero
+[2018-10-01 16:26:24,661] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:24,661] [ERROR] division by zero
+[2018-10-01 16:26:25,662] [DEBUG] --------start loop--------
+[2018-10-01 16:26:25,662] [DEBUG] initializing dbClass
+[2018-10-01 16:26:25,662] [ERROR] division by zero
+[2018-10-01 16:26:25,662] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:25,662] [ERROR] division by zero
+[2018-10-01 16:26:26,663] [DEBUG] --------start loop--------
+[2018-10-01 16:26:26,663] [DEBUG] initializing dbClass
+[2018-10-01 16:26:26,663] [ERROR] division by zero
+[2018-10-01 16:26:26,663] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:26,664] [ERROR] division by zero
+[2018-10-01 16:26:27,664] [DEBUG] --------start loop--------
+[2018-10-01 16:26:27,664] [DEBUG] initializing dbClass
+[2018-10-01 16:26:27,664] [ERROR] division by zero
+[2018-10-01 16:26:27,664] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:27,664] [ERROR] division by zero
+[2018-10-01 16:26:28,665] [DEBUG] --------start loop--------
+[2018-10-01 16:26:28,665] [DEBUG] initializing dbClass
+[2018-10-01 16:26:28,665] [ERROR] division by zero
+[2018-10-01 16:26:28,665] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:28,666] [ERROR] division by zero
+[2018-10-01 16:26:29,666] [DEBUG] --------start loop--------
+[2018-10-01 16:26:29,666] [DEBUG] initializing dbClass
+[2018-10-01 16:26:29,666] [ERROR] division by zero
+[2018-10-01 16:26:29,666] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:29,666] [ERROR] division by zero
+[2018-10-01 16:26:30,667] [DEBUG] --------start loop--------
+[2018-10-01 16:26:30,667] [DEBUG] initializing dbClass
+[2018-10-01 16:26:30,667] [ERROR] division by zero
+[2018-10-01 16:26:30,667] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:30,667] [ERROR] division by zero
+[2018-10-01 16:26:31,668] [DEBUG] --------start loop--------
+[2018-10-01 16:26:31,668] [DEBUG] initializing dbClass
+[2018-10-01 16:26:31,668] [ERROR] division by zero
+[2018-10-01 16:26:31,669] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:31,669] [ERROR] division by zero
+[2018-10-01 16:26:53,876] [DEBUG] --------------socketClient.py start listening--------------
+[2018-10-01 16:26:54,877] [DEBUG] --------start loop--------
+[2018-10-01 16:26:54,877] [DEBUG] initializing dbClass
+[2018-10-01 16:26:54,877] [ERROR] division by zero
+[2018-10-01 16:26:54,878] [ERROR] error occurred while initializing dbClass
+[2018-10-01 16:26:54,878] [ERROR] division by zero
+[2018-10-01 16:45:53,627] [DEBUG] --------------socketClient.py start listening--------------
+[2018-10-01 16:45:54,628] [DEBUG] --------start loop--------
+[2018-10-01 16:45:54,628] [DEBUG] initializing dbClass
+[2018-10-01 16:45:55,663] [DEBUG] --------start loop--------
+[2018-10-01 16:45:55,663] [DEBUG] initializing dbClass
+[2018-10-01 16:45:56,693] [DEBUG] --------start loop--------
+[2018-10-01 16:45:56,693] [DEBUG] initializing dbClass
+[2018-10-01 16:45:57,725] [DEBUG] --------start loop--------
+[2018-10-01 16:45:57,726] [DEBUG] initializing dbClass
+[2018-10-01 16:45:58,756] [DEBUG] --------start loop--------
+[2018-10-01 16:45:58,756] [DEBUG] initializing dbClass
+[2018-10-01 16:45:59,785] [DEBUG] --------start loop--------
+[2018-10-01 16:45:59,785] [DEBUG] initializing dbClass
+[2018-10-01 16:46:00,815] [DEBUG] --------start loop--------
+[2018-10-01 16:46:00,815] [DEBUG] initializing dbClass
+[2018-10-01 16:46:01,844] [DEBUG] --------start loop--------
+[2018-10-01 16:46:01,845] [DEBUG] initializing dbClass
+[2018-10-01 16:46:02,876] [DEBUG] --------start loop--------
+[2018-10-01 16:46:02,876] [DEBUG] initializing dbClass
+[2018-10-01 16:46:03,909] [DEBUG] --------start loop--------
+[2018-10-01 16:46:03,909] [DEBUG] initializing dbClass
+[2018-10-01 16:46:04,938] [DEBUG] --------start loop--------
+[2018-10-01 16:46:04,938] [DEBUG] initializing dbClass
+[2018-10-01 16:46:05,964] [DEBUG] --------start loop--------
+[2018-10-01 16:46:05,964] [DEBUG] initializing dbClass
+[2018-10-01 16:46:07,008] [DEBUG] --------start loop--------
+[2018-10-01 16:46:07,008] [DEBUG] initializing dbClass
+[2018-10-01 16:46:08,035] [DEBUG] --------start loop--------
+[2018-10-01 16:46:08,035] [DEBUG] initializing dbClass
+[2018-10-01 16:46:09,059] [DEBUG] --------start loop--------
+[2018-10-01 16:46:09,059] [DEBUG] initializing dbClass
+[2018-10-01 16:46:10,102] [DEBUG] --------start loop--------
+[2018-10-01 16:46:10,102] [DEBUG] initializing dbClass
+[2018-10-01 16:46:11,128] [DEBUG] --------start loop--------
+[2018-10-01 16:46:11,128] [DEBUG] initializing dbClass
+[2018-10-01 16:46:12,160] [DEBUG] --------start loop--------
+[2018-10-01 16:46:12,160] [DEBUG] initializing dbClass
+[2018-10-01 16:46:13,186] [DEBUG] --------start loop--------
+[2018-10-01 16:46:13,186] [DEBUG] initializing dbClass
+[2018-10-01 16:46:14,219] [DEBUG] --------start loop--------
+[2018-10-01 16:46:14,219] [DEBUG] initializing dbClass
+[2018-10-01 16:46:15,257] [DEBUG] --------start loop--------
+[2018-10-01 16:46:15,257] [DEBUG] initializing dbClass
+[2018-10-01 16:46:16,283] [DEBUG] --------start loop--------
+[2018-10-01 16:46:16,283] [DEBUG] initializing dbClass
+[2018-10-01 16:46:17,312] [DEBUG] --------start loop--------
+[2018-10-01 16:46:17,312] [DEBUG] initializing dbClass
+[2018-10-01 16:46:18,342] [DEBUG] --------start loop--------
+[2018-10-01 16:46:18,343] [DEBUG] initializing dbClass
+[2018-10-01 16:46:19,374] [DEBUG] --------start loop--------
+[2018-10-01 16:46:19,374] [DEBUG] initializing dbClass
+[2018-10-01 16:46:20,403] [DEBUG] --------start loop--------
+[2018-10-01 16:46:20,403] [DEBUG] initializing dbClass
+[2018-10-01 16:46:21,431] [DEBUG] --------start loop--------
+[2018-10-01 16:46:21,432] [DEBUG] initializing dbClass
+[2018-10-01 16:46:22,461] [DEBUG] --------start loop--------
+[2018-10-01 16:46:22,461] [DEBUG] initializing dbClass
+[2018-10-01 16:46:23,489] [DEBUG] --------start loop--------
+[2018-10-01 16:46:23,490] [DEBUG] initializing dbClass
+[2018-10-01 16:46:24,521] [DEBUG] --------start loop--------
+[2018-10-01 16:46:24,521] [DEBUG] initializing dbClass
+[2018-10-01 16:46:25,549] [DEBUG] --------start loop--------
+[2018-10-01 16:46:25,549] [DEBUG] initializing dbClass
+[2018-10-01 16:46:26,576] [DEBUG] --------start loop--------
+[2018-10-01 16:46:26,576] [DEBUG] initializing dbClass
+[2018-10-01 16:46:27,608] [DEBUG] --------start loop--------
+[2018-10-01 16:46:27,608] [DEBUG] initializing dbClass
+[2018-10-03 16:44:49,329] [DEBUG] 尝试初始化数据库
+[2018-10-03 16:44:49,330] [DEBUG] 尝试初始化数据库
+[2018-10-03 16:44:50,331] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:51,372] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:52,400] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:53,431] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:54,461] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:55,489] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:56,519] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:57,569] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:58,597] [DEBUG] --------start main process loop--------
+[2018-10-03 16:44:59,626] [DEBUG] --------start main process loop--------
+[2018-10-03 16:45:00,655] [DEBUG] --------start main process loop--------
