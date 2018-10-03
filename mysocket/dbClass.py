@@ -6,14 +6,14 @@
 
 import pymysql
 import json
-from datetime import datetime
 import logging
 import time
+
 
 class dbClass(object):
     """docstring for dbClass"""
 
-    def __init__(self,settings):
+    def __init__(self, settings):
         logging.debug('尝试初始化数据库')
         try:
             with open(settings, 'r') as f:
@@ -22,7 +22,6 @@ class dbClass(object):
             logging.error(str(e))
             logging.error('初始化数据库时出错，打不开配置文件')
             raise e
-
 
         configJson = json.loads(filetext)
         self.host = configJson['host']
@@ -53,28 +52,22 @@ class dbClass(object):
         self.cellTestHistoryDataTable = configJson["cellTestHistoryDataTable"]
 
     def updateCellDeviceTable(self, boxid, chnNum, datadict):
-        i=0
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                i=i+1
+                i = i + 1
                 logging.error(str(e))
-                if i>10:
+                if i > 10:
                     logging.critical("连接数据库失败!!")
                     return None
                 logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
                 time.sleep(10)
-
-
         cursor = dbconnection.cursor()
-
         ROWstr = ''
-
-        # UPDATE table_name SET field1=new-value1, field2=new-value2 WHERE runoob_id=3;
-
         from collections import Iterable
         a = isinstance(datadict, Iterable)
         for key in datadict:
@@ -82,36 +75,43 @@ class dbClass(object):
                 ROWstr = ROWstr + key + '=\'' + datadict[key] + '\','
             else:
                 ROWstr = ROWstr + key + '=' + str(datadict[key]) + ','
-
-        ROWstr = ROWstr[:-1];
+        ROWstr = ROWstr[:-1]
         ROWstr = ROWstr + ' '
-
         sql = 'update ' + self.cellDeviceTable + ' SET ' + ROWstr + 'where (boxID_id = ' + str(
             boxid) + ') and ' + '(chnNum = ' + str(chnNum) + ')'
-
-        # print(sql)
-        try:
-            cursor.execute(sql)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()
 
     def updateCellDeviceTable_Gas_Temp(self, cellid, datadict):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         ROWstr = ''
-
-        # UPDATE table_name SET field1=new-value1, field2=new-value2 WHERE runoob_id=3;
-
         from collections import Iterable
         a = isinstance(datadict, Iterable)
         for key in datadict:
@@ -120,53 +120,72 @@ class dbClass(object):
             else:
                 ROWstr = ROWstr + key + '=' + str(datadict[key]) + ','
 
-        ROWstr = ROWstr[:-1];
+        ROWstr = ROWstr[:-1]
         ROWstr = ROWstr + ' '
-
         sql = 'update ' + self.cellDeviceTable + ' SET ' + ROWstr + 'where (cellID = ' + str(cellid) + ')'
-
-        # print(sql)
-        try:
-            cursor.execute(sql)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()
 
     def executeGetSQL(self, sql, keys):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         r_list = []
-        try:
-            cursor.execute(sql)
-            result = cursor.fetchall()
-            for i in result:
-                data = {}
-                for j in range(0, len(keys)):
-                    data[keys[j]] = i[j]
-                r_list.append(data)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                for i in result:
+                    data = {}
+                    for j in range(0, len(keys)):
+                        data[keys[j]] = i[j]
+                    r_list.append(data)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行get-sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行get-sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()
         return r_list
 
     def getCellsUnderHandle(self):
-        print("get cell under handle")
+        logging.debug("获取待处理的电子负载通道")
         keys = ["cellID_id", "boxID_id", "testID_id", "bigTestID_id", "chnNum", "currState", "nextState"]
         keystr = ",".join(keys)
         sql = 'SELECT ' + keystr + ' FROM ' + self.cellTestRealDataTable + ' WHERE (currState!=nextState)'
         result = self.executeGetSQL(sql, keys)
-        print("cell under handle:" + str(result))
+        logging.debug("获取待处理的电子负载通道：" + str(result))
         return result
 
     def getCellsTestPlan(self, cell):
@@ -176,13 +195,13 @@ class dbClass(object):
         keys = ["id", "planID_id", "step", "mode", "i", "u", "r", "p", "n", "nStart", "nStop", "nTarget", "tTH", "iTH",
                 "uTH", "qTH"]
         keystr = ",".join(keys)
-        sql = 'SELECT ' + keystr + ' FROM ' + self.cellPlanDetailTable + ' WHERE planID_id=' + str(result[0]["planID_id"]) + ' ORDER BY step'
+        sql = 'SELECT ' + keystr + ' FROM ' + self.cellPlanDetailTable + ' WHERE planID_id=' + str(
+            result[0]["planID_id"]) + ' ORDER BY step'
         result = self.executeGetSQL(sql, keys)
         return result
 
     def getCellsComponetCOM(self, cell):
-        keys = ["cellID", "chnNum", "boxID_id", "mAIRID_id", "mH2ID_id", "mCH4ID_id", "mN2ID_id", "mAIRID_id",
-                "mH2OID_id", "mT1ID_id", "mT0ID_id"]
+        keys = ["cellID", "chnNum", "boxID_id"]
         keystr = ",".join(keys)
         sql = "SELECT " + keystr + " FROM " + self.cellDeviceTable + " WHERE cellID=" + str(cell["cellID_id"])
         cellDevice = self.executeGetSQL(sql, keys)[0]
@@ -195,21 +214,26 @@ class dbClass(object):
         data[0]["cellID"] = cellDevice["cellID"]
         return data
 
-    def getGasCOM(self, type, llj):
-        keys = ["ID", "IP", "PortNum", "Addr","fullScale"]
+    def getGasCOM(self, gtype, llj):
+        keys = ["ID", "IP", "PortNum", "Addr", "fullScale"]
         keystr = ",".join(keys)
-        if type == "H2":
+        if gtype == "H2":
             sql = "SELECT " + keystr + " FROM " + self.H2DeviceTable + " WHERE ID=" + str(llj["H2ID_id"])
-        elif type == "N2":
+        elif gtype == "N2":
             sql = "SELECT " + keystr + " FROM " + self.N2DeviceTable + " WHERE ID=" + str(llj["N2ID_id"])
-        elif type == "CH4":
+        elif gtype == "CH4":
             sql = "SELECT " + keystr + " FROM " + self.CH4DeviceTable + " WHERE ID=" + str(llj["CH4ID_id"])
-        elif type == "CO2":
+        elif gtype == "CO2":
             sql = "SELECT " + keystr + " FROM " + self.CO2DeviceTable + " WHERE ID=" + str(llj["CO2ID_id"])
-        elif type == "AIR":
+        elif gtype == "AIR":
             sql = "SELECT " + keystr + " FROM " + self.AIRDeviceTable + " WHERE ID=" + str(llj["AIRID_id"])
-        elif type == "H2O":
+        elif gtype == "H2O":
             sql = "SELECT " + keystr + " FROM " + self.H2ODeviceTable + " WHERE ID=" + str(llj["H2OID_id"])
+        else:
+            sql = None
+        if sql is None:
+            logging.error("SQL语句为空")
+            return None
         data = self.executeGetSQL(sql, keys)
         return data
 
@@ -221,24 +245,31 @@ class dbClass(object):
         return data
 
     def getWdjCOM(self, wdj):
-        keys = ["ID", "IP", "PortNum", "Addr"]
+        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum"]
         keystr = ",".join(keys)
         sql = "SELECT " + keystr + " FROM " + self.wdjDeviceTable + " WHERE ID=" + str(wdj["wdjID_id"])
         data = self.executeGetSQL(sql, keys)
         return data
 
+    def getVoltCOM(self, volt):
+        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum"]
+        keystr = ",".join(keys)
+        sql = "SELECT " + keystr + " FROM " + self.voltDeviceTable + " WHERE ID=" + str(volt["wdjID_id"])
+        data = self.executeGetSQL(sql, keys)
+        return data
+
     def getOvenUnderHandle(self):
-        print("get oven under handle")
-        keys = ["ID", "currState", "nextState", "IP", "PortNum", "Addr", "ovenPlanID_id"]
+        logging.debug("获取待处理温控器")
+        keys = ["ID", "currState", "nextState", "IP", "PortNum", "Addr", "ovenPlanID_id", "protocolVersion"]
         keystr = ",".join(keys)
         sql = 'SELECT ' + keystr + ' FROM ' + self.ovenDeviceTable + ' WHERE (currState!=nextState)'
         result = self.executeGetSQL(sql, keys)
-        print("oven under handle:"+str(result))
+        logging.debug("获取待处理温控器:" + str(result))
         return result
 
     def getLljUnderHandle(self):
-        print("get MFC under handle")
-        keys = ["ID", "currState", "nextState", "IP", "PortNum", "Addr","fullScale"]
+        logging.debug("获取待处理MFC")
+        keys = ["ID", "currState", "nextState", "IP", "PortNum", "Addr", "fullScale"]
         keystr = ",".join(keys)
         data = []
 
@@ -277,42 +308,49 @@ class dbClass(object):
         for i in result:
             i["type"] = "AIR"
         data = data + result
-        print("MFC under handle:" + str(result))
-        return result
+        logging.debug("获取待处理MFC:" + str(result))
+        return data
 
     def getOvenTestPlan(self, oven):
         keys = ["id", "step", "T", "time", "ovenPlanID_id"]
         keystr = ",".join(keys)
-        sql = 'SELECT ' + keystr + ' FROM ' + self.ovenPlanDetailTable + ' WHERE ovenPlanID_id=' + str(oven["ovenPlanID_id"]) + ' ORDER BY step '
+        sql = 'SELECT ' + keystr + ' FROM ' + self.ovenPlanDetailTable + ' WHERE ovenPlanID_id=' + str(
+            oven["ovenPlanID_id"]) + ' ORDER BY step '
         result = self.executeGetSQL(sql, keys)
         return result
 
     def getUncompleteBigTest(self):
-        print("get uncomplete test")
+        logging.debug("获取未完成的BigTest")
         keys = ["id", "chnNum", "AIRID_id", "CH4ID_id", "CO2ID_id", "H2ID_id", "H2OID_id", "N2ID_id", "boxID_id",
-                "cellID_id", "ovenID_id", "wdjID_id"]
+                "cellID_id", "oven0ID_id", "oven1ID_id", "oven2ID_id", "oven3ID_id", "wdjID_id", "voltID_id"]
         keystr = ",".join(keys)
         sql = 'SELECT ' + keystr + ' FROM ' + self.BigTestInfoTable + ' WHERE completeFlag=0 '
         result = self.executeGetSQL(sql, keys)
-        print("uncomplete test:"+str(result))
+        logging.debug("获取未完成的BigTest:" + str(result))
         return result
 
     def getTestIDfromCell(self, cellid):
         keys = ["cellID_id", "boxID_id", "chnNum", "bigTestID_id", "testID_id"]
         keystr = ",".join(keys)
-        sql = 'SELECT ' + keystr + ' FROM ' + self.cellTestRealDataTable + ' WHERE cellID_id='+str(cellid)
+        sql = 'SELECT ' + keystr + ' FROM ' + self.cellTestRealDataTable + ' WHERE cellID_id=' + str(cellid)
         result = self.executeGetSQL(sql, keys)
         return result
 
     def executeInsertSQL(self, datadict, table):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         ROWstr = []
         COLstr = ''
@@ -326,26 +364,40 @@ class dbClass(object):
         COLstr = COLstr[:-1]
         ss = ss[:-1]
         sql = "insert into  " + table + " (" + COLstr + ") values (" + ss + ")"
-        try:
-            cursor.execute(sql, ROWstr)
-            dbconnection.commit()
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql, ROWstr)
+                dbconnection.commit()
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行insert-sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行insert-sql语句失败,重试中')
         dbconnection.close()
 
     def insertHistoryData(self, datadict):
         self.executeInsertSQL(datadict, self.cellTestHistoryDataTable)
 
     def updateGasTable(self, gastype, datadict, MFCid):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         if gastype == "H2":
             table = self.H2DeviceTable
@@ -360,7 +412,7 @@ class dbClass(object):
         elif gastype == "CH4":
             table = self.CH4DeviceTable
         else:
-            print("update gas table: unknown gas type")
+            logging.error("update gas table: unknown gas type")
             return None
         ROWstr = ''
         for key in datadict:
@@ -368,25 +420,39 @@ class dbClass(object):
                 ROWstr = ROWstr + key + '=\'' + datadict[key] + '\','
             else:
                 ROWstr = ROWstr + key + '=' + str(datadict[key]) + ','
-        ROWstr = ROWstr[:-1];
+        ROWstr = ROWstr[:-1]
         sql = 'update ' + table + ' SET ' + ROWstr + ' where ID=' + str(MFCid)
-        try:
-            cursor.execute(sql)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行update-sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行insert-sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()
 
     def updateOvenTable(self, datadict, Ovenid):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         ROWstr = ''
         for key in datadict:
@@ -394,25 +460,39 @@ class dbClass(object):
                 ROWstr = ROWstr + key + '=\'' + datadict[key] + '\','
             else:
                 ROWstr = ROWstr + key + '=' + str(datadict[key]) + ','
-        ROWstr = ROWstr[:-1];
+        ROWstr = ROWstr[:-1]
         sql = 'update ' + self.ovenDeviceTable + ' SET ' + ROWstr + ' where ID=' + str(Ovenid)
-        try:
-            cursor.execute(sql)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行update-sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行insert-sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()
 
     def updateCellRealData(self, cellid, datadict):
+        i = 0
         while True:
             try:
                 dbconnection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,
-                                       db=self.db,charset="utf8")
+                                               db=self.db, charset="utf8")
                 break
             except Exception as e:
-                print(e)
-                print("cannot connect to mysql, retrying........................")
+                i = i + 1
+                logging.error(str(e))
+                if i > 10:
+                    logging.critical("连接数据库失败!!")
+                    return None
+                logging.error("无法连接到数据库,host=" + str(self.host) + ",port=" + str(self.port) + ",10秒后重连")
+                time.sleep(10)
         cursor = dbconnection.cursor()
         ROWstr = ''
 
@@ -424,13 +504,21 @@ class dbClass(object):
             else:
                 ROWstr = ROWstr + key + '=' + str(datadict[key]) + ','
 
-        ROWstr = ROWstr[:-1];
+        ROWstr = ROWstr[:-1]
         ROWstr = ROWstr + ' '
         sql = 'update ' + self.cellTestRealDataTable + ' SET ' + ROWstr + 'where (cellID_id = ' + str(cellid) + ')'
-        try:
-            cursor.execute(sql)
-        except Exception as e:
-            print(e)
-            dbconnection.rollback()
+        i = 0
+        while True:
+            try:
+                cursor.execute(sql)
+                break
+            except Exception as e:
+                i = i + 1
+                logging.error(e)
+                logging.error('执行update-sql语句失败')
+                dbconnection.rollback()
+                if i > 10:
+                    break
+                logging.error('执行insert-sql语句失败,重试中')
         dbconnection.commit()
         dbconnection.close()

@@ -7,6 +7,7 @@ from django.forms.models import model_to_dict
 
 admin.site.register(boxDeviceTable)
 admin.site.register(wdjDeviceTable)
+admin.site.register(voltDeviceTable)
 admin.site.register(H2DeviceTable)
 admin.site.register(H2ODeviceTable)
 admin.site.register(CH4DeviceTable)

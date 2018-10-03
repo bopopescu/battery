@@ -16,8 +16,8 @@ class wdjDeviceTable(models.Model):
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
     Addr = models.IntegerField(default=1, verbose_name="485地址", blank=True, null=True)
-    totalChnNum = models.IntegerField(default=6, verbose_name="总通道数", blank=True, null=True)
-    protocolVersion = models.CharField(default='7',verbose_name="宇电表头协议版本号", blank=True, null=True)
+    totalChnNum = models.IntegerField(default=20, verbose_name="总通道数", blank=True, null=True)
+    protocolVersion = models.CharField(default='7',max_length=2,verbose_name="宇电表头协议版本号", blank=True, null=True)
 
 
 class voltDeviceTable(models.Model):
@@ -26,68 +26,68 @@ class voltDeviceTable(models.Model):
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
     Addr = models.IntegerField(default=1, verbose_name="485地址", blank=True, null=True)
-    totalChnNum = models.IntegerField(default=1, verbose_name="总通道数", blank=True, null=True)
-    protocolVersion = models.CharField(default='7', verbose_name="宇电表头协议版本号", blank=True, null=True)
+    totalChnNum = models.IntegerField(default=20, verbose_name="总通道数", blank=True, null=True)
+    protocolVersion = models.CharField(default='7', max_length=2,verbose_name="宇电表头协议版本号", blank=True, null=True)
 
 
 class H2DeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class N2DeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class H2ODeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class CO2DeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class CH4DeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class AIRDeviceTable(models.Model):
     ID = models.CharField(max_length=8, verbose_name="设备编号", primary_key=True, unique=True)
-    currState = models.IntegerField(default=0, verbose_name="当前设定流量")
-    nextState = models.IntegerField(default=0, verbose_name="下一步设定流量")
+    currState =  models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="当前设定流量")
+    nextState = models.DecimalField(max_digits=8, decimal_places=2,default=0, verbose_name="下一步设定流量")
     fullScale = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="满量程值")
     IP = models.GenericIPAddressField(default='192.168.0.3', verbose_name="IP地址", blank=True, null=True)
     PortNum = models.IntegerField(default=20001, verbose_name="端口号", blank=True, null=True)
-    Addr = models.IntegerField(default=0x20, max_length=1, verbose_name="485地址", blank=True, null=True)
+    Addr = models.IntegerField(default=0x20, verbose_name="485地址", blank=True, null=True)
 
 
 class ovenPlanTable(models.Model):
@@ -118,7 +118,8 @@ class ovenDeviceTable(models.Model):
     Addr = models.IntegerField(default=1, verbose_name="485地址", blank=True, null=True)
     ovenPlanID = models.ForeignKey(ovenPlanTable, to_field='id', verbose_name="炉子测试方案ID", on_delete=models.CASCADE,
                                    null=True, blank=True)
-    protocolVersion = models.CharField(default='7', verbose_name="宇电表头协议版本号", blank=True, null=True)
+    protocolVersion = models.CharField(default='7', max_length=2,verbose_name="宇电表头协议版本号", blank=True, null=True)
+
 
 class cellDeviceTable(models.Model):
     cellID = models.CharField(max_length=8, verbose_name="电池/电堆编号", primary_key=True, unique=True)
@@ -159,25 +160,20 @@ class cellDeviceTable(models.Model):
 
     # Tc控温点
     mTc0ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="温控器ID", on_delete=models.CASCADE,
-                               blank=True,null=True)
+                               blank=True,null=True,related_name='first_oven')
     mTc1ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="温控器ID", on_delete=models.CASCADE,
-                               blank=True,null=True)
+                               blank=True,null=True,related_name='second_oven')
     mTc2ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="温控器ID", on_delete=models.CASCADE,
-                               blank=True, null=True)
+                               blank=True, null=True,related_name='third_oven')
     mTc3ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="温控器ID", on_delete=models.CASCADE,
-                               blank=True, null=True)
+                               blank=True, null=True,related_name='fourth_oven')
 
     # Tm测温点
-    mTm0ID = models.ForeignKey(wdjDeviceTable, to_field='ID', verbose_name="温度计ID", on_delete=models.CASCADE,
+    mTmID = models.ForeignKey(wdjDeviceTable, to_field='ID', verbose_name="温度计ID", on_delete=models.CASCADE,
                                blank=True, null=True)
-    mTm1ID = models.ForeignKey(wdjDeviceTable, to_field='ID', verbose_name="温度计ID", on_delete=models.CASCADE,
-                               blank=True,null=True)
-
 
     # Vm电压表
-    mVm0ID = models.ForeignKey(voltDeviceTable, to_field='ID', verbose_name="电压表ID", on_delete=models.CASCADE,
-                               blank=True, null=True)
-    mVm1ID = models.ForeignKey(voltDeviceTable, to_field='ID', verbose_name="电压表ID", on_delete=models.CASCADE,
+    mVmID = models.ForeignKey(voltDeviceTable, to_field='ID', verbose_name="电压表ID", on_delete=models.CASCADE,
                                blank=True, null=True)
 
 
@@ -267,21 +263,13 @@ class BigTestInfoTable(models.Model):
     voltID = models.ForeignKey(voltDeviceTable, to_field='ID', verbose_name="volt0ID", on_delete=models.CASCADE,
                                blank=True,null=True)
     oven0ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="ovenID", on_delete=models.CASCADE,
-                               blank=True, null=True)
-    ovenPlan0ID = models.ForeignKey(ovenPlanTable, to_field='id', verbose_name="炉子测试方案ID", on_delete=models.CASCADE,
-                                   blank=True, null=True)
+                               blank=True, null=True,related_name='firstoven')
     oven1ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="ovenID", on_delete=models.CASCADE,
-                               blank=True, null=True)
-    ovenPlan1ID = models.ForeignKey(ovenPlanTable, to_field='id', verbose_name="炉子测试方案ID", on_delete=models.CASCADE,
-                                   blank=True, null=True)
+                               blank=True, null=True,related_name='secondoven')
     oven2ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="ovenID", on_delete=models.CASCADE,
-                               blank=True, null=True)
-    ovenPlan2ID = models.ForeignKey(ovenPlanTable, to_field='id', verbose_name="炉子测试方案ID", on_delete=models.CASCADE,
-                                   blank=True, null=True)
+                               blank=True, null=True,related_name='thirdoven')
     oven3ID = models.ForeignKey(ovenDeviceTable, to_field='ID', verbose_name="ovenID", on_delete=models.CASCADE,
-                               blank=True, null=True)
-    ovenPlan3ID = models.ForeignKey(ovenPlanTable, to_field='id', verbose_name="炉子测试方案ID", on_delete=models.CASCADE,
-                                   blank=True, null=True)
+                               blank=True, null=True,related_name='fourthoven')
     startDate = models.DateTimeField(auto_now=True, verbose_name="创建时间")
     endDate = models.DateTimeField(verbose_name="结束时间", blank=True, null=True)
     completeFlag = models.IntegerField(default=0, verbose_name="完成标志")

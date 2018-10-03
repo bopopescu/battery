@@ -186,3 +186,33 @@
 [2018-10-02 09:55:53,747] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
 [2018-10-02 09:55:54,057] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
 [2018-10-02 09:55:54,309] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-03 20:34:09,181] [INFO] "GET / HTTP/1.1" 200 13050
+[2018-10-03 20:34:09,213] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-10-03 20:34:09,217] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-10-03 20:34:09,514] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-10-03 20:34:09,517] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-03 20:34:09,518] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-10-03 20:34:09,518] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-03 20:34:09,520] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-10-03 20:34:09,543] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-10-03 20:34:09,822] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-10-03 20:34:09,826] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-10-03 20:34:09,830] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-10-03 20:34:09,830] [INFO] "GET /static/img/chat.png HTTP/1.1" 200 2490
+[2018-10-03 20:34:09,831] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-03 20:34:10,127] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-03 20:34:10,153] [INFO] "GET /static/img/topo.svg HTTP/1.1" 200 60784
+[2018-10-03 20:34:10,153] [INFO] "GET /static/js/index.js HTTP/1.1" 200 13061
+[2018-10-03 20:34:10,187] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-03 20:34:10,254] [WARNING] Not Found: /favicon.ico
+[2018-10-03 20:34:10,255] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6594
+[2018-10-03 20:34:10,855] [WARNING] Not Found: /getRealData/
+[2018-10-03 20:34:10,855] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-03 20:34:12,155] [WARNING] Not Found: /getRealData/
+[2018-10-03 20:34:12,155] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-03 20:34:12,411] [INFO] "GET /oven_control/ HTTP/1.1" 200 15154
+[2018-10-03 20:34:12,464] [INFO] "GET /static/js/control.js HTTP/1.1" 200 29008
+[2018-10-03 20:34:12,728] [ERROR] 没有任何箱号
+[2018-10-03 20:34:12,760] [ERROR] 没有任何电炉
+[2018-10-03 20:34:12,780] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-03 20:34:12,808] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 44

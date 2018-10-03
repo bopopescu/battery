@@ -3,22 +3,16 @@
 
 from dbClass import dbClass
 from HardwareProtocol import Oven_7,Oven_8,Wdj_7,Wdj_8,Volt_7,Volt_8, eLoad, MFC
-import threading
 import socket
 import signal
-import base64
 import time
-import json
-import binascii
-import string
 from datetime import datetime
-import serial
 import logging
 
 
 class myConfig(object):
     def setConfig(self, type=None, cellid=None, ip=None, port=None, addr=None, boxid=None, chnnum=None, cmd=None,
-                  plan=None, timeout=1, waittime=0.2, length=100, senddata=None, recvdata=None, testid=None,
+                  plan=None, timeout=1, waittime=1, length=1000, senddata=None, recvdata=None, testid=None,
                   planid=None, gastype=None, protocolversion=None,gasfullscale=None,dbID=None):
         self.type = type
         self.cellid = cellid
@@ -56,11 +50,11 @@ class socketConnect(object):
 
     def checksum(self, data):
         # 为从电子负载发出的数据包计算校验和
-        sum = 0
+        csum = 0
         length = data[2] + (data[3] << 8)
         for i in range(length - 2):
-            sum = sum + data[4 + i]
-        return sum
+            csum = csum + data[4 + i]
+        return csum
 
     def buildCmdMessage(self, config):
         # 若正常，则返回的是命令；若不正常，则直接返回None
@@ -99,6 +93,8 @@ class socketConnect(object):
                     cmd = o.buildcmd("r/h/s", "set", 0)
                 elif config.protocolversion == '8':
                     cmd = o.buildcmd("Srun", "set", 0)
+                else:
+                    cmd = None
                 return cmd
             elif config.cmd == "stop":
                 cmd_list = []
@@ -114,23 +110,31 @@ class socketConnect(object):
                     cmd = o.buildcmd("STEP", "set", 1)
                     cmd_list.append(cmd)
                     return cmd_list
+                else:
+                    return None
             elif config.cmd == "resume":
                 if config.protocolversion == '7':
                     cmd = o.buildcmd("r/h/s", "set", 0)
                 elif config.protocolversion == '8':
                     cmd = o.buildcmd("Srun", "set", 0)
+                else:
+                    cmd=None
                 return cmd
             elif config.cmd == "pause":
                 if config.protocolversion == '7':
                     cmd = o.buildcmd("r/h/s", "set", 4)
                 elif config.protocolversion == '8':
                     cmd = o.buildcmd("Srun", "set", 2)
+                else:
+                    cmd=None
                 return cmd
             elif config.cmd == "read":
                 if config.protocolversion == '7':
                     cmd = o.buildcmd("SV/SteP", "read")
                 elif config.protocolversion == '8':
                     cmd = o.buildcmd("SV", "read")
+                else:
+                    cmd=None
                 return cmd
             elif config.cmd == "setplan":
                 i = 1
@@ -158,6 +162,8 @@ class socketConnect(object):
                     cmd = w.buildcmd("SV/SteP", "read")
                 elif config.protocolversion == '8':
                     cmd = w.buildcmd("SV", "read")
+                else:
+                    cmd=None
                 return cmd
             else:
                 logging.error('构建温度巡检仪命令时出错：unknown config.cmd')
@@ -177,6 +183,8 @@ class socketConnect(object):
                     cmd = v.buildcmd("SV/SteP", "read")
                 elif config.protocolversion == '8':
                     cmd = v.buildcmd("SV", "read")
+                else:
+                    cmd=None
                 return cmd
             else:
                 logging.error('构建温度巡检仪命令时出错：unknown config.cmd')
@@ -186,6 +194,7 @@ class socketConnect(object):
             mfc= MFC(config.addr)
             if config.cmd == 'set':
                 # value=0x4000~0xC000
+                config.plan=int(config.plan/config.gasfullscale*(0xc000-0x4000))+0x4000
                 cmd = mfc.buildcmd(type="SetDigitalSetpoint",value=config.plan)
                 return cmd
             elif config.cmd == 'read':
@@ -221,15 +230,15 @@ class socketConnect(object):
                 try:
                     time.sleep(config.waittime)
                     recvdata = s.recv(config.length)
+                    s.close()
                     return recvdata
                 except:  # 接收数据失败
                     logging.error('发送命令后无响应，接收数据超时！')
+                    s.close()
                     return None
             except:  # 读取数据失败
                 logging.error('发送命令失败，请检查网络连接！')
                 return None
-            s.shutdown(2)
-            s.close()
         except:  # 建立连接失败
             logging.error('连接' + config.type + '失败！ip:' + config.ip + '  port:' + str(config.port))
             return None
@@ -327,7 +336,7 @@ class socketConnect(object):
             # 流量计主逻辑
             for i in lljUnderHandle:
                 settingValue=i['nextState']
-                if settingValue>0xc000:
+                if settingValue>i["fullScale"]:
                     # todo需要报警
                     logging.error('流量计写入值超量程！')
                     continue
@@ -1030,7 +1039,7 @@ class socketConnect(object):
         #self.db_backup.insertHistoryData(data)
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='[%(asctime)s] [%(levelname)s] %(message)s',
                         filename='socket.log',
                         filemode='a')
