@@ -29,7 +29,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^users/', include('django.contrib.auth.urls')),
-    url('^$', IndexView.as_view(), name="index"),
+    #url('^$', IndexView.as_view(), name="index"),
     url(r'^setting/$', TemplateView.as_view(template_name="setting.html"), name="setting"),
 
     url(r'^get_b_c_num/$', get_b_c_num, name="get_b_c_num"),

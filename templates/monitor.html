@@ -96,10 +96,21 @@
 
         <div class="row">
             <ul id="myTab" class="nav nav-tabs">
-                <li class="active">
-                    <a href="#briefinfo" data-toggle="tab">
-                        通道实时数据
+{#                <li class="active">#}
+{#                    <a href="#briefinfo" data-toggle="tab">#}
+{#                        通道实时数据#}
+{#                    </a>#}
+{#                </li>#}
+                <li class="dropdown active">
+                    <a href="#" id="myTabDrop0" class="dropdown-toggle"
+                       data-toggle="dropdown">通道实时数据
+                        <b class="caret"></b>
                     </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                        <li class="active"><a href="#UIbriefinfo" tabindex="-1" data-toggle="tab">电流/电压</a></li>
+                        <li><a href="#Tbriefinfo" tabindex="-1" data-toggle="tab">温度</a></li>
+                        <li><a href="#Qbriefinfo" tabindex="-1" data-toggle="tab">气流量</a></li>
+                    </ul>
                 </li>
                 <li class="">
                     <a href="#testscheme" data-toggle="tab">
@@ -112,9 +123,10 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                        <li><a href="#UIchart" tabindex="-1" data-toggle="tab">电流/电压</a></li>
-                        <li><a href="#T0chart" tabindex="-1" data-toggle="tab">电炉温度</a></li>
-                        <li><a href="#Tchart" tabindex="-1" data-toggle="tab">测温点温度</a></li>
+                        <li><a href="#UIchart" tabindex="-1" data-toggle="tab">电子负载电流/电压</a></li>
+                        <li><a href="#Tcchart" tabindex="-1" data-toggle="tab">控温点温度</a></li>
+                        <li><a href="#Tmchart" tabindex="-1" data-toggle="tab">测温点温度</a></li>
+                        <li><a href="#Vmchart" tabindex="-1" data-toggle="tab">电池电压</a></li>
                         <li><a href="#Qchart" tabindex="-1" data-toggle="tab">气流量</a></li>
                     </ul>
                 </li>
@@ -139,8 +151,7 @@
                 </li>
             </ul>
             <div id="myTabContent" class="tab-content">
-                <div class="tab-pane fade in active" id="briefinfo">
-
+                <div class="tab-pane fade in active" id="UIbriefinfo">
                     <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
                         <div class="small-box bg-yellow-gradient">
                             <div class="inner" id="I">
@@ -151,7 +162,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-yellow-gradient" style="height:">
+                        <div class="small-box bg-yellow-gradient">
                             <div class="inner" id="U">
                                 <p id="U_name">电压</p>
                                 <p style="font-size:20px;line-height:10px;"><span id="U_val">0</span> <sup
@@ -177,7 +188,409 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm0">
+                                <p id="Vm_name">测压点0</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm0_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm1">
+                                <p id="Vm_name">测压点1</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm1_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm2">
+                                <p id="Vm_name">测压点2</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm2_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm3">
+                                <p id="Vm_name">测压点3</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm3_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm4">
+                                <p id="Vm_name">测压点4</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm4_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm5">
+                                <p id="Vm_name">测压点5</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm5_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm6">
+                                <p id="Vm_name">测压点6</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm6_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm7">
+                                <p id="Vm_name">测压点7</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm7_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm8">
+                                <p id="Vm_name">测压点8</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm8_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm9">
+                                <p id="Vm_name">测压点9</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm9_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm10">
+                                <p id="Vm_name">测压点10</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm10_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm11">
+                                <p id="Vm_name">测压点11</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm11_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm12">
+                                <p id="Vm_name">测压点12</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm12_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm13">
+                                <p id="Vm_name">测压点13</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm13_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm14">
+                                <p id="Vm_name">测压点14</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm14_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm15">
+                                <p id="Vm_name">测压点15</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm15_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm16">
+                                <p id="Vm_name">测压点16</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm16_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm17">
+                                <p id="Vm_name">测压点17</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm17_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm18">
+                                <p id="Vm_name">测压点18</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm18_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-yellow-gradient">
+                            <div class="inner" id="Vm19">
+                                <p id="Vm_name">测压点19</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Vm19_val">0</span> <sup
+                                        style="font-size: 12px">mV</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="Tbriefinfo">
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tc0">
+                                <p id="T_name">控温点0温度</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tc0_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tc1">
+                                <p id="T_name">控温点1温度</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tc1_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tc2">
+                                <p id="T_name">控温点2温度</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tc2_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tc3">
+                                <p id="T_name">控温点3温度</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tc3_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm0">
+                                <p id="Tm_name">测温点0</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm0_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm1">
+                                <p id="Tm_name">测温点1</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm1_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm2">
+                                <p id="Tm_name">测温点2</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm2_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm3">
+                                <p id="Tm_name">测温点3</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm3_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm4">
+                                <p id="Tm_name">测温点4</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm4_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm5">
+                                <p id="Tm_name">测温点5</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm5_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm6">
+                                <p id="Tm_name">测温点6</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm6_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm7">
+                                <p id="Tm_name">测温点7</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm7_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm8">
+                                <p id="Tm_name">测温点8</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm8_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm9">
+                                <p id="Tm_name">测温点9</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm9_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm10">
+                                <p id="Tm_name">测温点10</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm10_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm11">
+                                <p id="Tm_name">测温点11</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm11_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm12">
+                                <p id="Tm_name">测温点12</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm12_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm13">
+                                <p id="Tm_name">测温点13</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm13_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm14">
+                                <p id="Tm_name">测温点14</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm14_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm15">
+                                <p id="Tm_name">测温点15</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm15_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm16">
+                                <p id="Tm_name">测温点16</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm16_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm17">
+                                <p id="Tm_name">测温点17</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm17_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm18">
+                                <p id="Tm_name">测温点18</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm18_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                        <div class="small-box bg-red-gradient">
+                            <div class="inner" id="Tm19">
+                                <p id="Tm_name">测温点19</p>
+                                <p style="font-size:20px;line-height:10px;"><span id="Tm19_val">0</span> <sup
+                                        style="font-size: 12px">&#176C</sup></p>
+                            </div>
+                        </div>
+                    </div>
 
+
+                </div>
+                <div class="tab-pane fade" id="Qbriefinfo">
                     <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
                         <div class="small-box bg-blue-gradient">
                             <div class="inner" id="Q_H2">
@@ -233,64 +646,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-red-gradient">
-                            <div class="inner" id="T0">
-                                <p id="T_name">控温点温度</p>
-                                <p style="font-size:20px;line-height:10px;"><span id="T0_val">0</span> <sup
-                                        style="font-size: 12px">&#176C</sup></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-red-gradient">
-                            <div class="inner" id="T1">
-                                <p id="T_name">测温点1温度</p>
-                                <p style="font-size:20px;line-height:10px;"><span id="T1_val">0</span> <sup
-                                        style="font-size: 12px">&#176C</sup></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-red-gradient">
-                            <div class="inner" id="T2">
-                                <p id="T_name">测温点2温度</p>
-                                <p style="font-size:20px;line-height:10px;"><span id="T2_val">0</span> <sup
-                                        style="font-size: 12px">&#176C</sup></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-red-gradient">
-                            <div class="inner" id="T3">
-                                <p id="T_name">测温点3温度</p>
-                                <p style="font-size:20px;line-height:10px;"><span id="T3_val">0</span> <sup
-                                        style="font-size: 12px">&#176C</sup></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
-                        <div class="small-box bg-red-gradient">
-                            <div class="inner" id="T4">
-                                <p id="T_name">测温点4温度</p>
-                                <p style="font-size:20px;line-height:10px;"><span id="T4_val">0</span> <sup
-                                        style="font-size: 12px">&#176C</sup></p>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
+
                 <div class="tab-pane fade" id="UIchart">
                     <div id="U_I_t_chart" style="height: 400px;width:800px;"></div>
                 </div>
-                <div class="tab-pane fade" id="Tchart">
-                    <div id="T_t_chart" style="height: 400px;width:800px;"></div>
+                <div class="tab-pane fade" id="Tcchart">
+                    <div id="Tc_t_chart" style="height: 400px;width:800px;"></div>
                 </div>
-                <div class="tab-pane fade" id="T0chart">
-                    <div id="T0_t_chart" style="height: 400px;width:800px;"></div>
+                <div class="tab-pane fade" id="Tmchart">
+                    <div id="Tm_t_chart" style="height: 400px;width:800px;"></div>
                 </div>
-
+                <div class="tab-pane fade" id="Vmchart">
+                    <div id="Vm_t_chart" style="height: 400px;width:800px;"></div>
+                </div>
                 <div class="tab-pane fade" id="Qchart">
                     <div id="Q_t_chart" style="height: 400px;width:800px;"></div>
                 </div>
@@ -321,15 +690,18 @@
                                 <th scope="col">电池编号</th>
                                 <th scope="col">箱号</th>
                                 <th scope="col">通道号</th>
-                                <th scope="col">负载方案编号</th>
-                                <th scope="col">电炉编号</th>
-                                <th scope="col">电炉方案编号</th>
-                                <th scope="col">H2流量计号</th>
-                                <th scope="col">N2流量计号</th>
-                                <th scope="col">H2O流量计号</th>
-                                <th scope="col">CO2流量计号</th>
-                                <th scope="col">CH4流量计号</th>
-                                <th scope="col">AIR流量计号</th>
+                                <th scope="col">电压巡检仪编号</th>
+                                <th scope="col">温度巡检仪编号</th>
+                                <th scope="col">温控器0编号</th>
+                                <th scope="col">温控器1编号</th>
+                                <th scope="col">温控器2编号</th>
+                                <th scope="col">温控器3编号</th>
+                                <th scope="col">H2流量计编号</th>
+                                <th scope="col">N2流量计编号</th>
+                                <th scope="col">H2O流量计编号</th>
+                                <th scope="col">CO2流量计编号</th>
+                                <th scope="col">CH4流量计编号</th>
+                                <th scope="col">AIR流量计编号</th>
                                 <th scope="col">开始时间</th>
                                 <th scope="col">结束时间</th>
                             </tr>
@@ -347,14 +719,18 @@
                                 <th scope="col">电池编号</th>
                                 <th scope="col">所属箱号</th>
                                 <th scope="col">所属通道号</th>
-                                <th scope="col">所属电炉号</th>
-                                <th scope="col">H2流量计号</th>
-                                <th scope="col">N2流量计号</th>
-                                <th scope="col">H2O流量计号</th>
-                                <th scope="col">CO2流量计号</th>
-                                <th scope="col">CH4流量计号</th>
-                                <th scope="col">AIR流量计号</th>
-                                <th scope="col">温度计号</th>
+                                <th scope="col">电压巡检仪编号</th>
+                                <th scope="col">H2流量计编号</th>
+                                <th scope="col">N2流量计编号</th>
+                                <th scope="col">H2O流量计编号</th>
+                                <th scope="col">CO2流量计编号</th>
+                                <th scope="col">CH4流量计编号</th>
+                                <th scope="col">AIR流量计编号</th>
+                                <th scope="col">温度巡检仪编号</th>
+                                <th scope="col">温控器0编号</th>
+                                <th scope="col">温控器1编号</th>
+                                <th scope="col">温控器2编号</th>
+                                <th scope="col">温控器3编号</th>
                             </tr>
                             </thead>
                             <tbody id="device_relation_tablebody">

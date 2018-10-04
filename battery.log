@@ -216,3 +216,660 @@
 [2018-10-03 20:34:12,760] [ERROR] 没有任何电炉
 [2018-10-03 20:34:12,780] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
 [2018-10-03 20:34:12,808] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 44
+[2018-10-04 10:39:41,336] [INFO] "GET / HTTP/1.1" 200 13050
+[2018-10-04 10:39:41,361] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-04 10:39:41,361] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-04 10:39:41,682] [INFO] "GET /static/img/chat.png HTTP/1.1" 200 2490
+[2018-10-04 10:39:41,683] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-04 10:39:41,730] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-04 10:39:41,753] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-04 10:39:41,809] [INFO] "GET /static/img/topo.svg HTTP/1.1" 200 60784
+[2018-10-04 10:39:41,944] [WARNING] Not Found: /favicon.ico
+[2018-10-04 10:39:41,945] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6594
+[2018-10-04 10:39:42,436] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:39:42,436] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:39:42,893] [INFO] "GET /monitor/ HTTP/1.1" 200 27310
+[2018-10-04 10:39:42,910] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 28533
+[2018-10-04 10:39:43,318] [ERROR] 没有任何箱号
+[2018-10-04 10:39:43,360] [ERROR] 没有任何电炉
+[2018-10-04 10:39:43,383] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:39:43,567] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:39:43,694] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:39:43,878] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:40:06,993] [ERROR] Internal Server Error: /monitor/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/d/battery/apps/views.py", line 30, in monitor
+    return render(request, 'monitor.html')
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+[2018-10-04 10:40:07,070] [ERROR] "GET /monitor/ HTTP/1.1" 500 154246
+[2018-10-04 10:41:21,076] [INFO] "GET /monitor/ HTTP/1.1" 200 27310
+[2018-10-04 10:41:21,235] [ERROR] 没有任何箱号
+[2018-10-04 10:41:21,264] [ERROR] 没有任何电炉
+[2018-10-04 10:41:21,284] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:41:21,293] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:41:21,603] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:41:21,853] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:41:24,003] [INFO] "GET /setting/ HTTP/1.1" 200 9228
+[2018-10-04 10:41:25,697] [INFO] "GET / HTTP/1.1" 200 13050
+[2018-10-04 10:41:26,771] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:41:26,771] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:41:28,071] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:41:28,072] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:41:28,770] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:41:28,771] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:41:29,506] [INFO] "GET /setting/ HTTP/1.1" 200 9228
+[2018-10-04 10:41:34,824] [INFO] "GET /setting/ HTTP/1.1" 200 9228
+[2018-10-04 10:42:12,018] [INFO] "GET /setting/ HTTP/1.1" 200 6843
+[2018-10-04 10:42:14,503] [INFO] "GET / HTTP/1.1" 200 10673
+[2018-10-04 10:42:15,594] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:15,594] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:16,895] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:16,896] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:17,598] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:17,599] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:18,909] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:18,910] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:19,594] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:19,595] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:20,084] [INFO] "GET /monitor/ HTTP/1.1" 200 24925
+[2018-10-04 10:42:20,184] [ERROR] 没有任何箱号
+[2018-10-04 10:42:20,207] [ERROR] 没有任何电炉
+[2018-10-04 10:42:20,228] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:42:20,329] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:42:20,639] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:42:20,891] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:42:44,274] [INFO] "GET /monitor/ HTTP/1.1" 200 27525
+[2018-10-04 10:42:44,501] [ERROR] 没有任何箱号
+[2018-10-04 10:42:44,527] [ERROR] 没有任何电炉
+[2018-10-04 10:42:44,548] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:42:44,557] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:42:44,867] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:42:45,118] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:42:45,232] [INFO] "GET / HTTP/1.1" 200 13265
+[2018-10-04 10:42:46,031] [INFO] "GET / HTTP/1.1" 200 13265
+[2018-10-04 10:42:47,104] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:47,105] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:49,048] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:49,049] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:49,287] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:49,290] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:50,098] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:50,099] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:51,417] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:51,417] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:52,102] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:52,103] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:53,418] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:53,419] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:54,106] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:54,106] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:55,405] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:55,406] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:56,099] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:56,100] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:57,410] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:57,410] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:58,099] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:58,099] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:42:59,411] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:42:59,412] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:00,105] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:00,106] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:01,411] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:01,412] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:02,100] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:02,101] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:03,416] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:03,417] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:04,101] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:04,101] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:05,414] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:05,414] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:06,104] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:06,105] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:07,418] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:07,419] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:08,106] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:08,107] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:09,404] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:09,404] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:10,108] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:10,109] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:11,407] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:11,408] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:12,111] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:12,111] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:13,420] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:13,421] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:14,098] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:14,099] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:15,420] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:15,421] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:16,102] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:16,104] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:17,422] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:17,423] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:18,106] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:18,107] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:19,404] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:19,405] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:20,738] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:20,739] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:22,047] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:22,048] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:22,737] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:22,738] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:24,043] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:24,044] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:24,740] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:24,740] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:26,053] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:26,053] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:26,741] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:26,742] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:28,069] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:28,078] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:28,740] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:28,741] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:30,049] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:30,050] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:30,732] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:30,733] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:32,035] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:32,035] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:32,282] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:32,282] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:33,098] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:43:33,099] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:43:33,608] [INFO] "GET / HTTP/1.1" 200 13273
+[2018-10-04 10:43:34,385] [INFO] "GET /monitor/ HTTP/1.1" 200 27533
+[2018-10-04 10:43:34,496] [ERROR] 没有任何箱号
+[2018-10-04 10:43:34,518] [ERROR] 没有任何电炉
+[2018-10-04 10:43:34,540] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:43:34,851] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:43:35,103] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:43:35,162] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:43:35,890] [INFO] "GET /monitor/ HTTP/1.1" 200 27533
+[2018-10-04 10:43:36,182] [ERROR] 没有任何箱号
+[2018-10-04 10:43:36,204] [ERROR] 没有任何电炉
+[2018-10-04 10:43:36,226] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:43:36,536] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:43:36,788] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:43:36,846] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:43:37,102] [INFO] "GET /monitor/ HTTP/1.1" 200 27533
+[2018-10-04 10:43:37,193] [ERROR] 没有任何箱号
+[2018-10-04 10:43:37,217] [ERROR] 没有任何电炉
+[2018-10-04 10:43:37,240] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:43:37,549] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:43:37,801] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:43:37,860] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:34,792] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:44:35,021] [ERROR] 没有任何箱号
+[2018-10-04 10:44:35,045] [ERROR] 没有任何电炉
+[2018-10-04 10:44:35,067] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:44:35,077] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:44:35,387] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:35,638] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:40,856] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:44:41,150] [ERROR] 没有任何箱号
+[2018-10-04 10:44:41,188] [ERROR] 没有任何电炉
+[2018-10-04 10:44:41,209] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:44:41,520] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:44:41,770] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:41,830] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:42,872] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:44:43,166] [ERROR] 没有任何箱号
+[2018-10-04 10:44:43,190] [ERROR] 没有任何电炉
+[2018-10-04 10:44:43,212] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:44:43,522] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:44:43,773] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:43,832] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:45,018] [INFO] "GET /control/ HTTP/1.1" 200 13121
+[2018-10-04 10:44:45,305] [INFO] "GET /static/js/control.js HTTP/1.1" 304 0
+[2018-10-04 10:44:45,629] [ERROR] 没有任何箱号
+[2018-10-04 10:44:45,650] [ERROR] 没有任何电炉
+[2018-10-04 10:44:45,671] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:44:45,882] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 10:44:57,090] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:44:57,299] [ERROR] 没有任何箱号
+[2018-10-04 10:44:57,321] [ERROR] 没有任何电炉
+[2018-10-04 10:44:57,345] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:44:57,353] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:44:57,662] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:44:57,914] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:45:12,634] [INFO] "GET /monitor/ HTTP/1.1" 200 27533
+[2018-10-04 10:45:12,864] [ERROR] 没有任何箱号
+[2018-10-04 10:45:12,887] [ERROR] 没有任何电炉
+[2018-10-04 10:45:12,910] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:45:12,921] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:45:13,230] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:45:13,481] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:45:37,633] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:45:37,860] [ERROR] 没有任何箱号
+[2018-10-04 10:45:37,885] [ERROR] 没有任何电炉
+[2018-10-04 10:45:37,907] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:45:37,915] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:45:38,226] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:45:38,478] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:45:59,912] [INFO] "GET /monitor/ HTTP/1.1" 200 25476
+[2018-10-04 10:46:00,141] [ERROR] 没有任何箱号
+[2018-10-04 10:46:00,164] [ERROR] 没有任何电炉
+[2018-10-04 10:46:00,186] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:00,195] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:00,506] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:00,757] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:07,891] [INFO] "GET /monitor/ HTTP/1.1" 200 25472
+[2018-10-04 10:46:08,186] [ERROR] 没有任何箱号
+[2018-10-04 10:46:08,209] [ERROR] 没有任何电炉
+[2018-10-04 10:46:08,230] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:08,541] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:08,792] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:08,852] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:36,601] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:46:36,721] [ERROR] 没有任何箱号
+[2018-10-04 10:46:36,745] [ERROR] 没有任何电炉
+[2018-10-04 10:46:36,767] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:36,848] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:37,157] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:37,408] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:38,001] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:46:38,295] [ERROR] 没有任何箱号
+[2018-10-04 10:46:38,317] [ERROR] 没有任何电炉
+[2018-10-04 10:46:38,337] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:38,647] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:38,898] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:38,958] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:43,107] [INFO] "GET / HTTP/1.1" 200 10918
+[2018-10-04 10:46:44,171] [WARNING] Not Found: /getRealData/
+[2018-10-04 10:46:44,172] [WARNING] "GET /getRealData/ HTTP/1.1" 404 6597
+[2018-10-04 10:46:45,067] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:46:45,166] [ERROR] 没有任何箱号
+[2018-10-04 10:46:45,189] [ERROR] 没有任何电炉
+[2018-10-04 10:46:45,217] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:45,313] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:45,623] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:45,874] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:51,272] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:46:51,565] [ERROR] 没有任何箱号
+[2018-10-04 10:46:51,587] [ERROR] 没有任何电炉
+[2018-10-04 10:46:51,609] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:46:51,920] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:46:52,170] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:46:52,231] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:00,634] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:47:00,856] [ERROR] 没有任何箱号
+[2018-10-04 10:47:01,014] [ERROR] 没有任何电炉
+[2018-10-04 10:47:01,035] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:47:01,045] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:47:01,356] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:01,606] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:02,288] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:47:02,582] [ERROR] 没有任何箱号
+[2018-10-04 10:47:02,603] [ERROR] 没有任何电炉
+[2018-10-04 10:47:02,624] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:47:02,935] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:47:03,186] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:03,245] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:03,503] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:47:03,604] [ERROR] 没有任何箱号
+[2018-10-04 10:47:03,628] [ERROR] 没有任何电炉
+[2018-10-04 10:47:03,650] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:47:03,962] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:47:04,212] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:04,272] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:06,982] [WARNING] Not Found: /
+[2018-10-04 10:47:06,983] [WARNING] "GET / HTTP/1.1" 404 6427
+[2018-10-04 10:47:10,258] [INFO] "GET /monitor/ HTTP/1.1" 200 25170
+[2018-10-04 10:47:10,550] [ERROR] 没有任何箱号
+[2018-10-04 10:47:10,571] [ERROR] 没有任何电炉
+[2018-10-04 10:47:10,592] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:47:10,904] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:47:11,154] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:11,214] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:42,768] [INFO] "GET /admin HTTP/1.1" 301 0
+[2018-10-04 10:47:42,825] [INFO] "GET /admin/ HTTP/1.1" 200 12765
+[2018-10-04 10:47:43,023] [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 16225
+[2018-10-04 10:47:43,141] [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17976
+[2018-10-04 10:47:43,141] [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[2018-10-04 10:47:43,329] [INFO] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[2018-10-04 10:47:43,452] [INFO] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[2018-10-04 10:47:43,646] [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2018-10-04 10:47:43,646] [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2018-10-04 10:47:43,647] [INFO] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[2018-10-04 10:47:43,647] [INFO] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[2018-10-04 10:47:47,792] [WARNING] Not Found: /
+[2018-10-04 10:47:47,794] [WARNING] "GET / HTTP/1.1" 404 6427
+[2018-10-04 10:47:49,727] [INFO] "GET /admin/ HTTP/1.1" 200 12765
+[2018-10-04 10:47:52,226] [ERROR] 没有任何箱号
+[2018-10-04 10:47:52,251] [ERROR] 没有任何电炉
+[2018-10-04 10:47:52,274] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:47:52,388] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:47:52,699] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:52,950] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:47:56,054] [INFO] "GET /admin/ HTTP/1.1" 200 12765
+[2018-10-04 10:47:58,212] [INFO] "GET /admin/auth/user/ HTTP/1.1" 200 6605
+[2018-10-04 10:47:58,448] [INFO] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[2018-10-04 10:47:58,531] [INFO] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[2018-10-04 10:47:58,532] [INFO] "GET /static/admin/js/core.js HTTP/1.1" 200 7134
+[2018-10-04 10:47:58,535] [INFO] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[2018-10-04 10:47:58,540] [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[2018-10-04 10:47:58,540] [INFO] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[2018-10-04 10:47:58,752] [INFO] "GET /static/admin/js/actions.js HTTP/1.1" 200 6538
+[2018-10-04 10:47:58,836] [INFO] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[2018-10-04 10:47:58,841] [INFO] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[2018-10-04 10:47:58,843] [INFO] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2018-10-04 10:47:58,846] [INFO] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[2018-10-04 10:47:58,850] [INFO] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2018-10-04 10:47:59,142] [INFO] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[2018-10-04 10:47:59,146] [INFO] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[2018-10-04 10:48:02,991] [INFO] "GET /admin/ HTTP/1.1" 200 12765
+[2018-10-04 10:48:03,542] [ERROR] 没有任何箱号
+[2018-10-04 10:48:03,568] [ERROR] 没有任何电炉
+[2018-10-04 10:48:03,589] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:48:03,598] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:48:03,607] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:48:03,917] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:48:05,110] [ERROR] 没有任何箱号
+[2018-10-04 10:48:05,156] [ERROR] 没有任何电炉
+[2018-10-04 10:48:05,177] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 10:48:05,186] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 10:48:05,497] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 10:48:05,748] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 10:57:15,034] [INFO] "GET /monitor/ HTTP/1.1" 200 29026
+[2018-10-04 10:58:33,968] [INFO] "GET /monitor/ HTTP/1.1" 200 25637
+[2018-10-04 11:00:50,234] [INFO] "GET /monitor/ HTTP/1.1" 200 26239
+[2018-10-04 13:30:09,462] [INFO] "GET /monitor/ HTTP/1.1" 200 26138
+[2018-10-04 13:30:46,906] [INFO] "GET /monitor/ HTTP/1.1" 200 26153
+[2018-10-04 13:31:10,669] [INFO] "GET /monitor/ HTTP/1.1" 200 26153
+[2018-10-04 13:31:10,706] [INFO] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+[2018-10-04 13:31:10,916] [INFO] "GET /static/css/ionicons.min.css HTTP/1.1" 200 51284
+[2018-10-04 13:31:11,007] [INFO] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31000
+[2018-10-04 13:31:11,008] [INFO] "GET /static/css/_all-skins.min.css HTTP/1.1" 200 41583
+[2018-10-04 13:31:11,010] [INFO] "GET /static/css/AdminLTE.min.css HTTP/1.1" 200 91501
+[2018-10-04 13:31:11,012] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-10-04 13:31:11,015] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-10-04 13:31:11,224] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-10-04 13:31:11,317] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-10-04 13:31:11,318] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-04 13:31:11,318] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-10-04 13:31:11,320] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-10-04 13:31:11,325] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-10-04 13:31:11,530] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-04 13:31:11,625] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-04 13:31:11,628] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-10-04 13:31:11,628] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-04 13:31:11,629] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-10-04 13:31:11,931] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-04 13:31:11,961] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 28603
+[2018-10-04 13:31:12,311] [ERROR] 没有任何箱号
+[2018-10-04 13:31:12,335] [ERROR] 没有任何电炉
+[2018-10-04 13:31:12,360] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:31:12,563] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:31:12,671] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:31:12,875] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:32:10,354] [INFO] "GET /monitor/ HTTP/1.1" 200 26131
+[2018-10-04 13:32:10,589] [ERROR] 没有任何箱号
+[2018-10-04 13:32:10,615] [ERROR] 没有任何电炉
+[2018-10-04 13:32:10,640] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:32:10,649] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:32:10,959] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:32:11,210] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:33:22,971] [INFO] "GET /monitor/ HTTP/1.1" 200 26131
+[2018-10-04 13:33:23,215] [ERROR] 没有任何箱号
+[2018-10-04 13:33:23,240] [ERROR] 没有任何电炉
+[2018-10-04 13:33:23,263] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:33:23,272] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:33:23,582] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:33:23,833] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:34:25,162] [INFO] "GET /monitor/ HTTP/1.1" 200 26118
+[2018-10-04 13:34:25,309] [ERROR] 没有任何箱号
+[2018-10-04 13:34:25,334] [ERROR] 没有任何电炉
+[2018-10-04 13:34:25,355] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:34:25,408] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:34:25,718] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:34:25,969] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:34:52,179] [INFO] "GET /monitor/ HTTP/1.1" 200 26133
+[2018-10-04 13:34:52,308] [ERROR] 没有任何箱号
+[2018-10-04 13:34:52,333] [ERROR] 没有任何电炉
+[2018-10-04 13:34:52,354] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:34:52,424] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:34:52,735] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:34:52,985] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:35:10,129] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 13:36:38,172] [INFO] "GET /monitor/ HTTP/1.1" 200 26133
+[2018-10-04 13:36:38,393] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 13:36:38,452] [ERROR] 没有任何箱号
+[2018-10-04 13:36:38,475] [ERROR] 没有任何电炉
+[2018-10-04 13:36:38,497] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:36:38,808] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:36:39,059] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:36:39,121] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:41:54,373] [INFO] "GET /monitor/ HTTP/1.1" 200 37413
+[2018-10-04 13:41:54,625] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 13:41:54,687] [ERROR] 没有任何箱号
+[2018-10-04 13:41:54,709] [ERROR] 没有任何电炉
+[2018-10-04 13:41:54,731] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:41:55,043] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:41:55,293] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:41:55,355] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 13:43:43,205] [INFO] "GET /monitor/ HTTP/1.1" 200 37423
+[2018-10-04 13:43:43,448] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 13:43:43,521] [ERROR] 没有任何箱号
+[2018-10-04 13:43:43,544] [ERROR] 没有任何电炉
+[2018-10-04 13:43:43,566] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 13:43:43,878] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 13:43:44,130] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 13:43:44,189] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 14:40:41,155] [INFO] "GET /monitor/ HTTP/1.1" 200 48230
+[2018-10-04 14:40:41,179] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-10-04 14:40:41,403] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 14:40:41,748] [ERROR] 没有任何箱号
+[2018-10-04 14:40:41,770] [ERROR] 没有任何电炉
+[2018-10-04 14:40:41,789] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 14:40:41,999] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 14:40:42,102] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 14:40:42,309] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 14:41:40,787] [INFO] "GET /monitor/ HTTP/1.1" 200 48170
+[2018-10-04 14:41:41,017] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 14:41:41,078] [ERROR] 没有任何箱号
+[2018-10-04 14:41:41,101] [ERROR] 没有任何电炉
+[2018-10-04 14:41:41,123] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 14:41:41,438] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 14:41:41,692] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 14:41:41,749] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 14:42:25,691] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 14:42:25,920] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 14:42:25,981] [ERROR] 没有任何箱号
+[2018-10-04 14:42:26,004] [ERROR] 没有任何电炉
+[2018-10-04 14:42:26,044] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 14:42:26,355] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 14:42:26,607] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 14:42:26,667] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:12,450] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:35:12,476] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-10-04 15:35:12,713] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:13,079] [ERROR] 没有任何箱号
+[2018-10-04 15:35:13,234] [ERROR] 没有任何电炉
+[2018-10-04 15:35:13,255] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:13,330] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:35:13,567] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:13,641] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:18,196] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:35:18,485] [ERROR] 没有任何箱号
+[2018-10-04 15:35:18,508] [ERROR] 没有任何电炉
+[2018-10-04 15:35:18,531] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:18,740] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:35:18,843] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:19,048] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:19,051] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:27,281] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:35:27,574] [INFO] "GET /static/js/control.js HTTP/1.1" 200 29008
+[2018-10-04 15:35:27,783] [ERROR] 没有任何箱号
+[2018-10-04 15:35:27,804] [ERROR] 没有任何电炉
+[2018-10-04 15:35:27,826] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:27,883] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:27,938] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:28,147] [INFO] "GET /oven_control/ HTTP/1.1" 200 13009
+[2018-10-04 15:35:28,338] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:28,691] [ERROR] 没有任何箱号
+[2018-10-04 15:35:28,713] [ERROR] 没有任何电炉
+[2018-10-04 15:35:28,733] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:28,944] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:30,658] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:35:30,950] [ERROR] 没有任何箱号
+[2018-10-04 15:35:30,973] [ERROR] 没有任何电炉
+[2018-10-04 15:35:30,994] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:31,197] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:31,299] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:33,690] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:35:33,980] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:34,289] [ERROR] 没有任何箱号
+[2018-10-04 15:35:34,310] [ERROR] 没有任何电炉
+[2018-10-04 15:35:34,330] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:34,644] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:35:34,894] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:34,954] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:36,176] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:35:36,470] [ERROR] 没有任何箱号
+[2018-10-04 15:35:36,493] [ERROR] 没有任何电炉
+[2018-10-04 15:35:36,517] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:36,707] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:36,835] [INFO] "GET /oven_control/ HTTP/1.1" 200 13009
+[2018-10-04 15:35:37,064] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:37,371] [ERROR] 没有任何箱号
+[2018-10-04 15:35:37,396] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:37,397] [ERROR] 没有任何电炉
+[2018-10-04 15:35:37,418] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:37,730] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:37,993] [INFO] "GET /gas_control/ HTTP/1.1" 200 8016
+[2018-10-04 15:35:38,271] [ERROR] 没有任何箱号
+[2018-10-04 15:35:38,307] [ERROR] 没有任何电炉
+[2018-10-04 15:35:38,329] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:38,489] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:39,673] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:35:39,965] [ERROR] 没有任何箱号
+[2018-10-04 15:35:39,989] [ERROR] 没有任何电炉
+[2018-10-04 15:35:40,011] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:40,212] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:35:40,328] [INFO] "GET /gas_control/ HTTP/1.1" 200 8016
+[2018-10-04 15:35:40,619] [ERROR] 没有任何箱号
+[2018-10-04 15:35:40,642] [ERROR] 没有任何电炉
+[2018-10-04 15:35:40,665] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:40,861] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:41,167] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:57,092] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:35:57,322] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:35:57,379] [ERROR] 没有任何箱号
+[2018-10-04 15:35:57,402] [ERROR] 没有任何电炉
+[2018-10-04 15:35:57,424] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:35:57,737] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:35:57,988] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:35:58,047] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:00,449] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:36:00,742] [ERROR] 没有任何箱号
+[2018-10-04 15:36:00,765] [ERROR] 没有任何电炉
+[2018-10-04 15:36:00,792] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:01,034] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:36:01,105] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:01,343] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:01,345] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:02,054] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:36:02,344] [ERROR] 没有任何箱号
+[2018-10-04 15:36:02,368] [ERROR] 没有任何电炉
+[2018-10-04 15:36:02,392] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:02,591] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:36:02,703] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:02,903] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:03,012] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:04,675] [INFO] "GET /oven_control/ HTTP/1.1" 200 13009
+[2018-10-04 15:36:04,871] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:04,928] [ERROR] 没有任何箱号
+[2018-10-04 15:36:04,952] [ERROR] 没有任何电炉
+[2018-10-04 15:36:04,974] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:05,286] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:36:05,541] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:36:05,726] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:06,081] [ERROR] 没有任何箱号
+[2018-10-04 15:36:06,103] [ERROR] 没有任何电炉
+[2018-10-04 15:36:06,123] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:06,332] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:36:17,923] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:36:18,142] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:18,205] [ERROR] 没有任何箱号
+[2018-10-04 15:36:18,228] [ERROR] 没有任何电炉
+[2018-10-04 15:36:18,251] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:18,563] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:36:18,814] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:18,875] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:36:57,859] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-04 15:36:58,056] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 15:36:58,109] [ERROR] 没有任何箱号
+[2018-10-04 15:36:58,132] [ERROR] 没有任何电炉
+[2018-10-04 15:36:58,154] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:58,464] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 44
+[2018-10-04 15:36:59,307] [INFO] "GET /monitor/ HTTP/1.1" 200 48250
+[2018-10-04 15:36:59,597] [ERROR] 没有任何箱号
+[2018-10-04 15:36:59,620] [ERROR] 没有任何电炉
+[2018-10-04 15:36:59,641] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 15:36:59,861] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 15:36:59,955] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 15:37:00,172] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 15:37:00,263] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 16:42:59,612] [INFO] "GET /monitor/ HTTP/1.1" 200 48623
+[2018-10-04 16:42:59,641] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 42026
+[2018-10-04 16:42:59,879] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 16:43:00,242] [ERROR] 没有任何箱号
+[2018-10-04 16:43:00,265] [ERROR] 没有任何电炉
+[2018-10-04 16:43:00,285] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 16:43:00,492] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 16:43:00,598] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 16:43:00,803] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13
+[2018-10-04 16:48:47,987] [INFO] "GET /monitor/ HTTP/1.1" 200 48861
+[2018-10-04 16:48:48,015] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 42238
+[2018-10-04 16:48:48,242] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-04 16:48:48,605] [ERROR] 没有任何箱号
+[2018-10-04 16:48:48,648] [ERROR] 没有任何电炉
+[2018-10-04 16:48:48,673] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 23
+[2018-10-04 16:48:48,855] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 12
+[2018-10-04 16:48:48,986] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 13
+[2018-10-04 16:48:49,166] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 13

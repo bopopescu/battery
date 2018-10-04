@@ -1535,3 +1535,8 @@ class MFC_alicat(object):
             print("BulidCMD_GAS: unknown type")
             return None
 
+
+
+if __name__=='__main__':
+    m=MFC(0x22)
+    print(m.buildcmd(type='ReadFlow'))

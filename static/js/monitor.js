@@ -5,8 +5,9 @@
 
 var myChart = echarts.init(document.getElementById('U_I_t_chart'));
 var myChart1 = echarts.init(document.getElementById('Q_t_chart'));
-var myChart2 = echarts.init(document.getElementById('T_t_chart'));
-var myChart3 = echarts.init(document.getElementById('T0_t_chart'));
+var myChart2 = echarts.init(document.getElementById('Tc_t_chart'));
+var myChart3 = echarts.init(document.getElementById('Tm_t_chart'));
+var myChart4 = echarts.init(document.getElementById('Vm_t_chart'));
 
 var intID1;
 var intID2;
@@ -22,12 +23,55 @@ var Q = {
     Q_Air: [],
     Q_H2O: []
 };
-var T = {
+var Vm = {
+    V0: [],
+    V1: [],
+    V2: [],
+    V3: [],
+    V4: [],
+    V5: [],
+    V6: [],
+    V7: [],
+    V8: [],
+    V9: [],
+    V10: [],
+    V11: [],
+    V12: [],
+    V13: [],
+    V14: [],
+    V15: [],
+    V16: [],
+    V17: [],
+    V18: [],
+    V19: [],
+};
+var Tc = {
     T0: [],
     T1: [],
     T2: [],
     T3: [],
-    T4: []
+};
+var Tm = {
+    T0: [],
+    T1: [],
+    T2: [],
+    T3: [],
+    T4: [],
+    T5: [],
+    T6: [],
+    T7: [],
+    T8: [],
+    T9: [],
+    T10: [],
+    T11: [],
+    T12: [],
+    T13: [],
+    T14: [],
+    T15: [],
+    T16: [],
+    T17: [],
+    T18: [],
+    T19: [],
 };
 
 var refresh = 3000;
@@ -77,6 +121,7 @@ $(document).ready(function () {
             myChart1.resize();
             myChart2.resize();
             myChart3.resize();
+            myChart4.resize();
         };
     }
 )
@@ -304,17 +349,61 @@ function show_chart() {
                 //console.log(data);
                 I = data.I;
                 U = data.U;
+
                 Q.Q_CO2 = data.Q_CO2;
                 Q.Q_CH4 = data.Q_CH4;
                 Q.Q_Air = data.Q_Air;
                 Q.Q_N2 = data.Q_N2;
                 Q.Q_H2 = data.Q_H2;
                 Q.Q_H2O = data.Q_H2O;
-                T.T0 = data.T0;
-                T.T1 = data.T1;
-                T.T2 = data.T2;
-                T.T3 = data.T3;
-                T.T4 = data.T4;
+
+                Tm.T0 = data.Tm0;
+                Tm.T1 = data.Tm1;
+                Tm.T2 = data.Tm2;
+                Tm.T3 = data.Tm3;
+                Tm.T4 = data.Tm4;
+                Tm.T5 = data.Tm5;
+                Tm.T6 = data.Tm6;
+                Tm.T7 = data.Tm7;
+                Tm.T8 = data.Tm8;
+                Tm.T9 = data.Tm9;
+                Tm.T10 = data.Tm10;
+                Tm.T11 = data.Tm11;
+                Tm.T12 = data.Tm12;
+                Tm.T13 = data.Tm13;
+                Tm.T14 = data.Tm14;
+                Tm.T15 = data.Tm15;
+                Tm.T16 = data.Tm16;
+                Tm.T17 = data.Tm17;
+                Tm.T18 = data.Tm18;
+                Tm.T19 = data.Tm19;
+
+                Tc.T0 = data.Tc0;
+                Tc.T1 = data.Tc1;
+                Tc.T2 = data.Tc2;
+                Tc.T3 = data.Tc3;
+
+                Vm.V0 = data.Vm0;
+                Vm.V1 = data.Vm1;
+                Vm.V2 = data.Vm2;
+                Vm.V3 = data.Vm3;
+                Vm.V4 = data.Vm4;
+                Vm.V5 = data.Vm5;
+                Vm.V6 = data.Vm6;
+                Vm.V7 = data.Vm7;
+                Vm.V8 = data.Vm8;
+                Vm.V9 = data.Vm9;
+                Vm.V10 = data.Vm10;
+                Vm.V11 = data.Vm11;
+                Vm.V12 = data.Vm12;
+                Vm.V13 = data.Vm13;
+                Vm.V14 = data.Vm14;
+                Vm.V15 = data.Vm15;
+                Vm.V16 = data.Vm16;
+                Vm.V17 = data.Vm17;
+                Vm.V18 = data.Vm18;
+                Vm.V19 = data.Vm19;
+
                 var option_U_I = {
                     legend: {
                         data: ["电压", "电流"]
@@ -453,9 +542,9 @@ function show_chart() {
                         data: Q.Q_H2O,
                     }]
                 };
-                var option_T = {
+                var option_Tc = {
                     legend: {
-                        data: ["测温点1", "测温点2", "测温点3", "测温点4"]
+                        data: ["控温点0", "控温点1", "控温点2", "控温点3"]
                     },
                     dataZoom: [{
                         type: 'slider',
@@ -487,34 +576,35 @@ function show_chart() {
                         boundaryGap: [0, '10%'],
                     },
                     series: [{
-                        name: '测温点1',
+                        name: '控温点0',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: T.T1,
+                        data: Tc.T0,
                     }, {
-                        name: '测温点2',
+                        name: '控温点1',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: T.T2,
+                        data: Tc.T1,
                     }, {
-                        name: '测温点3',
+                        name: '控温点2',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: T.T3,
+                        data: Tc.T2,
                     }, {
-                        name: '测温点4',
+                        name: '控温点3',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: T.T4,
+                        data: Tc.T3,
                     }]
                 };
-                var option_T0 = {
+                var option_Tm = {
                     legend: {
-                        data: ["控温点"]
+                        data: ["测温点0", "测温点1", "测温点2", "测温点3", "测温点4", "测温点5", "测温点6", "测温点7", "测温点8", "测温点9",
+                            "测温点10", "测温点11", "测温点12", "测温点13", "测温点14", "测温点15", "测温点16", "测温点17", "测温点18", "测温点19",]
                     },
                     dataZoom: [{
                         type: 'slider',
@@ -546,17 +636,128 @@ function show_chart() {
                         boundaryGap: [0, '10%'],
                     },
                     series: [{
-                        name: '控温点',
-                        type: 'line',
-                        showSymbol: false,
-                        hoverAnimation: false,
-                        data: T.T0,
-                    }]
+                        name: '测温点0', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T0,
+                    }, {
+                        name: '测温点1', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T1,
+                    }, {
+                        name: '测温点2', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T2,
+                    }, {
+                        name: '测温点3', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T3,
+                    }, {
+                        name: '测温点4', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T4,
+                    }, {
+                        name: '测温点5', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T5,
+                    }, {
+                        name: '测温点6', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T6,
+                    }, {
+                        name: '测温点7', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T7,
+                    }, {
+                        name: '测温点8', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T8,
+                    }, {
+                        name: '测温点9', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T9,
+                    }, {
+                        name: '测温点10', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T10,
+                    }, {
+                        name: '测温点11', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T11,
+                    }, {
+                        name: '测温点12', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T12,
+                    }, {
+                        name: '测温点13', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T13,
+                    }, {
+                        name: '测温点14', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T14,
+                    }, {
+                        name: '测温点15', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T15,
+                    }, {
+                        name: '测温点16', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T16,
+                    }, {
+                        name: '测温点17', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T17,
+                    }, {
+                        name: '测温点18', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T18,
+                    }, {
+                        name: '测温点19', type: 'line', showSymbol: false, hoverAnimation: false, data: Tm.T19,
+                    },]
+                };
+                var option_Vm = {
+                    legend: {
+                        data: ["测压点0", "测压点1", "测压点2", "测压点3", "测压点4", "测压点5", "测压点6", "测压点7", "测压点8", "测压点9",
+                            "测压点10", "测压点11", "测压点12", "测压点13", "测压点14", "测压点15", "测压点16", "测压点17", "测压点18", "测压点19",]
+                    },
+                    dataZoom: [{
+                        type: 'slider',
+                        show: true,
+                        start: 0,
+                        end: 100
+                    },
+                    ],
+                    xAxis: {
+                        type: "time",
+                        splitLine: {
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        },
+                    },
+                    yAxis: {
+                        name: '电压/mV',
+                        type: 'value',
+                        nameTextStyle: {
+                            fontSize: 14
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        },
+                        position: 'left',
+                        boundaryGap: [0, '10%'],
+                    },
+                    series: [{
+                        name: '测压点0', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V0,
+                    }, {
+                        name: '测压点1', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V1,
+                    }, {
+                        name: '测压点2', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V2,
+                    }, {
+                        name: '测压点3', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V3,
+                    }, {
+                        name: '测压点4', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V4,
+                    }, {
+                        name: '测压点5', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V5,
+                    }, {
+                        name: '测压点6', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V6,
+                    }, {
+                        name: '测压点7', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V7,
+                    }, {
+                        name: '测压点8', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V8,
+                    }, {
+                        name: '测压点9', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V9,
+                    }, {
+                        name: '测压点10', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V10,
+                    }, {
+                        name: '测压点11', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V11,
+                    }, {
+                        name: '测压点12', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V12,
+                    }, {
+                        name: '测压点13', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V13,
+                    }, {
+                        name: '测压点14', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V14,
+                    }, {
+                        name: '测压点15', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V15,
+                    }, {
+                        name: '测压点16', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V16,
+                    }, {
+                        name: '测压点17', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V17,
+                    }, {
+                        name: '测压点18', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V18,
+                    }, {
+                        name: '测压点19', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V19,
+                    },]
                 };
                 myChart.setOption(option_U_I);
                 myChart1.setOption(option_Q);
-                myChart2.setOption(option_T);
-                myChart3.setOption(option_T0);
+                myChart2.setOption(option_Tc);
+                myChart3.setOption(option_Tm);
+                myChart4.setOption(option_Vm);
 
             }
         });
@@ -573,32 +774,58 @@ function get_realtime_data() {
             async: false, //同步执行
             success: function (data) {
                 //console.log(data);
-                if (data.I != I[I.length - 1])
-                    I.push(data.I);
-                if (data.U != U[U.length - 1])
-                    U.push(data.U);
-                if (data.Q_CO2 != Q.Q_CO2[Q.Q_CO2.length - 1])
-                    Q.Q_CO2.push(data.Q_CO2);
-                if (data.Q_CH4 != Q.Q_CH4[Q.Q_CH4.length - 1])
-                    Q.Q_CH4.push(data.Q_CH4);
-                if (data.Q_Air != Q.Q_Air[Q.Q_Air.length - 1])
-                    Q.Q_Air.push(data.Q_Air);
-                if (data.Q_N2 != Q.Q_N2[Q.Q_N2.length - 1])
-                    Q.Q_N2.push(data.Q_N2);
-                if (data.Q_H2 != Q.Q_H2[Q.Q_H2.length - 1])
-                    Q.Q_H2.push(data.Q_H2);
-                if (data.Q_H2O != Q.Q_H2O[Q.Q_H2O.length - 1])
-                    Q.Q_H2O.push(data.Q_H2O);
-                if (data.T0 != T.T0[T.T0.length - 1])
-                    T.T0.push(data.T0);
-                if (data.T1 != T.T1[T.T1.length - 1])
-                    T.T1.push(data.T1);
-                if (data.T2 != T.T2[T.T2.length - 1])
-                    T.T2.push(data.T2);
-                if (data.T3 != T.T3[T.T3.length - 1])
-                    T.T3.push(data.T3);
-                if (data.T4 != T.T4[T.T4.length - 1])
-                    T.T4.push(data.T4);
+                if (data.I != I[I.length - 1]) I.push(data.I);
+                if (data.U != U[U.length - 1]) U.push(data.U);
+                if (data.Q_CO2 != Q.Q_CO2[Q.Q_CO2.length - 1]) Q.Q_CO2.push(data.Q_CO2);
+                if (data.Q_CH4 != Q.Q_CH4[Q.Q_CH4.length - 1]) Q.Q_CH4.push(data.Q_CH4);
+                if (data.Q_Air != Q.Q_Air[Q.Q_Air.length - 1]) Q.Q_Air.push(data.Q_Air);
+                if (data.Q_N2 != Q.Q_N2[Q.Q_N2.length - 1]) Q.Q_N2.push(data.Q_N2);
+                if (data.Q_H2 != Q.Q_H2[Q.Q_H2.length - 1]) Q.Q_H2.push(data.Q_H2);
+                if (data.Q_H2O != Q.Q_H2O[Q.Q_H2O.length - 1]) Q.Q_H2O.push(data.Q_H2O);
+                if (data.Tc0 != Tc.T0[Tc.T0.length - 1]) Tc.T0.push(data.Tc0);
+                if (data.Tc1 != Tc.T1[Tc.T1.length - 1]) Tc.T1.push(data.Tc1);
+                if (data.Tc2 != Tc.T2[Tc.T2.length - 1]) Tc.T2.push(data.Tc2);
+                if (data.Tc3 != Tc.T3[Tc.T3.length - 1]) Tc.T3.push(data.Tc3);
+                if (data.Tm0 != Tm.T0[Tm.T0.length - 1]) Tm.T0.push(data.Tm0);
+                if (data.Tm1 != Tm.T1[Tm.T1.length - 1]) Tm.T1.push(data.Tm1);
+                if (data.Tm2 != Tm.T2[Tm.T2.length - 1]) Tm.T2.push(data.Tm2);
+                if (data.Tm3 != Tm.T3[Tm.T3.length - 1]) Tm.T3.push(data.Tm3);
+                if (data.Tm4 != Tm.T4[Tm.T4.length - 1]) Tm.T4.push(data.Tm4);
+                if (data.Tm5 != Tm.T5[Tm.T5.length - 1]) Tm.T5.push(data.Tm5);
+                if (data.Tm6 != Tm.T6[Tm.T6.length - 1]) Tm.T6.push(data.Tm6);
+                if (data.Tm7 != Tm.T7[Tm.T7.length - 1]) Tm.T7.push(data.Tm7);
+                if (data.Tm8 != Tm.T8[Tm.T8.length - 1]) Tm.T8.push(data.Tm8);
+                if (data.Tm9 != Tm.T9[Tm.T9.length - 1]) Tm.T9.push(data.Tm9);
+                if (data.Tm10 != Tm.T10[Tm.T10.length - 1]) Tm.T10.push(data.Tm10);
+                if (data.Tm11 != Tm.T11[Tm.T11.length - 1]) Tm.T11.push(data.Tm11);
+                if (data.Tm12 != Tm.T12[Tm.T12.length - 1]) Tm.T12.push(data.Tm12);
+                if (data.Tm13 != Tm.T13[Tm.T13.length - 1]) Tm.T13.push(data.Tm13);
+                if (data.Tm14 != Tm.T14[Tm.T14.length - 1]) Tm.T14.push(data.Tm14);
+                if (data.Tm15 != Tm.T15[Tm.T15.length - 1]) Tm.T15.push(data.Tm15);
+                if (data.Tm16 != Tm.T16[Tm.T16.length - 1]) Tm.T16.push(data.Tm16);
+                if (data.Tm17 != Tm.T17[Tm.T17.length - 1]) Tm.T17.push(data.Tm17);
+                if (data.Tm18 != Tm.T18[Tm.T18.length - 1]) Tm.T18.push(data.Tm18);
+                if (data.Tm19 != Tm.T19[Tm.T19.length - 1]) Tm.T19.push(data.Tm19);
+                if (data.Vm0 != Vm.V0[Vm.V0.length - 1]) Vm.V0.push(data.Vm0);
+                if (data.Vm1 != Vm.V1[Vm.V1.length - 1]) Vm.V1.push(data.Vm1);
+                if (data.Vm2 != Vm.V2[Vm.V2.length - 1]) Vm.V2.push(data.Vm2);
+                if (data.Vm3 != Vm.V3[Vm.V3.length - 1]) Vm.V3.push(data.Vm3);
+                if (data.Vm4 != Vm.V4[Vm.V4.length - 1]) Vm.V4.push(data.Vm4);
+                if (data.Vm5 != Vm.V5[Vm.V5.length - 1]) Vm.V5.push(data.Vm5);
+                if (data.Vm6 != Vm.V6[Vm.V6.length - 1]) Vm.V6.push(data.Vm6);
+                if (data.Vm7 != Vm.V7[Vm.V7.length - 1]) Vm.V7.push(data.Vm7);
+                if (data.Vm8 != Vm.V8[Vm.V8.length - 1]) Vm.V8.push(data.Vm8);
+                if (data.Vm9 != Vm.V9[Vm.V9.length - 1]) Vm.V9.push(data.Vm9);
+                if (data.Vm10 != Vm.V10[Vm.V10.length - 1]) Vm.V10.push(data.Vm10);
+                if (data.Vm11 != Vm.V11[Vm.V11.length - 1]) Vm.V11.push(data.Vm11);
+                if (data.Vm12 != Vm.V12[Vm.V12.length - 1]) Vm.V12.push(data.Vm12);
+                if (data.Vm13 != Vm.V13[Vm.V13.length - 1]) Vm.V13.push(data.Vm13);
+                if (data.Vm14 != Vm.V14[Vm.V14.length - 1]) Vm.V14.push(data.Vm14);
+                if (data.Vm15 != Vm.V15[Vm.V15.length - 1]) Vm.V15.push(data.Vm15);
+                if (data.Vm16 != Vm.V16[Vm.V16.length - 1]) Vm.V16.push(data.Vm16);
+                if (data.Vm17 != Vm.V17[Vm.V17.length - 1]) Vm.V17.push(data.Vm17);
+                if (data.Vm18 != Vm.V18[Vm.V18.length - 1]) Vm.V18.push(data.Vm18);
+                if (data.Vm19 != Vm.V19[Vm.V19.length - 1]) Vm.V19.push(data.Vm19);
                 myChart.setOption({
                     series: [{
                         data: U
@@ -623,19 +850,26 @@ function get_realtime_data() {
                 });
                 myChart2.setOption({
                     series: [{
-                        data: T.T1
+                        data: Tc.T0,
                     }, {
-                        data: T.T2
+                        data: Tc.T1,
                     }, {
-                        data: T.T3
+                        data: Tc.T2,
                     }, {
-                        data: T.T4
+                        data: Tc.T3,
                     }]
                 });
                 myChart3.setOption({
-                    series: [{
-                        data: T.T0
-                    }]
+                    series: [{data: Tm.T0,}, {data: Tm.T1,}, {data: Tm.T2,}, {data: Tm.T3,}, {data: Tm.T4,},
+                        {data: Tm.T5,}, {data: Tm.T6,}, {data: Tm.T7,}, {data: Tm.T8,}, {data: Tm.T9,},
+                        {data: Tm.T10,}, {data: Tm.T11,}, {data: Tm.T12,}, {data: Tm.T13,}, {data: Tm.T14,},
+                        {data: Tm.T15,}, {data: Tm.T16,}, {data: Tm.T17,}, {data: Tm.T18,}, {data: Tm.T19,},]
+                });
+                myChart4.setOption({
+                    series: [{data: Vm.V0,}, {data: Vm.V1,}, {data: Vm.V2,}, {data: Vm.V3,}, {data: Vm.V4,},
+                        {data: Vm.V5,}, {data: Vm.V6,}, {data: Vm.V7,}, {data: Vm.V8,}, {data: Vm.V9,},
+                        {data: Vm.V10,}, {data: Vm.V11,}, {data: Vm.V12,}, {data: Vm.V13,}, {data: Vm.V14,},
+                        {data: Vm.V15,}, {data: Vm.V16,}, {data: Vm.V17,}, {data: Vm.V18,}, {data: Vm.V19,},]
                 });
             }
         });
@@ -734,12 +968,12 @@ function get_cells_info() {
             var cell_num = data.length;
             if (cell_num != 0) {
                 var tb = document.getElementById("device_relation_tablebody");
-                create_table_body(tb, cell_num, 11);
+                create_table_body(tb, cell_num, 15);
                 for (var i = 1; i <= cell_num; i++) {
                     insert_into_table(tb, i, 1, data[i - 1].cellID);
                     insert_into_table(tb, i, 2, data[i - 1].boxID);
                     insert_into_table(tb, i, 3, data[i - 1].chnNum);
-                    insert_into_table(tb, i, 4, data[i - 1].ovenID);
+                    insert_into_table(tb, i, 4, data[i - 1].voltID);
                     insert_into_table(tb, i, 5, data[i - 1].H2ID);
                     insert_into_table(tb, i, 6, data[i - 1].N2ID);
                     insert_into_table(tb, i, 7, data[i - 1].H2OID);
@@ -747,6 +981,11 @@ function get_cells_info() {
                     insert_into_table(tb, i, 9, data[i - 1].CH4ID);
                     insert_into_table(tb, i, 10, data[i - 1].AIRID);
                     insert_into_table(tb, i, 11, data[i - 1].wdjID);
+                    insert_into_table(tb, i, 12, data[i - 1].oven0ID);
+                    insert_into_table(tb, i, 13, data[i - 1].oven1ID);
+                    insert_into_table(tb, i, 14, data[i - 1].oven2ID);
+                    insert_into_table(tb, i, 15, data[i - 1].oven3ID);
+
                 }
 
             }
@@ -765,24 +1004,27 @@ function get_tests_info() {
             var test_num = data.length;
             if (test_num != 0) {
                 var tb = document.getElementById("tests_info_tablebody");
-                create_table_body(tb, test_num, 16);
+                create_table_body(tb, test_num, 19);
                 for (var i = 1; i <= test_num; i++) {
                     insert_into_table(tb, i, 1, data[i - 1].BigTestID);
                     insert_into_table(tb, i, 2, data[i - 1].TestID);
                     insert_into_table(tb, i, 3, data[i - 1].CellID);
                     insert_into_table(tb, i, 4, data[i - 1].BoxID);
                     insert_into_table(tb, i, 5, data[i - 1].ChnID);
-                    insert_into_table(tb, i, 6, data[i - 1].PlanID);
-                    insert_into_table(tb, i, 7, data[i - 1].OvenID);
-                    insert_into_table(tb, i, 8, data[i - 1].OvenPlanID);
-                    insert_into_table(tb, i, 9, data[i - 1].H2ID);
-                    insert_into_table(tb, i, 10, data[i - 1].N2ID);
-                    insert_into_table(tb, i, 11, data[i - 1].H2OID);
-                    insert_into_table(tb, i, 12, data[i - 1].CO2ID);
-                    insert_into_table(tb, i, 13, data[i - 1].CH4ID);
-                    insert_into_table(tb, i, 14, data[i - 1].AIRID);
-                    insert_into_table(tb, i, 15, data[i - 1].StartTime);
-                    insert_into_table(tb, i, 16, data[i - 1].EndTime);
+                    insert_into_table(tb, i, 6, data[i - 1].wdjID);
+                    insert_into_table(tb, i, 7, data[i - 1].voltID);
+                    insert_into_table(tb, i, 8, data[i - 1].Oven0ID);
+                    insert_into_table(tb, i, 9, data[i - 1].Oven1ID);
+                    insert_into_table(tb, i, 10, data[i - 1].Oven2ID);
+                    insert_into_table(tb, i, 11, data[i - 1].Oven3ID);
+                    insert_into_table(tb, i, 12, data[i - 1].H2ID);
+                    insert_into_table(tb, i, 13, data[i - 1].N2ID);
+                    insert_into_table(tb, i, 14, data[i - 1].H2OID);
+                    insert_into_table(tb, i, 15, data[i - 1].CO2ID);
+                    insert_into_table(tb, i, 16, data[i - 1].CH4ID);
+                    insert_into_table(tb, i, 17, data[i - 1].AIRID);
+                    insert_into_table(tb, i, 18, data[i - 1].StartTime);
+                    insert_into_table(tb, i, 19, data[i - 1].EndTime);
                 }
 
             }

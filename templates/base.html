@@ -52,12 +52,12 @@
     </div>
 </div>
 
-<div id="chat_icon" style="z-index: 9999; position: fixed ! important; right: 0px; bottom: 100px;">
-    <div class="icon">
-        <img src="/static/img/chat.png" style="width: 50px;height: 50px;" onclick="set_status_dialog()"
-             data-toggle="modal" data-target="#status_dialog">
-    </div>
-</div>
+{#<div id="chat_icon" style="z-index: 9999; position: fixed ! important; right: 0px; bottom: 100px;">#}
+{#    <div class="icon">#}
+{#        <img src="/static/img/chat.png" style="width: 50px;height: 50px;" onclick="set_status_dialog()"#}
+{#             data-toggle="modal" data-target="#status_dialog">#}
+{#    </div>#}
+{#</div>#}
 
 <style>
     .centerboth {
@@ -70,50 +70,50 @@
 {% if user.is_authenticated %}
     <div class="wrapper">
         <header class="main-header">
-            <a href="{% url 'index' %}" class="logo"><img src="/static/img/logo.png"
+            <a href="{% url 'monitor' %}" class="logo"><img src="/static/img/logo.png"
                                                           style="height: 35px;display: inline;margin-right: 8px;">
                 <span class="logo-lg" style="display: inline;">EIRI-IoET</span>
             </a>
             <nav class="navbar navbar-static-top" style="line-height: 50px;">
-{#                <h3 style="color: #FFFFFF;display: inline;margin: 10px;">臻泰能源——电池测试平台</h3>#}
+                <h3 style="color: #FFFFFF;display: inline;margin: 10px;">臻泰能源——电池测试平台</h3>
 
-                <div class="navbar-custom-menu">
-                    <span id="headerdate" style="color: #FFFFFF;margin-right: 10px;"></span>
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="/static/img/noavatar_small.gif" class="user-image" alt="User Image">
-                                <span class="hidden-xs">{{ user.username }}</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header" style="line-height: normal;">
-                                    <img src="/static/img/noavatar_small.gif" class="img-circle" alt="User Image">
-
-                                    <p>
-                                        {{ user.first_name }} - {{ user.last_name }}
-                                        <small>上次登陆：{{ user.last_login }}</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="{% url 'setting' %}" class="btn btn-default btn-flat">个人中心</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="{% url 'logout' %}?next={{ request.path }}"
-                                           class="btn btn-default btn-flat">退出</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
+{#                <div class="navbar-custom-menu">#}
+{#                    <span id="headerdate" style="color: #FFFFFF;margin-right: 10px;"></span>#}
+{#                    <ul class="nav navbar-nav">#}
+{#                        <li class="dropdown user user-menu">#}
+{#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">#}
+{#                                <img src="/static/img/noavatar_small.gif" class="user-image" alt="User Image">#}
+{#                                <span class="hidden-xs">{{ user.username }}</span>#}
+{#                            </a>#}
+{#                            <ul class="dropdown-menu">#}
+{#                                <!-- User image -->#}
+{#                                <li class="user-header" style="line-height: normal;">#}
+{#                                    <img src="/static/img/noavatar_small.gif" class="img-circle" alt="User Image">#}
+{##}
+{#                                    <p>#}
+{#                                        {{ user.first_name }} - {{ user.last_name }}#}
+{#                                        <small>上次登陆：{{ user.last_login }}</small>#}
+{#                                    </p>#}
+{#                                </li>#}
+{#                                <!-- Menu Body -->#}
+{##}
+{#                                <!-- Menu Footer-->#}
+{#                                <li class="user-footer">#}
+{#                                    <div class="pull-left">#}
+{#                                        <a href="{% url 'setting' %}" class="btn btn-default btn-flat">个人中心</a>#}
+{#                                    </div>#}
+{#                                    <div class="pull-right">#}
+{#                                        <a href="{% url 'logout' %}?next={{ request.path }}"#}
+{#                                           class="btn btn-default btn-flat">退出</a>#}
+{#                                    </div>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{#                        <li>#}
 {#                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>#}
-                        </li>
-                    </ul>
-                </div>
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
             </nav>
         </header>
 
