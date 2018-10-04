@@ -5,7 +5,7 @@ from django.views.generic.base import View
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.core import serializers
 from django.db.models import Sum
-
+import logging
 # from apps import cellDeviceTable
 from django.views.decorators.csrf import csrf_exempt
 import json, decimal
@@ -43,17 +43,17 @@ def testline_status(request, box_num, channel_num):
     # run/pause/stop
     testid = testInfoTable.objects.filter(boxID=box_num, chnNum=channel_num)
     if len(testid) == 0:
-        print("找不到测试信息")
+        logging.error("testline-status找不到当前通道对应的测试信息")
         data = {"testline_status": "err"}
         return JsonResponse(data)
     elif len(testid) > 1:
-        print("当前通道有多条测试记录，选取最后一条")
+        logging.error("testline-status当前通道有多条测试记录，选取最后一条")
     testid = testid.order_by("id").reverse()[0]
     try:
         crd = cellTestRealDataTable.objects.get(testID=testid)
         cs = crd.currState
     except:
-        print("haha")
+        logging.error("testline-status当前通道无实时数据")
         cs = "stop"
     data = {"testline_status": cs}
     return JsonResponse(data)
@@ -91,22 +91,7 @@ def get_testdata_from_start(request, box_num, channel_num):
 
 def get_testdata_real_time(request, box_num, channel_num):
     # 获取实时数据，返回一条当前时间点的数据
-    # data={"name": time.UTC(), "value":[UTC , value]}
-    data = {
-        'I': {"name": current_milli_time(), "value": [current_milli_time(), 1000]},
-        'U': {"name": current_milli_time(), "value": [current_milli_time(), 2000]},
-        'Q_N2': {"name": current_milli_time(), "value": [current_milli_time(), 100]},
-        'Q_H2': {"name": current_milli_time(), "value": [current_milli_time(), 150]},
-        'Q_CO2': {"name": current_milli_time(), "value": [current_milli_time(), 200]},
-        'Q_CH4': {"name": current_milli_time(), "value": [current_milli_time(), 50]},
-        'Q_Air': {"name": current_milli_time(), "value": [current_milli_time(), 25]},
-        'Q_H2O': {"name": current_milli_time(), "value": [current_milli_time(), 10]},
-        'T1': {"name": current_milli_time(), "value": [current_milli_time(), 1073]},
-    }
-
-    ##test
     data = get_real_time_test_data_interface(box_num, channel_num)
-    ##test
     return JsonResponse(data)
 
 
@@ -154,28 +139,28 @@ def delete_old_oven_scheme(request, num):
 
 @csrf_exempt
 def save_scheme(request):
-    print(request.body)
-    print(json.loads(request.body.decode()))
+    # print(request.body)
+    # print(json.loads(request.body.decode()))
     scheme = json.loads(request.body.decode())
     if save_test_scheme_interface(scheme):
-        print("保存成功")
+        logging.info("test-scheme保存成功")
         message = "保存成功"
     else:
-        print("保存过程中出错")
+        logging.error("test-scheme保存过程中出错")
         message = "保存过程中出错"
     return JsonResponse({"Message":message})
 
 
 @csrf_exempt
 def save_oven_scheme(request):
-    print(request.body)
-    print(json.loads(request.body.decode()))
+    # print(request.body)
+    # print(json.loads(request.body.decode()))
     scheme = json.loads(request.body.decode())
     if save_oven_test_scheme_interface(scheme):
-        print("保存成功")
+        logging.info("oven-scheme保存成功")
         message = "保存成功"
     else:
-        print("保存过程中出错")
+        logging.error("oven-scheme保存过程中出错")
         message = "保存过程中出错"
     return JsonResponse({"Message":message})
 
@@ -183,7 +168,6 @@ def save_oven_scheme(request):
 @csrf_exempt
 def start_channel(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=start_channel_interface(datarecv['box'], datarecv['channel'], datarecv['plan'])
     return JsonResponse({"Message":message})
 
@@ -191,7 +175,6 @@ def start_channel(request):
 @csrf_exempt
 def start_oven(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=start_oven_interface(datarecv['box'], datarecv['channel'], datarecv['oven'], datarecv['oplan'])
     return JsonResponse({"Message":message})
 
@@ -199,7 +182,6 @@ def start_oven(request):
 @csrf_exempt
 def stop_oven(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=stop_oven_interface(datarecv['box'], datarecv['channel'], datarecv['oven'], datarecv['oplan'])
     return JsonResponse({"Message":message})
 
@@ -207,7 +189,6 @@ def stop_oven(request):
 @csrf_exempt
 def pause_oven(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=pause_oven_interface(datarecv['box'], datarecv['channel'], datarecv['oven'], datarecv['oplan'])
     return JsonResponse({"Message":message})
 
@@ -215,7 +196,6 @@ def pause_oven(request):
 @csrf_exempt
 def resume_oven(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=resume_oven_interface(datarecv['box'], datarecv['channel'], datarecv['oven'], datarecv['oplan'])
     return JsonResponse({"Message":message})
 
@@ -231,7 +211,6 @@ def resume_oven(request):
 @csrf_exempt
 def pause_channel(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=pause_channel_interface(datarecv['box'], datarecv['channel'])
     return JsonResponse({"Message":message})
 
@@ -239,7 +218,6 @@ def pause_channel(request):
 @csrf_exempt
 def stop_channel(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=stop_channel_interface(datarecv['box'], datarecv['channel'])
     return JsonResponse({"Message":message})
 
@@ -247,7 +225,6 @@ def stop_channel(request):
 @csrf_exempt
 def continue_channel(request):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     message=continue_channel_interface(datarecv['box'], datarecv['channel'])
     return JsonResponse({"Message":message})
 
@@ -260,12 +237,11 @@ def get_gas_info(request, box_id, chn_id):
 @csrf_exempt
 def set_gas(request, box_id, chn_id):
     datarecv = json.loads(request.body.decode())
-    print(datarecv)
     if set_gas_interface(box_id, chn_id, datarecv):
-        print("气体设置成功")
+        logging.info("气体设置成功")
         message="气体设置成功"
     else:
-        print("气体设置失败！")
+        logging.info("气体设置失败！")
         message="气体设置失败"
     return JsonResponse({"Message":message})
 

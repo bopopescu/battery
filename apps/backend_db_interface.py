@@ -55,7 +55,11 @@ def get_oven_status_interface():
             "next": i.nextState,
             "PlanID": i.ovenPlanID.id if i.ovenPlanID is not None else None
         }
-        bt = BigTestInfoTable.objects.filter(ovenID=i.ID, completeFlag=0)
+        bt0 = BigTestInfoTable.objects.filter(oven0ID=i.ID, completeFlag=0)
+        bt1 = BigTestInfoTable.objects.filter(oven1ID=i.ID, completeFlag=0)
+        bt2 = BigTestInfoTable.objects.filter(oven2ID=i.ID, completeFlag=0)
+        bt3 = BigTestInfoTable.objects.filter(oven3ID=i.ID, completeFlag=0)
+        bt = bt0 | bt1 | bt2 | bt3
         if len(bt) == 0:
             oven["T"] = -1
         else:
@@ -63,7 +67,9 @@ def get_oven_status_interface():
             if len(crt) == 0:
                 oven["T"] = -1
             else:
-                oven["T"] = crt[0].T0
+                oven["T"] = crt[0].Tc0 if len(bt0) != 0 \
+                    else crt[0].Tc1 if len(bt1) != 0 \
+                    else crt[0].Tc2 if len(bt2) != 0 else crt[0].Tc3
         data.append(oven)
     return {"oven": data}
 
@@ -79,14 +85,18 @@ def get_cells_info_interface():
                 "cellID": c.cellID,
                 "boxID": c.boxID.ID if c.boxID else None,
                 "chnNum": c.chnNum,
-                "ovenID": c.mT0ID.ID if c.mT0ID else None,
+                "oven0ID": c.mT0ID.ID if c.mTc0ID else None,
+                "oven1ID": c.mT0ID.ID if c.mTc1ID else None,
+                "oven2ID": c.mT0ID.ID if c.mTc2ID else None,
+                "oven3ID": c.mT0ID.ID if c.mTc3ID else None,
                 "H2ID": c.mH2ID.ID if c.mH2ID else None,
                 "H2OID": c.mH2OID.ID if c.mH2OID else None,
                 "N2ID": c.mN2ID.ID if c.mN2ID else None,
                 "CO2ID": c.mCO2ID.ID if c.mCO2ID else None,
                 "CH4ID": c.mCH4ID.ID if c.mCH4ID else None,
                 "AIRID": c.mAIRID.ID if c.mAIRID else None,
-                "wdjID": c.mT1ID.ID if c.mT1ID else None
+                "wdjID": c.mT1ID.ID if c.mTmID else None,
+                "voltID": c.mT1ID.ID if c.mVmID else None,
             }
             data.append(cell)
         return {"cells": data}
@@ -107,15 +117,18 @@ def get_tests_info_interface():
                     "CellID": None,
                     "BoxID": None,
                     "ChnID": None,
-                    "PlanID": None,
-                    "OvenID": bt.ovenID.ID if bt.ovenID else None,
-                    "OvenPlanID": bt.ovenPlanID.id if bt.ovenPlanID else None,
+                    "Oven0ID": bt.oven0ID.ID if bt.oven0ID else None,
+                    "Oven1ID": bt.oven1ID.ID if bt.oven1ID else None,
+                    "Oven2ID": bt.oven2ID.ID if bt.oven2ID else None,
+                    "Oven3ID": bt.oven3ID.ID if bt.oven3ID else None,
                     "H2ID": bt.H2ID.ID if bt.H2ID else None,
                     "H2OID": bt.H2OID.ID if bt.H2OID else None,
                     "N2ID": bt.N2ID.ID if bt.N2ID else None,
                     "CO2ID": bt.CO2ID.ID if bt.CO2ID else None,
                     "CH4ID": bt.CH4ID.ID if bt.CH4ID else None,
                     "AIRID": bt.AIRID.ID if bt.AIRID else None,
+                    "wdjID": bt.wdjID.ID if bt.wdjID else None,
+                    "voltID": bt.voltID.ID if bt.voltID else None,
                     "StartTime": bt.startDate,
                     "EndTime": bt.endDate
                 }
@@ -128,9 +141,10 @@ def get_tests_info_interface():
                         "CellID": st.cellID.cellID if st.cellID else None,
                         "BoxID": st.boxID.ID if st.boxID else None,
                         "ChnID": st.chnNum,
-                        "PlanID": st.planID.id if st.planID else None,
-                        "OvenID": bt.ovenID.ID if bt.ovenID else None,
-                        "OvenPlanID": bt.ovenPlanID.id if bt.ovenPlanID else None,
+                        "Oven0ID": bt.oven0ID.ID if bt.oven0ID else None,
+                        "Oven1ID": bt.oven1ID.ID if bt.oven1ID else None,
+                        "Oven2ID": bt.oven2ID.ID if bt.oven2ID else None,
+                        "Oven3ID": bt.oven3ID.ID if bt.oven3ID else None,
                         "H2ID": bt.H2ID.ID if bt.H2ID else None,
                         "H2OID": bt.H2OID.ID if bt.H2OID else None,
                         "N2ID": bt.N2ID.ID if bt.N2ID else None,
@@ -138,6 +152,7 @@ def get_tests_info_interface():
                         "CH4ID": bt.CH4ID.ID if bt.CH4ID else None,
                         "AIRID": bt.AIRID.ID if bt.AIRID else None,
                         "wdjID": bt.wdjID.ID if bt.wdjID else None,
+                        "voltID": bt.voltID.ID if bt.voltID else None,
                         "StartTime": st.startDate,
                         "EndTime": st.endDate
                     }
@@ -311,19 +326,15 @@ def get_real_time_test_data_interface(box_id, cha_id):
     # 首先获取该通道的最近测试ID
     test_id = get_latest_testid_interface(box_id, cha_id)
     data = {
-        'I': {},
-        'U': {},
-        'Q_N2': {},
-        'Q_H2': {},
-        'Q_CO2': {},
-        'Q_CH4': {},
-        'Q_Air': {},
-        'Q_H2O': {},
-        'T0': {},
-        'T1': {},
-        'T2': {},
-        'T3': {},
-        'T4': {},
+        'I': {}, 'U': {},
+        'Q_N2': {}, 'Q_H2': {}, 'Q_CO2': {}, 'Q_CH4': {}, 'Q_Air': {}, 'Q_H2O': {},
+        'Tc0': {}, 'Tc1': {}, 'Tc2': {}, 'Tc3': {},
+        'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {}, 'Tm6': {}, 'Tm7': {}, 'Tm8': {}, 'Tm9': {},
+        'Tm10': {}, 'Tm11': {}, 'Tm12': {}, 'Tm13': {}, 'Tm14': {}, 'Tm15': {}, 'Tm16': {}, 'Tm17': {}, 'Tm18': {},
+        'Tm19': {},
+        'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {}, 'Vm9': {},
+        'Vm10': {}, 'Vm11': {}, 'Vm12': {}, 'Vm13': {}, 'Vm14': {}, 'Vm15': {}, 'Vm16': {}, 'Vm17': {}, 'Vm18': {},
+        'Vm19': {},
     }
     if test_id == -1:
         return data
@@ -359,21 +370,78 @@ def get_real_time_test_data_interface(box_id, cha_id):
         'Q_H2O': {"name": int(rt_data.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
                   "value": [int(rt_data.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
                             rt_data.qH2O]},
-        'T0': {"name": int(rt_data.tT0.timestamp() * 1000),
-               "value": [int(rt_data.tT0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                         float(rt_data.T0)]},
-        'T1': {"name": int(rt_data.tT1.timestamp() * 1000),
-               "value": [int(rt_data.tT1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                         float(rt_data.T1)]},
-        'T2': {"name": int(rt_data.tT2.timestamp() * 1000),
-               "value": [int(rt_data.tT2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                         float(rt_data.T2)]},
-        'T3': {"name": int(rt_data.tT3.timestamp() * 1000),
-               "value": [int(rt_data.tT3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                         float(rt_data.T3)]},
-        'T4': {"name": int(rt_data.tT4.timestamp() * 1000),
-               "value": [int(rt_data.tT4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                         float(rt_data.T4)]},
+        'Tc0': {"name": int(rt_data.tTc0.timestamp() * 1000),
+                "value": [int(rt_data.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tc0)]},
+        'Tc1': {"name": int(rt_data.tTc1.timestamp() * 1000),
+                "value": [int(rt_data.tTc1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tc1)]},
+        'Tc2': {"name": int(rt_data.tTc2.timestamp() * 1000),
+                "value": [int(rt_data.tTc2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tc2)]},
+        'Tc3': {"name": int(rt_data.tTc3.timestamp() * 1000),
+                "value": [int(rt_data.tTc3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tc3)]},
+        'Tm0': {"name": int(rt_data.tTm0.timestamp() * 1000),
+                "value": [int(rt_data.tTm0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm0)]},
+        'Tm1': {"name": int(rt_data.tTm1.timestamp() * 1000),
+                "value": [int(rt_data.tTm1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm1)]},
+        'Tm2': {"name": int(rt_data.tTm2.timestamp() * 1000),
+                "value": [int(rt_data.tTm2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm2)]},
+        'Tm3': {"name": int(rt_data.tTm3.timestamp() * 1000),
+                "value": [int(rt_data.tTm3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm3)]},
+        'Tm4': {"name": int(rt_data.tTm4.timestamp() * 1000),
+                "value": [int(rt_data.tTm4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm4)]},
+        'Tm5': {"name": int(rt_data.tTm5.timestamp() * 1000),
+                "value": [int(rt_data.tTm5.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm5)]},
+        'Tm6': {"name": int(rt_data.tTm6.timestamp() * 1000),
+                "value": [int(rt_data.tTm6.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm6)]},
+        'Tm7': {"name": int(rt_data.tTm7.timestamp() * 1000),
+                "value": [int(rt_data.tTm7.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm7)]},
+        'Tm8': {"name": int(rt_data.tTm8.timestamp() * 1000),
+                "value": [int(rt_data.tTm8.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm8)]},
+        'Tm9': {"name": int(rt_data.tTm9.timestamp() * 1000),
+                "value": [int(rt_data.tTm9.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                          float(rt_data.Tm9)]},
+        'Tm10': {"name": int(rt_data.tTm10.timestamp() * 1000),
+                 "value": [int(rt_data.tTm10.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm10)]},
+        'Tm11': {"name": int(rt_data.tTm11.timestamp() * 1000),
+                 "value": [int(rt_data.tTm11.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm11)]},
+        'Tm12': {"name": int(rt_data.tTm12.timestamp() * 1000),
+                 "value": [int(rt_data.tTm12.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm12)]},
+        'Tm13': {"name": int(rt_data.tTm13.timestamp() * 1000),
+                 "value": [int(rt_data.tTm13.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm13)]},
+        'Tm14': {"name": int(rt_data.tTm14.timestamp() * 1000),
+                 "value": [int(rt_data.tTm14.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm14)]},
+        'Tm15': {"name": int(rt_data.tTm15.timestamp() * 1000),
+                 "value": [int(rt_data.tTm15.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm15)]},
+        'Tm16': {"name": int(rt_data.tTm16.timestamp() * 1000),
+                 "value": [int(rt_data.tTm16.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm16)]},
+        'Tm17': {"name": int(rt_data.tTm17.timestamp() * 1000),
+                 "value": [int(rt_data.tTm17.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm17)]},
+        'Tm18': {"name": int(rt_data.tTm18.timestamp() * 1000),
+                 "value": [int(rt_data.tTm18.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm18)]},
+        'Tm19': {"name": int(rt_data.tTm19.timestamp() * 1000),
+                 "value": [int(rt_data.tTm19.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+                           float(rt_data.Tm19)]},
     }
     return data
 
@@ -383,87 +451,121 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
     ## bug:数据必须按照时间顺序排列 否则显示会有问题
     hs_data = cellTestHistoryDataTable.objects.filter(testID=test_id).order_by("celldata_time")
     data = {
-        'I': [],
-        'U': [],
-        'Q_N2': [],
-        'Q_H2': [],
-        'Q_CO2': [],
-        'Q_CH4': [],
-        'Q_Air': [],
-        'Q_H2O': [],
-        'T0': [],
-        'T1': [],
-        'T2': [],
-        'T3': [],
-        'T4': [],
+        'I': [], 'U': [],
+        'Q_N2': [], 'Q_H2': [], 'Q_CO2': [], 'Q_CH4': [], 'Q_Air': [], 'Q_H2O': [],
+        'Tc0': {}, 'Tc1': {}, 'Tc2': {}, 'Tc3': {},
+        'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {}, 'Tm6': {}, 'Tm7': {}, 'Tm8': {}, 'Tm9': {},
+        'Tm10': {}, 'Tm11': {}, 'Tm12': {}, 'Tm13': {}, 'Tm14': {}, 'Tm15': {}, 'Tm16': {}, 'Tm17': {}, 'Tm18': {},
+        'Tm19': {},
+        'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {}, 'Vm9': {},
+        'Vm10': {}, 'Vm11': {}, 'Vm12': {}, 'Vm13': {}, 'Vm14': {}, 'Vm15': {}, 'Vm16': {}, 'Vm17': {}, 'Vm18': {},
+        'Vm19': {},
     }
     if len(hs_data) == 0:
         logger = logging.getLogger("django")
         logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在历史数据")
         return data
+
+    timeformat = lambda x: int(x.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000)
     for i in hs_data:
         data['I'].append({
-            "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                      float(i.i) / 1000]})
+            "name": timeformat(i.celldata_time), "value": [timeformat(i.celldata_time), float(i.i) / 1000]})
         data['U'].append({
-            "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                      float(i.u) / 1000]})
-        data['Q_N2'].append({
-            "name": int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qN2]})
-        data['Q_H2'].append({
-            "name": int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2]})
-        data['Q_CO2'].append({
-            "name": int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCO2]})
-        data['Q_CH4'].append({
-            "name": int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCH4]})
-        data['Q_Air'].append({
-            "name": int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qAIR]})
-        data['Q_H2O'].append({
-            "name": int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2O]})
-        data['T0'].append({
-            "name": int(i.tT0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tT0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T0)]})
-        data['T1'].append({
-            "name": int(i.tT1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tT1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T1)]})
-        data['T2'].append({
-            "name": int(i.tT2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tT2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T2)]})
-        data['T3'].append({
-            "name": int(i.tT3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tT3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T3)]})
-        data['T4'].append({
-            "name": int(i.tT4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-            "value": [int(i.tT4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T4)]})
+            "name": timeformat(i.celldata_time), "value": [timeformat(i.celldata_time), float(i.u) / 1000]})
+        data['Q_N2'].append({"name": timeformat(i.tN2), "value": [timeformat(i.tN2), i.qN2]})
+        data['Q_H2'].append({"name": timeformat(i.tH2), "value": [timeformat(i.tN2), i.qH2]})
+        data['Q_H2O'].append({"name": timeformat(i.tH2O), "value": [timeformat(i.tH2O), i.qH2O]})
+        data['Q_CO2'].append({"name": timeformat(i.tCO2), "value": [timeformat(i.tCO2), i.qCO2]})
+        data['Q_AIR'].append({"name": timeformat(i.tAIR), "value": [timeformat(i.tAIR), i.qAIR]})
+        data['Q_CH4'].append({"name": timeformat(i.tCH4), "value": [timeformat(i.tCH4), i.qCH4]})
+        data['Tc0'].append({"name": timeformat(i.tTc0), "value": [timeformat(i.tTc0), i.Tc0]})
+        data['Tc1'].append({"name": timeformat(i.tTc1), "value": [timeformat(i.tTc1), i.Tc1]})
+        data['Tc2'].append({"name": timeformat(i.tTc2), "value": [timeformat(i.tTc2), i.Tc2]})
+        data['Tc3'].append({"name": timeformat(i.tTc3), "value": [timeformat(i.tTc3), i.Tc3]})
+        data['Tm0'].append({"name": timeformat(i.tTm0), "value": [timeformat(i.tTm0), i.Tm0]})
+        data['Tm1'].append({"name": timeformat(i.tTm1), "value": [timeformat(i.tTm1), i.Tm1]})
+        data['Tm2'].append({"name": timeformat(i.tTm2), "value": [timeformat(i.tTm2), i.Tm2]})
+        data['Tm3'].append({"name": timeformat(i.tTm3), "value": [timeformat(i.tTm3), i.Tm3]})
+        data['Tm4'].append({"name": timeformat(i.tTm4), "value": [timeformat(i.tTm4), i.Tm4]})
+        data['Tm5'].append({"name": timeformat(i.tTm5), "value": [timeformat(i.tTm5), i.Tm5]})
+        data['Tm6'].append({"name": timeformat(i.tTm6), "value": [timeformat(i.tTm6), i.Tm6]})
+        data['Tm7'].append({"name": timeformat(i.tTm7), "value": [timeformat(i.tTm7), i.Tm7]})
+        data['Tm8'].append({"name": timeformat(i.tTm8), "value": [timeformat(i.tTm8), i.Tm8]})
+        data['Tm9'].append({"name": timeformat(i.tTm9), "value": [timeformat(i.tTm9), i.Tm9]})
+        data['Tm10'].append({"name": timeformat(i.tTm10), "value": [timeformat(i.tTm10), i.Tm10]})
+        data['Tm11'].append({"name": timeformat(i.tTm11), "value": [timeformat(i.tTm11), i.Tm11]})
+        data['Tm12'].append({"name": timeformat(i.tTm12), "value": [timeformat(i.tTm12), i.Tm12]})
+        data['Tm13'].append({"name": timeformat(i.tTm13), "value": [timeformat(i.tTm13), i.Tm13]})
+        data['Tm14'].append({"name": timeformat(i.tTm14), "value": [timeformat(i.tTm14), i.Tm14]})
+        data['Tm15'].append({"name": timeformat(i.tTm15), "value": [timeformat(i.tTm15), i.Tm15]})
+        data['Tm16'].append({"name": timeformat(i.tTm16), "value": [timeformat(i.tTm16), i.Tm16]})
+        data['Tm17'].append({"name": timeformat(i.tTm17), "value": [timeformat(i.tTm17), i.Tm17]})
+        data['Tm18'].append({"name": timeformat(i.tTm18), "value": [timeformat(i.tTm18), i.Tm18]})
+        data['Tm19'].append({"name": timeformat(i.tTm19), "value": [timeformat(i.tTm19), i.Tm19]})
+        data['Vm0'].append({"name": timeformat(i.tVm0), "value": [timeformat(i.tVm0), i.Vm0]})
+        data['Vm1'].append({"name": timeformat(i.tVm1), "value": [timeformat(i.tVm1), i.Vm1]})
+        data['Vm2'].append({"name": timeformat(i.tVm2), "value": [timeformat(i.tVm2), i.Vm2]})
+        data['Vm3'].append({"name": timeformat(i.tVm3), "value": [timeformat(i.tVm3), i.Vm3]})
+        data['Vm4'].append({"name": timeformat(i.tVm4), "value": [timeformat(i.tVm4), i.Vm4]})
+        data['Vm5'].append({"name": timeformat(i.tVm5), "value": [timeformat(i.tVm5), i.Vm5]})
+        data['Vm6'].append({"name": timeformat(i.tVm6), "value": [timeformat(i.tVm6), i.Vm6]})
+        data['Vm7'].append({"name": timeformat(i.tVm7), "value": [timeformat(i.tVm7), i.Vm7]})
+        data['Vm8'].append({"name": timeformat(i.tVm8), "value": [timeformat(i.tVm8), i.Vm8]})
+        data['Vm9'].append({"name": timeformat(i.tVm9), "value": [timeformat(i.tVm9), i.Vm9]})
+        data['Vm10'].append({"name": timeformat(i.tVm10), "value": [timeformat(i.tVm10), i.Vm10]})
+        data['Vm11'].append({"name": timeformat(i.tVm11), "value": [timeformat(i.tVm11), i.Vm11]})
+        data['Vm12'].append({"name": timeformat(i.tVm12), "value": [timeformat(i.tVm12), i.Vm12]})
+        data['Vm13'].append({"name": timeformat(i.tVm13), "value": [timeformat(i.tVm13), i.Vm13]})
+        data['Vm14'].append({"name": timeformat(i.tVm14), "value": [timeformat(i.tVm14), i.Vm14]})
+        data['Vm15'].append({"name": timeformat(i.tVm15), "value": [timeformat(i.tVm15), i.Vm15]})
+        data['Vm16'].append({"name": timeformat(i.tVm16), "value": [timeformat(i.tVm16), i.Vm16]})
+        data['Vm17'].append({"name": timeformat(i.tVm17), "value": [timeformat(i.tVm17), i.Vm17]})
+        data['Vm18'].append({"name": timeformat(i.tVm18), "value": [timeformat(i.tVm18), i.Vm18]})
+        data['Vm19'].append({"name": timeformat(i.tVm19), "value": [timeformat(i.tVm19), i.Vm19]})
+
+        # data['I'].append({
+        #     "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #               float(i.i) / 1000]})
+        # data['U'].append({
+        #     "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #               float(i.u) / 1000]})
+        # data['Q_N2'].append({
+        #     "name": int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qN2]})
+        # data['Q_H2'].append({
+        #     "name": int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2]})
+        # data['Q_CO2'].append({
+        #     "name": int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCO2]})
+        # data['Q_CH4'].append({
+        #     "name": int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCH4]})
+        # data['Q_Air'].append({
+        #     "name": int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qAIR]})
+        # data['Q_H2O'].append({
+        #     "name": int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2O]})
+        # data['Tc0'].append({
+        #     "name": int(i.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
+        #     "value": [int(i.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T0)]})
     return data
 
 
 def get_real_time_info_interface(box_id, cha_id):
     test_id = get_latest_testid_interface(box_id, cha_id)
     data = {
-        "I": 0,
-        "U": 0,
-        "T0": 0,
-        "T1": 0,
-        "T2": 0,
-        "T3": 0,
-        "T4": 0,
-        "Q_H2": 0,
-        "Q_CO2": 0,
-        "Q_N2": 0,
-        "Q_CH4": 0,
-        "Q_Air": 0,
-        "Q_H2O": 0,
-        "q": 0,
-        "k": 0
+        "I": 0, "U": 0, "q": 0, "k": 0,
+        "Tc0": 0, "Tc1": 0, "Tc2": 0, "Tc3": 0,
+        "Tm0": 0, "Tm1": 0, "Tm2": 0, "Tm3": 0, "Tm4": 0, "Tm5": 0, "Tm6": 0, "Tm7": 0, "Tm8": 0, "Tm9": 0,
+        "Tm10": 0, "Tm11": 0, "Tm12": 0, "Tm13": 0, "Tm14": 0, "Tm15": 0, "Tm16": 0, "Tm17": 0, "Tm18": 0, "Tm19": 0,
+        "Vm0": 0, "Vm1": 0, "Vm2": 0, "Vm3": 0, "Vm4": 0, "Vm5": 0, "Vm6": 0, "Vm7": 0, "Vm8": 0, "Vm9": 0,
+        "Vm10": 0, "Vm11": 0, "Vm12": 0, "Vm13": 0, "Vm14": 0, "Vm15": 0, "Vm16": 0, "Vm17": 0, "Vm18": 0, "Vm19": 0,
+        "Q_H2": 0, "Q_CO2": 0, "Q_N2": 0, "Q_CH4": 0, "Q_Air": 0, "Q_H2O": 0,
+
     }
     if test_id == -1:
         return data
@@ -473,21 +575,61 @@ def get_real_time_info_interface(box_id, cha_id):
         logger = logging.getLogger("django")
         logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在实时信息")
         return data
+    dataformat = lambda x: float(x) if x is not None else 0
     data['I'] = float(rt_data.i) / 1000 if rt_data.i is not None else 0
     data['U'] = float(rt_data.u) / 1000 if rt_data.u is not None else 0
-    data['T0'] = float(rt_data.T0) if rt_data.T0 is not None else 0
-    data['T1'] = float(rt_data.T1) if rt_data.T1 is not None else 0
-    data['T2'] = float(rt_data.T2) if rt_data.T2 is not None else 0
-    data['T3'] = float(rt_data.T3) if rt_data.T3 is not None else 0
-    data['T4'] = float(rt_data.T4) if rt_data.T4 is not None else 0
-    data['Q_N2'] = float(rt_data.qN2) if rt_data.qN2 is not None else 0
-    data['Q_H2'] = float(rt_data.qH2) if rt_data.qH2 is not None else 0
-    data['Q_CO2'] = float(rt_data.qCO2) if rt_data.qCO2 is not None else 0
-    data['Q_CH4'] = float(rt_data.qCH4) if rt_data.qCH4 is not None else 0
-    data['Q_Air'] = float(rt_data.qAIR) if rt_data.qAIR is not None else 0
-    data['Q_H2O'] = float(rt_data.qH2O) if rt_data.qH2O is not None else 0
     data['q'] = float(rt_data.q) if rt_data.q is not None else 0
-    data['k'] = rt_data.n if rt_data.k is not None else 0
+    data['k'] = rt_data.n if rt_data.n is not None else 0
+    data['Tc0'] = dataformat(rt_data.Tc0)
+    data['Tc1'] = dataformat(rt_data.Tc1)
+    data['Tc2'] = dataformat(rt_data.Tc2)
+    data['Tc3'] = dataformat(rt_data.Tc3)
+    data['Q_N2'] = dataformat(rt_data.qN2)
+    data['Q_H2'] = dataformat(rt_data.qH2)
+    data['Q_CO2'] = dataformat(rt_data.qCO2)
+    data['Q_CH4'] = dataformat(rt_data.qCH4)
+    data['Q_Air'] = dataformat(rt_data.qAIR)
+    data['Q_H2O'] = dataformat(rt_data.qH2O)
+    data['Tm0'] = dataformat(rt_data.Tm0)
+    data['Tm1'] = dataformat(rt_data.Tm1)
+    data['Tm2'] = dataformat(rt_data.Tm2)
+    data['Tm3'] = dataformat(rt_data.Tm3)
+    data['Tm4'] = dataformat(rt_data.Tm4)
+    data['Tm5'] = dataformat(rt_data.Tm5)
+    data['Tm6'] = dataformat(rt_data.Tm6)
+    data['Tm7'] = dataformat(rt_data.Tm7)
+    data['Tm8'] = dataformat(rt_data.Tm8)
+    data['Tm9'] = dataformat(rt_data.Tm9)
+    data['Tm10'] = dataformat(rt_data.Tm10)
+    data['Tm11'] = dataformat(rt_data.Tm11)
+    data['Tm12'] = dataformat(rt_data.Tm12)
+    data['Tm13'] = dataformat(rt_data.Tm13)
+    data['Tm14'] = dataformat(rt_data.Tm14)
+    data['Tm15'] = dataformat(rt_data.Tm15)
+    data['Tm16'] = dataformat(rt_data.Tm16)
+    data['Tm17'] = dataformat(rt_data.Tm17)
+    data['Tm18'] = dataformat(rt_data.Tm18)
+    data['Tm19'] = dataformat(rt_data.Tm19)
+    data['Vm0'] = dataformat(rt_data.Vm0)
+    data['Vm1'] = dataformat(rt_data.Vm1)
+    data['Vm2'] = dataformat(rt_data.Vm2)
+    data['Vm3'] = dataformat(rt_data.Vm3)
+    data['Vm4'] = dataformat(rt_data.Vm4)
+    data['Vm5'] = dataformat(rt_data.Vm5)
+    data['Vm6'] = dataformat(rt_data.Vm6)
+    data['Vm7'] = dataformat(rt_data.Vm7)
+    data['Vm8'] = dataformat(rt_data.Vm8)
+    data['Vm9'] = dataformat(rt_data.Vm9)
+    data['Vm10'] = dataformat(rt_data.Vm10)
+    data['Vm11'] = dataformat(rt_data.Vm11)
+    data['Vm12'] = dataformat(rt_data.Vm12)
+    data['Vm13'] = dataformat(rt_data.Vm13)
+    data['Vm14'] = dataformat(rt_data.Vm14)
+    data['Vm15'] = dataformat(rt_data.Vm15)
+    data['Vm16'] = dataformat(rt_data.Vm16)
+    data['Vm17'] = dataformat(rt_data.Vm17)
+    data['Vm18'] = dataformat(rt_data.Vm18)
+    data['Vm19'] = dataformat(rt_data.Vm19)
     return data
 
 
@@ -673,11 +815,15 @@ def start_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         logger = logging.getLogger("django")
         logger.error("启动电炉失败：没有该测试方案")
         return "启动电炉失败：没有该测试方案"
-    cell = cellDeviceTable.objects.filter(mT0ID=ovenid)
+    cell1 = cellDeviceTable.objects.filter(mTc0ID=ovenid)
+    cell2 = cellDeviceTable.objects.filter(mTc1ID=ovenid)
+    cell3 = cellDeviceTable.objects.filter(mTc2ID=ovenid)
+    cell4 = cellDeviceTable.objects.filter(mTc3ID=ovenid)
+    cell = cell1 | cell2 | cell3 | cell4
     if len(cell) == 0:
         logger = logging.getLogger("django")
         logger.warning("启动电炉：该电炉里面没有电池")
-        bt = BigTestInfoTable(ovenID=ovenid, ovenPlanID=ovenplanid, completeFlag=0)
+        bt = BigTestInfoTable(oven0ID=ovenid, ovenPlanID=ovenplanid, completeFlag=0)
         bt.save()
         crt = cellTestRealDataTable.objects.filter(bigTestID=None, boxID=None, chnNum=None)
         if len(crt) == 0:
@@ -687,24 +833,49 @@ def start_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
             crt.update(bigTestID=bt, currState="stop", nextState="stop")
         # return "启动成功！警告：该电炉中没有电池"
     for i in cell:
-        bt = BigTestInfoTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, H2ID=i.mH2ID, N2ID=i.mN2ID, CO2ID=i.mCO2ID,
-                              CH4ID=i.mCH4ID, AIRID=i.mAIRID, H2OID=i.mH2OID, ovenID=ovenid, ovenPlanID=ovenplanid,
-                              wdjID=i.mT1ID,
-                              completeFlag=0)
-        bt.save()
-        crt = cellTestRealDataTable.objects.filter(boxID=i.boxID, chnNum=i.chnNum)
-        if len(crt) == 0:
-            crt = cellTestRealDataTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, bigTestID=bt, currState="stop",
-                                        nextState="stop")
-            crt.save()
+        bt = BigTestInfoTable.objects.filter(cellID=i, completeFlag=0)
+        if len(bt) != 0:
+            if len(cell1) != 0:
+                bt.update(oven0ID=ovenid)
+            elif len(cell2) != 0:
+                bt.update(oven1ID=ovenid)
+            elif len(cell3) != 0:
+                bt.update(oven2ID=ovenid)
+            elif len(cell4) != 0:
+                bt.update(oven3ID=ovenid)
         else:
-            crt.update(cellID=i, bigTestID=bt, currState="stop", nextState="stop")
+            if len(cell1) != 0:
+                bt = BigTestInfoTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, H2ID=i.mH2ID, N2ID=i.mN2ID,
+                                      CO2ID=i.mCO2ID, CH4ID=i.mCH4ID, AIRID=i.mAIRID, H2OID=i.mH2OID, oven0ID=ovenid,
+                                      wdjID=i.mTmID, voltID=i.mVmID, completeFlag=0)
+            elif len(cell2) != 0:
+                bt = BigTestInfoTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, H2ID=i.mH2ID, N2ID=i.mN2ID,
+                                      CO2ID=i.mCO2ID, CH4ID=i.mCH4ID, AIRID=i.mAIRID, H2OID=i.mH2OID, oven1ID=ovenid,
+                                      wdjID=i.mTmID, voltID=i.mVmID, completeFlag=0)
+            elif len(cell3) != 0:
+                bt = BigTestInfoTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, H2ID=i.mH2ID, N2ID=i.mN2ID,
+                                      CO2ID=i.mCO2ID, CH4ID=i.mCH4ID, AIRID=i.mAIRID, H2OID=i.mH2OID, oven2ID=ovenid,
+                                      wdjID=i.mTmID, voltID=i.mVmID, completeFlag=0)
+            elif len(cell4) != 0:
+                bt = BigTestInfoTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, H2ID=i.mH2ID, N2ID=i.mN2ID,
+                                      CO2ID=i.mCO2ID, CH4ID=i.mCH4ID, AIRID=i.mAIRID, H2OID=i.mH2OID, oven3ID=ovenid,
+                                      wdjID=i.mTmID, voltID=i.mVmID, completeFlag=0)
+
+            bt.save()
+            crt = cellTestRealDataTable.objects.filter(boxID=i.boxID, chnNum=i.chnNum)
+            if len(crt) == 0:
+                crt = cellTestRealDataTable(cellID=i, boxID=i.boxID, chnNum=i.chnNum, bigTestID=bt, currState="stop",
+                                            nextState="stop")
+                crt.save()
+            else:
+                crt.update(cellID=i, bigTestID=bt, currState="stop", nextState="stop")
     ovenDeviceTable.objects.filter(ID=oven_id, currState="stop").update(ovenPlanID=ovenplanid, nextState="start")
     logger = logging.getLogger("django")
     logger.info("启动电炉：成功")
     return "启动电炉成功"
 
 
+# todo
 def stop_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
     try:
         ovenid = ovenDeviceTable.objects.get(ID=oven_id)
@@ -720,19 +891,52 @@ def stop_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         logger = logging.getLogger("django")
         logger.error("停止电炉失败：该电炉正尝试停止")
         return "正尝试停止......"
-    cell = cellDeviceTable.objects.filter(mT0ID=ovenid)
-    bt = BigTestInfoTable.objects.filter(ovenID=ovenid, completeFlag=0)
+
+    bt0 = BigTestInfoTable.objects.filter(oven0ID=ovenid, completeFlag=0)
+    bt1 = BigTestInfoTable.objects.filter(oven1ID=ovenid, completeFlag=0)
+    bt2 = BigTestInfoTable.objects.filter(oven2ID=ovenid, completeFlag=0)
+    bt3 = BigTestInfoTable.objects.filter(oven3ID=ovenid, completeFlag=0)
+    bt = bt0 | bt1 | bt2 | bt3
     if len(bt) == 1 and bt[0].cellID is None:
         cellTestRealDataTable.objects.get(bigTestID=bt[0]).delete()
-    if len(testInfoTable.objects.filter(bigTestID__in=bt, completeFlag=0)) != 0:
+        ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
+        bt.update(completeFlag=1, endDate=datetime.datetime.now())
+        logger = logging.getLogger("django")
+        logger.info("停止电炉:成功")
+        return "停止电炉成功！"
+    if len(bt) == 1 and len(testInfoTable.objects.filter(bigTestID__in=bt, completeFlag=0)) != 0:
         logger = logging.getLogger("django")
         logger.error("停止电炉失败：该父测试下还有未完成的子测试，结束失败")
         return "停止电炉失败：该电炉内部还有电池正在测试！"
-    ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
-    bt.update(completeFlag=1, endDate=datetime.datetime.now())
-    logger = logging.getLogger("django")
-    logger.info("停止电炉:成功")
-    return "停止电炉成功！"
+    # todo
+    count=0
+    if bt[0].oven0ID.nextState == "start":
+        count=count+1
+    if bt[0].oven1ID.nextState == "start":
+        count=count+1
+    if bt[0].oven2ID.nextState == "start":
+        count=count+1
+    if bt[0].oven3ID.nextState == "start":
+        count=count+1
+    if count > 1:
+        ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
+        logger = logging.getLogger("django")
+        logger.info("停止电炉:成功,但对应父测试未结束，因为还有其他电炉")
+        return "停止电炉成功，但对应父测试未结束，因为还有其他电炉正在运行！"
+    else:
+        if len(testInfoTable.objects.filter(bigTestID__in=bt, completeFlag=0)) != 0:
+            logger = logging.getLogger("django")
+            logger.error("停止电炉失败：该父测试下还有未完成的子测试，结束失败")
+            return "停止电炉失败：该电炉内部还有电池正在测试！"
+        else:
+            cellTestRealDataTable.objects.filter(bigTestID__in=bt).delete()
+            ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
+            bt.update(completeFlag=1, endDate=datetime.datetime.now())
+            logger = logging.getLogger("django")
+            logger.info("停止电炉:成功")
+            return "停止电炉成功！"
+
+
 
 
 def pause_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
@@ -754,9 +958,7 @@ def pause_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         logger = logging.getLogger("django")
         logger.error("暂停电炉失败：该电炉正在尝试暂停")
         return "正在尝试暂停......"
-    cell = cellDeviceTable.objects.filter(mT0ID=ovenid)
     ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="pause")
-    bt = BigTestInfoTable.objects.filter(ovenID=ovenid, completeFlag=0)
     logger = logging.getLogger("django")
     logger.info("暂停电炉：成功")
     return "暂停电炉成功！"
@@ -781,9 +983,7 @@ def resume_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         logger = logging.getLogger("django")
         logger.error("继续电炉失败：该电炉正尝试启动")
         return "正在尝试启动......"
-    cell = cellDeviceTable.objects.filter(mT0ID=ovenid)
     ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="start")
-    bt = BigTestInfoTable.objects.filter(ovenID=ovenid, completeFlag=0)
     logger = logging.getLogger("django")
     logger.info("继续电炉：成功")
     return "操作成功！"
@@ -801,7 +1001,6 @@ def get_gas_info_interface(box_id, chn_id):
         logger.warning("getgasinfo:当前通道有多条测试记录，选取最后一条")
     testid = testid.order_by("id").reverse()[0]
     try:
-        print(testid.cellID)
         cellid = testid.cellID
     except:
         logger = logging.getLogger("django")
