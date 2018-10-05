@@ -237,24 +237,24 @@ class dbClass(object):
         data = self.executeGetSQL(sql, keys)
         return data
 
-    def getOvenCOM(self, oven):
-        keys = ["ID", "IP", "PortNum", "Addr"]
+    def getOvenCOM(self, oven, num):
+        keys = ["ID", "IP", "PortNum", "Addr","protocolVersion"]
         keystr = ",".join(keys)
-        sql = "SELECT " + keystr + " FROM " + self.ovenDeviceTable + " WHERE ID=" + str(oven["ovenID_id"])
+        sql = "SELECT " + keystr + " FROM " + self.ovenDeviceTable + " WHERE ID=" + str(oven["oven"+str(num)+"ID_id"])
         data = self.executeGetSQL(sql, keys)
         return data
 
     def getWdjCOM(self, wdj):
-        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum"]
+        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum","protocolVersion"]
         keystr = ",".join(keys)
         sql = "SELECT " + keystr + " FROM " + self.wdjDeviceTable + " WHERE ID=" + str(wdj["wdjID_id"])
         data = self.executeGetSQL(sql, keys)
         return data
 
     def getVoltCOM(self, volt):
-        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum"]
+        keys = ["ID", "IP", "PortNum", "Addr", "totalChnNum","protocolVersion"]
         keystr = ",".join(keys)
-        sql = "SELECT " + keystr + " FROM " + self.voltDeviceTable + " WHERE ID=" + str(volt["wdjID_id"])
+        sql = "SELECT " + keystr + " FROM " + self.voltDeviceTable + " WHERE ID=" + str(volt["voltID_id"])
         data = self.executeGetSQL(sql, keys)
         return data
 

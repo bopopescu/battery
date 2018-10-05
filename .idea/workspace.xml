@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/mysocket/socketClient.py" description="AllData.update({" line="427" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac6e03b-44a9-4e11-a34c-44fae0e368e3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,6 +19,7 @@
     <SUITE FILE_PATH="coverage/battery1$dbtest.coverage" NAME="dbtest Coverage Results" MODIFIED="1535433509465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysocket" />
     <SUITE FILE_PATH="coverage/battery1$ovenControl.coverage" NAME="ovenControl Coverage Results" MODIFIED="1535601815200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oven" />
     <SUITE FILE_PATH="coverage/battery$ovenControl.coverage" NAME="ovenControl Coverage Results" MODIFIED="1538616750692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oven" />
+    <SUITE FILE_PATH="coverage/battery$modifyDeviceAddress.coverage" NAME="modifyDeviceAddress Coverage Results" MODIFIED="1538729712036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysocket" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -162,13 +166,13 @@
     <session id="-690678890">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -176,49 +180,59 @@
           <entry key="css" value="1" />
           <entry key="html" value="7" />
           <entry key="js" value="2" />
-          <entry key="json" value="4" />
-          <entry key="py" value="23" />
+          <entry key="json" value="6" />
+          <entry key="log" value="3" />
+          <entry key="py" value="31" />
+          <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JSON" value="4" />
+          <entry key="JSON" value="6" />
           <entry key="JavaScript" value="2" />
-          <entry key="Python" value="23" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="266" />
-          <entry key="js" value="429" />
+          <entry key="js" value="541" />
           <entry key="json" value="22" />
-          <entry key="py" value="8066" />
+          <entry key="py" value="8746" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="266" />
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="429" />
-          <entry key="Python" value="8066" />
+          <entry key="JavaScript" value="541" />
+          <entry key="Python" value="8746" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="888" column="30" lean-forward="true" selection-start-line="888" selection-start-column="30" selection-end-line="888" selection-end-column="30" />
+            <state relative-caret-position="-1225">
+              <caret line="526" column="1" selection-start-line="526" selection-start-column="1" selection-end-line="553" selection-end-column="116" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#11694#14921#0" />
-                <element signature="e#21508#24744#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="765" column="35" selection-start-line="765" selection-start-column="35" selection-end-line="765" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -226,232 +240,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-86">
-              <caret line="240" column="6" selection-start-line="240" selection-start-column="6" selection-end-line="240" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/battery/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/monitor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="663" column="69" selection-start-line="663" selection-start-column="69" selection-end-line="663" selection-end-column="69" />
-              <folding>
-                <element signature="n#li#2;n#ul#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#li#3;n#ul#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-                <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="682" column="91" selection-start-line="682" selection-start-column="91" selection-end-line="682" selection-end-column="91" />
-              <folding>
-                <element signature="e#482#572#0" />
-                <element signature="e#651#767#0" />
-                <element signature="e#582#644#0" />
-                <element signature="e#9991#12249#0" />
-                <element signature="e#12282#14830#0" />
-                <element signature="e#14863#16941#0" />
-                <element signature="e#15012#15178#0" />
-                <element signature="e#15230#15473#0" />
-                <element signature="e#15502#15985#0" />
-                <element signature="e#18979#23163#0" />
-                <element signature="e#17099#17265#0" />
-                <element signature="e#18777#19020#0" />
-                <element signature="e#19049#19532#0" />
-                <element signature="e#23326#23492#0" />
-                <element signature="e#23544#23787#0" />
-                <element signature="e#23816#24299#0" />
-                <element signature="e#20376#20538#0" />
-                <element signature="e#20576#21000#0" />
-                <element signature="e#21038#21326#0" />
-                <element signature="e#21364#21472#0" />
-                <element signature="e#30238#30689#0" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="334" column="41" lean-forward="true" selection-start-line="334" selection-start-column="41" selection-end-line="334" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -459,8 +249,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysocket/HardwareProtocol.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9575">
-              <caret line="508" selection-start-line="508" selection-end-line="508" />
+            <state relative-caret-position="375">
+              <caret line="1502" column="18" selection-start-line="1502" selection-start-column="18" selection-end-line="1502" selection-end-column="18" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#15868#19355#0" />
@@ -474,10 +264,78 @@
                 <element signature="e#21305#21826#0" />
                 <element signature="e#21877#22398#0" />
                 <element signature="e#22450#22950#0" />
-                <element signature="e#50966#63829#0" />
                 <element signature="e#63862#64445#0" />
-                <marker date="1538619095394" expanded="true" signature="63857:64446" ph="..." />
+                <marker date="1538729592634" expanded="true" signature="63887:64476" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3042">
+              <caret line="686" column="42" lean-forward="true" selection-start-line="686" selection-start-column="42" selection-end-line="686" selection-end-column="42" />
+              <folding>
+                <element signature="e#44#71#0" expanded="true" />
+                <element signature="e#10283#13534#0" />
+                <element signature="e#10384#11498#0" />
+                <element signature="e#13610#14171#0" />
+                <element signature="e#14395#14992#0" />
+                <element signature="e#15063#15659#0" />
+                <element signature="e#15762#16613#0" />
+                <element signature="e#16718#17316#0" />
+                <element signature="e#17845#19682#0" />
+                <element signature="e#20214#21261#0" />
+                <element signature="e#21452#22494#0" />
+                <element signature="e#22683#23725#0" />
+                <element signature="e#23915#24962#0" />
+                <element signature="e#25154#26201#0" />
+                <element signature="e#26393#27440#0" />
+                <element signature="e#36864#40633#0" />
+                <element signature="e#40682#43160#0" />
+                <element signature="e#43208#45618#0" />
+                <element signature="e#45667#47332#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysocket/socket.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-50">
+              <caret line="20376" column="33" selection-start-line="20376" selection-start-column="33" selection-end-line="20399" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysocket/dbClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="334" column="107" selection-start-line="334" selection-start-column="101" selection-end-line="334" selection-end-column="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysocket/modifyDeviceAddress.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysocket/db_config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -488,16 +346,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>myCircle_Red</find>
-      <find>myCircle</find>
-      <find>headerdate</find>
       <find>modal</find>
       <find>U_I_t_chart</find>
       <find>c.m</find>
@@ -525,6 +380,9 @@
       <find>Tc</find>
       <find>Tm</find>
       <find>U</find>
+      <find>{}</find>
+      <find>sH2</find>
+      <find>sH2O</find>
     </findStrings>
     <replaceStrings>
       <replace>hours=TZ</replace>
@@ -540,6 +398,7 @@
       <replace>Tm</replace>
       <replace>Vm</replace>
       <replace>V</replace>
+      <replace>[]</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\battery1\mysocket\server</dir>
@@ -574,18 +433,20 @@
         <option value="$PROJECT_DIR$/battery/settings.py" />
         <option value="$PROJECT_DIR$/Oven/ovenControl.py" />
         <option value="$PROJECT_DIR$/mysocket/backup_db_config.json" />
-        <option value="$PROJECT_DIR$/mysocket/dbClass.py" />
         <option value="$PROJECT_DIR$/mysocket/db_config.json" />
-        <option value="$PROJECT_DIR$/apps/models.py" />
         <option value="$PROJECT_DIR$/apps/admin.py" />
-        <option value="$PROJECT_DIR$/mysocket/HardwareProtocol.py" />
-        <option value="$PROJECT_DIR$/mysocket/socketClient.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/battery/urls.py" />
         <option value="$PROJECT_DIR$/apps/views.py" />
-        <option value="$PROJECT_DIR$/apps/backend_db_interface.py" />
         <option value="$PROJECT_DIR$/templates/monitor.html" />
+        <option value="$PROJECT_DIR$/mysocket/modifyDeviceAddress.py" />
+        <option value="$PROJECT_DIR$/mysocket/HardwareProtocol.py" />
+        <option value="$PROJECT_DIR$/mysocket/socket.txt" />
+        <option value="$PROJECT_DIR$/apps/models.py" />
         <option value="$PROJECT_DIR$/static/js/monitor.js" />
+        <option value="$PROJECT_DIR$/apps/backend_db_interface.py" />
+        <option value="$PROJECT_DIR$/mysocket/dbClass.py" />
+        <option value="$PROJECT_DIR$/mysocket/socketClient.py" />
       </list>
     </option>
   </component>
@@ -596,9 +457,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="528" />
+    <option name="x" value="82" />
+    <option name="y" value="-8" />
+    <option name="width" value="1552" />
+    <option name="height" value="841" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -704,7 +566,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.HardwareProtocol">
+  <component name="RunManager" selected="Python.modifyDeviceAddress">
     <configuration name="HardwareProtocol" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="battery1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -749,7 +611,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mfcControl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="modifyDeviceAddress" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="battery1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -757,12 +619,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MFC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysocket" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MFC/mfcControl.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysocket/modifyDeviceAddress.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -840,19 +702,19 @@
     </configuration>
     <list>
       <item itemvalue="Django server.battery1" />
-      <item itemvalue="Python.mfcControl" />
       <item itemvalue="Python.ovenControl" />
       <item itemvalue="Python.dbtest" />
       <item itemvalue="Python.socketClient" />
       <item itemvalue="Python.HardwareProtocol" />
+      <item itemvalue="Python.modifyDeviceAddress" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.modifyDeviceAddress" />
         <item itemvalue="Python.HardwareProtocol" />
         <item itemvalue="Python.ovenControl" />
         <item itemvalue="Python.socketClient" />
         <item itemvalue="Python.dbtest" />
-        <item itemvalue="Python.mfcControl" />
       </list>
     </recent_temporary>
   </component>
@@ -882,12 +744,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15671642" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15831557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49966055" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80117273" weight="0.16160521" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80117273" weight="0.29718006" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -935,28 +797,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/io.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python36/Lib/site-packages/serial/serialjava.py" />
-    <entry file="file://$PROJECT_DIR$/templates/gas_control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/load_control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
-          <caret line="106" column="77" selection-start-line="106" selection-start-column="77" selection-end-line="106" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Python36/Lib/site-packages/django/db/models/sql/query.py" />
     <entry file="file://D:/Python/Python36/Lib/site-packages/django/db/models/query.py" />
     <entry file="file://$PROJECT_DIR$/mysocket/server/dbClass.py">
@@ -991,13 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1061,24 +894,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MFC/readall.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MFC/mfcControl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/backup_db_config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1096,51 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/dbClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13025">
-          <caret line="524" selection-start-line="524" selection-end-line="524" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4675">
-          <caret line="193" column="12" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
-          <folding>
-            <element signature="e#44#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/HardwareProtocol.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9575">
-          <caret line="508" selection-start-line="508" selection-end-line="508" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#15868#19355#0" />
-            <element signature="e#15894#16880#0" />
-            <element signature="e#16925#17099#0" />
-            <element signature="e#17172#18140#0" />
-            <element signature="e#18212#19355#0" />
-            <element signature="e#19570#20096#0" />
-            <element signature="e#20146#20682#0" />
-            <element signature="e#20736#21261#0" />
-            <element signature="e#21305#21826#0" />
-            <element signature="e#21877#22398#0" />
-            <element signature="e#22450#22950#0" />
-            <element signature="e#50966#63829#0" />
-            <element signature="e#63862#64445#0" />
-            <marker date="1538619095394" expanded="true" signature="63857:64446" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,27 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Oven/ovenControl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/AdminLTE.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="85422" selection-start-line="6" selection-start-column="85422" selection-end-line="6" selection-end-column="85422" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/db_config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1191,7 +952,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battery/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="700">
           <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
@@ -1201,225 +962,166 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+        <state relative-caret-position="1300">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="240" column="6" selection-start-line="240" selection-start-column="6" selection-end-line="240" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="888" column="30" lean-forward="true" selection-start-line="888" selection-start-column="30" selection-end-line="888" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#11694#14921#0" />
-            <element signature="e#21508#24744#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/monitor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
+        <state relative-caret-position="16575">
           <caret line="663" column="69" selection-start-line="663" selection-start-column="69" selection-end-line="663" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oven/ovenControl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="121" column="12" lean-forward="true" selection-start-line="121" selection-start-column="12" selection-end-line="123" selection-end-column="23" />
           <folding>
-            <element signature="n#li#2;n#ul#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#li#3;n#ul#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#0;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#7;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#8;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#9;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#10;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#11;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#12;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#13;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#14;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#15;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#16;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#17;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#18;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#19;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#20;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#21;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#22;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#sup#0;n#p#1;n#div#0;n#div#0;n#div#23;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MFC/readall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/backup_db_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/db_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/socket.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="682" column="91" selection-start-line="682" selection-start-column="91" selection-end-line="682" selection-end-column="91" />
+        <state relative-caret-position="126">
+          <caret line="765" column="35" selection-start-line="765" selection-start-column="35" selection-end-line="765" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/modifyDeviceAddress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
           <folding>
-            <element signature="e#482#572#0" />
-            <element signature="e#651#767#0" />
-            <element signature="e#582#644#0" />
-            <element signature="e#9991#12249#0" />
-            <element signature="e#12282#14830#0" />
-            <element signature="e#14863#16941#0" />
-            <element signature="e#15012#15178#0" />
-            <element signature="e#15230#15473#0" />
-            <element signature="e#15502#15985#0" />
-            <element signature="e#18979#23163#0" />
-            <element signature="e#17099#17265#0" />
-            <element signature="e#18777#19020#0" />
-            <element signature="e#19049#19532#0" />
-            <element signature="e#23326#23492#0" />
-            <element signature="e#23544#23787#0" />
-            <element signature="e#23816#24299#0" />
-            <element signature="e#20376#20538#0" />
-            <element signature="e#20576#21000#0" />
-            <element signature="e#21038#21326#0" />
-            <element signature="e#21364#21472#0" />
-            <element signature="e#30238#30689#0" />
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/dbClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="334" column="107" selection-start-line="334" selection-start-column="101" selection-end-line="334" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/HardwareProtocol.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="1502" column="18" selection-start-line="1502" selection-start-column="18" selection-end-line="1502" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#15868#19355#0" />
+            <element signature="e#15894#16880#0" />
+            <element signature="e#16925#17099#0" />
+            <element signature="e#17172#18140#0" />
+            <element signature="e#18212#19355#0" />
+            <element signature="e#19570#20096#0" />
+            <element signature="e#20146#20682#0" />
+            <element signature="e#20736#21261#0" />
+            <element signature="e#21305#21826#0" />
+            <element signature="e#21877#22398#0" />
+            <element signature="e#22450#22950#0" />
+            <element signature="e#63862#64445#0" />
+            <marker date="1538729592634" expanded="true" signature="63887:64476" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/socket.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="20376" column="33" selection-start-line="20376" selection-start-column="33" selection-end-line="20399" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa14284.17189/dbClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3042">
+          <caret line="686" column="42" lean-forward="true" selection-start-line="686" selection-start-column="42" selection-end-line="686" selection-end-column="42" />
+          <folding>
+            <element signature="e#44#71#0" expanded="true" />
+            <element signature="e#10283#13534#0" />
+            <element signature="e#10384#11498#0" />
+            <element signature="e#13610#14171#0" />
+            <element signature="e#14395#14992#0" />
+            <element signature="e#15063#15659#0" />
+            <element signature="e#15762#16613#0" />
+            <element signature="e#16718#17316#0" />
+            <element signature="e#17845#19682#0" />
+            <element signature="e#20214#21261#0" />
+            <element signature="e#21452#22494#0" />
+            <element signature="e#22683#23725#0" />
+            <element signature="e#23915#24962#0" />
+            <element signature="e#25154#26201#0" />
+            <element signature="e#26393#27440#0" />
+            <element signature="e#36864#40633#0" />
+            <element signature="e#40682#43160#0" />
+            <element signature="e#43208#45618#0" />
+            <element signature="e#45667#47332#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="334" column="41" lean-forward="true" selection-start-line="334" selection-start-column="41" selection-end-line="334" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1225">
+          <caret line="526" column="1" selection-start-line="526" selection-start-column="1" selection-end-line="553" selection-end-column="116" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

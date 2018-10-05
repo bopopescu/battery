@@ -360,19 +360,20 @@ class cellTestRealDataTable(models.Model):
     tH2O = models.DateTimeField(auto_now=True, verbose_name="H2O数据修改时间", blank=True, null=True)
 
     # 温控器信息
-    sTc0 = models.IntegerField(default=0, verbose_name="通讯状态", blank=True, null=True)
+
+    sTc0 = models.IntegerField(default=0, verbose_name="Tc0通讯状态", blank=True, null=True)
     Tc0 = models.DecimalField(max_digits=5, decimal_places=1, default=0, verbose_name="温度控制点0", blank=True, null=True)
     tTc0 = models.DateTimeField(auto_now=True, verbose_name="T0数据修改时间", blank=True, null=True)
 
-    sTc1 = models.IntegerField(default=0, verbose_name="通讯状态", blank=True, null=True)
+    sTc1 = models.IntegerField(default=0, verbose_name="Tc1通讯状态", blank=True, null=True)
     Tc1 = models.DecimalField(max_digits=5, decimal_places=1, default=0, verbose_name="温度控制点1", blank=True, null=True)
     tTc1 = models.DateTimeField(auto_now=True, verbose_name="T1数据修改时间", blank=True, null=True)
 
-    sTc2 = models.IntegerField(default=0, verbose_name="通讯状态", blank=True, null=True)
+    sTc2 = models.IntegerField(default=0, verbose_name="Tc2通讯状态", blank=True, null=True)
     Tc2 = models.DecimalField(max_digits=5, decimal_places=1, default=0, verbose_name="温度控制点2", blank=True, null=True)
     tTc2 = models.DateTimeField(auto_now=True, verbose_name="T2数据修改时间", blank=True, null=True)
 
-    sTc3 = models.IntegerField(default=0, verbose_name="通讯状态", blank=True, null=True)
+    sTc3 = models.IntegerField(default=0, verbose_name="Tc3通讯状态", blank=True, null=True)
     Tc3 = models.DecimalField(max_digits=5, decimal_places=1, default=0, verbose_name="温度控制点3", blank=True, null=True)
     tTc3 = models.DateTimeField(auto_now=True, verbose_name="T3数据修改时间", blank=True, null=True)
 

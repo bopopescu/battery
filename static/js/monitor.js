@@ -46,11 +46,12 @@ var Vm = {
     V19: [],
 };
 var Tc = {
-    T0: [],
-    T1: [],
-    T2: [],
-    T3: [],
+    Tc0: [],
+    Tc1: [],
+    Tc2: [],
+    Tc3: [],
 };
+
 var Tm = {
     T0: [],
     T1: [],
@@ -103,6 +104,7 @@ function stop_refresh() {
 }
 
 $(document).ready(function () {
+
         get_boxes();
         get_oven_status();
         get_cells_info();
@@ -378,10 +380,10 @@ function show_chart() {
                 Tm.T18 = data.Tm18;
                 Tm.T19 = data.Tm19;
 
-                Tc.T0 = data.Tc0;
-                Tc.T1 = data.Tc1;
-                Tc.T2 = data.Tc2;
-                Tc.T3 = data.Tc3;
+                Tc.Tc0 = data.Tc0;
+                Tc.Tc1 = data.Tc1;
+                Tc.Tc2 = data.Tc2;
+                Tc.Tc3 = data.Tc3;
 
                 Vm.V0 = data.Vm0;
                 Vm.V1 = data.Vm1;
@@ -580,25 +582,25 @@ function show_chart() {
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: Tc.T0,
+                        data: Tc.Tc0,
                     }, {
                         name: '控温点1',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: Tc.T1,
+                        data: Tc.Tc1,
                     }, {
                         name: '控温点2',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: Tc.T2,
+                        data: Tc.Tc2,
                     }, {
                         name: '控温点3',
                         type: 'line',
                         showSymbol: false,
                         hoverAnimation: false,
-                        data: Tc.T3,
+                        data: Tc.Tc3,
                     }]
                 };
                 var option_Tm = {
@@ -755,17 +757,20 @@ function show_chart() {
                         name: '测压点19', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V19,
                     },]
                 };
+                console.log("debug1")
                 myChart.setOption(option_U_I);
                 myChart1.setOption(option_Q);
                 myChart2.setOption(option_Tc);
                 myChart3.setOption(option_Tm);
                 myChart4.setOption(option_Vm);
+                console.log("debug2")
 
             }
         });
 }
 
 function get_realtime_data() {
+
     var box_num = $('#box_num_selected option:selected').val();//选中的值
     var channel_num = $('#channel_num_selected option:selected').val();//选中的值
     if (box_num != undefined && channel_num != undefined)
@@ -784,10 +789,10 @@ function get_realtime_data() {
                 if (data.Q_N2 != Q.Q_N2[Q.Q_N2.length - 1]) Q.Q_N2.push(data.Q_N2);
                 if (data.Q_H2 != Q.Q_H2[Q.Q_H2.length - 1]) Q.Q_H2.push(data.Q_H2);
                 if (data.Q_H2O != Q.Q_H2O[Q.Q_H2O.length - 1]) Q.Q_H2O.push(data.Q_H2O);
-                if (data.Tc0 != Tc.T0[Tc.T0.length - 1]) Tc.T0.push(data.Tc0);
-                if (data.Tc1 != Tc.T1[Tc.T1.length - 1]) Tc.T1.push(data.Tc1);
-                if (data.Tc2 != Tc.T2[Tc.T2.length - 1]) Tc.T2.push(data.Tc2);
-                if (data.Tc3 != Tc.T3[Tc.T3.length - 1]) Tc.T3.push(data.Tc3);
+                if (data.Tc0 != Tc.Tc0[Tc.Tc0.length - 1]) Tc.Tc0.push(data.Tc0);
+                if (data.Tc1 != Tc.Tc1[Tc.Tc1.length - 1]) Tc.Tc1.push(data.Tc1);
+                if (data.Tc2 != Tc.Tc2[Tc.Tc2.length - 1]) Tc.Tc2.push(data.Tc2);
+                if (data.Tc3 != Tc.Tc3[Tc.Tc3.length - 1]) Tc.Tc3.push(data.Tc3);
                 if (data.Tm0 != Tm.T0[Tm.T0.length - 1]) Tm.T0.push(data.Tm0);
                 if (data.Tm1 != Tm.T1[Tm.T1.length - 1]) Tm.T1.push(data.Tm1);
                 if (data.Tm2 != Tm.T2[Tm.T2.length - 1]) Tm.T2.push(data.Tm2);
@@ -837,28 +842,34 @@ function get_realtime_data() {
                 });
                 myChart1.setOption({
                     series: [{
-                        data: Q.Q_N2
+                        data: Q.Q_N2,
+                        type:'line'
                     }, {
-                        data: Q.Q_N2
+                        data: Q.Q_N2,
+                        type:'line'
                     }, {
-                        data: Q.Q_Air
+                        data: Q.Q_Air,
+                        type:'line',
                     }, {
-                        data: Q.Q_CH4
+                        data: Q.Q_CH4,
+                        type:'line'
                     }, {
-                        data: Q.Q_CO2
+                        data: Q.Q_CO2,
+                        type:'line'
                     }, {
-                        data: Q.Q_H2O
+                        data: Q.Q_H2O,
+                        type:'line'
                     }]
                 });
                 myChart2.setOption({
                     series: [{
-                        data: Tc.T0,
+                        data: Tc.Tc0,
                     }, {
-                        data: Tc.T1,
+                        data: Tc.Tc1,
                     }, {
-                        data: Tc.T2,
+                        data: Tc.Tc2,
                     }, {
-                        data: Tc.T3,
+                        data: Tc.Tc3,
                     }]
                 });
                 myChart3.setOption({

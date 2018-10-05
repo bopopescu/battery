@@ -85,18 +85,18 @@ def get_cells_info_interface():
                 "cellID": c.cellID,
                 "boxID": c.boxID.ID if c.boxID else None,
                 "chnNum": c.chnNum,
-                "oven0ID": c.mT0ID.ID if c.mTc0ID else None,
-                "oven1ID": c.mT0ID.ID if c.mTc1ID else None,
-                "oven2ID": c.mT0ID.ID if c.mTc2ID else None,
-                "oven3ID": c.mT0ID.ID if c.mTc3ID else None,
+                "oven0ID": c.mTc0ID.ID if c.mTc0ID else None,
+                "oven1ID": c.mTc1ID.ID if c.mTc1ID else None,
+                "oven2ID": c.mTc2ID.ID if c.mTc2ID else None,
+                "oven3ID": c.mTc3ID.ID if c.mTc3ID else None,
                 "H2ID": c.mH2ID.ID if c.mH2ID else None,
                 "H2OID": c.mH2OID.ID if c.mH2OID else None,
                 "N2ID": c.mN2ID.ID if c.mN2ID else None,
                 "CO2ID": c.mCO2ID.ID if c.mCO2ID else None,
                 "CH4ID": c.mCH4ID.ID if c.mCH4ID else None,
                 "AIRID": c.mAIRID.ID if c.mAIRID else None,
-                "wdjID": c.mT1ID.ID if c.mTmID else None,
-                "voltID": c.mT1ID.ID if c.mVmID else None,
+                "wdjID": c.mTmID.ID if c.mTmID else None,
+                "voltID": c.mVmID.ID if c.mVmID else None,
             }
             data.append(cell)
         return {"cells": data}
@@ -453,13 +453,13 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
     data = {
         'I': [], 'U': [],
         'Q_N2': [], 'Q_H2': [], 'Q_CO2': [], 'Q_CH4': [], 'Q_Air': [], 'Q_H2O': [],
-        'Tc0': {}, 'Tc1': {}, 'Tc2': {}, 'Tc3': {},
-        'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {}, 'Tm6': {}, 'Tm7': {}, 'Tm8': {}, 'Tm9': {},
-        'Tm10': {}, 'Tm11': {}, 'Tm12': {}, 'Tm13': {}, 'Tm14': {}, 'Tm15': {}, 'Tm16': {}, 'Tm17': {}, 'Tm18': {},
-        'Tm19': {},
-        'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {}, 'Vm9': {},
-        'Vm10': {}, 'Vm11': {}, 'Vm12': {}, 'Vm13': {}, 'Vm14': {}, 'Vm15': {}, 'Vm16': {}, 'Vm17': {}, 'Vm18': {},
-        'Vm19': {},
+        'Tc0': [], 'Tc1': [], 'Tc2': [], 'Tc3': [],
+        'Tm0': [], 'Tm1': [], 'Tm2': [], 'Tm3': [], 'Tm4': [], 'Tm5': [], 'Tm6': [], 'Tm7': [], 'Tm8': [], 'Tm9': [],
+        'Tm10': [], 'Tm11': [], 'Tm12': [], 'Tm13': [], 'Tm14': [], 'Tm15': [], 'Tm16': [], 'Tm17': [], 'Tm18': [],
+        'Tm19': [],
+        'Vm0': [], 'Vm1': [], 'Vm2': [], 'Vm3': [], 'Vm4': [], 'Vm5': [], 'Vm6': [], 'Vm7': [], 'Vm8': [], 'Vm9': [],
+        'Vm10': [], 'Vm11': [], 'Vm12': [], 'Vm13': [], 'Vm14': [], 'Vm15': [], 'Vm16': [], 'Vm17': [], 'Vm18': [],
+        'Vm19': [],
     }
     if len(hs_data) == 0:
         logger = logging.getLogger("django")
@@ -476,7 +476,7 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
         data['Q_H2'].append({"name": timeformat(i.tH2), "value": [timeformat(i.tN2), i.qH2]})
         data['Q_H2O'].append({"name": timeformat(i.tH2O), "value": [timeformat(i.tH2O), i.qH2O]})
         data['Q_CO2'].append({"name": timeformat(i.tCO2), "value": [timeformat(i.tCO2), i.qCO2]})
-        data['Q_AIR'].append({"name": timeformat(i.tAIR), "value": [timeformat(i.tAIR), i.qAIR]})
+        data['Q_Air'].append({"name": timeformat(i.tAIR), "value": [timeformat(i.tAIR), i.qAIR]})
         data['Q_CH4'].append({"name": timeformat(i.tCH4), "value": [timeformat(i.tCH4), i.qCH4]})
         data['Tc0'].append({"name": timeformat(i.tTc0), "value": [timeformat(i.tTc0), i.Tc0]})
         data['Tc1'].append({"name": timeformat(i.tTc1), "value": [timeformat(i.tTc1), i.Tc1]})
@@ -910,13 +910,13 @@ def stop_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         return "停止电炉失败：该电炉内部还有电池正在测试！"
     # todo
     count=0
-    if bt[0].oven0ID.nextState == "start":
+    if bt[0].oven0ID is not None and bt[0].oven0ID.nextState == "start":
         count=count+1
-    if bt[0].oven1ID.nextState == "start":
+    if bt[0].oven1ID is not None and bt[0].oven1ID.nextState == "start":
         count=count+1
-    if bt[0].oven2ID.nextState == "start":
+    if bt[0].oven2ID is not None and bt[0].oven2ID.nextState == "start":
         count=count+1
-    if bt[0].oven3ID.nextState == "start":
+    if bt[0].oven3ID is not None and bt[0].oven3ID.nextState == "start":
         count=count+1
     if count > 1:
         ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
