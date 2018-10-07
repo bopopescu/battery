@@ -50,25 +50,13 @@
 {% block main %}
     <section class="content">
         <div class="row" style="margin-left:0px">
-            <div class="col-lg-12">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label for="box_num_selected">箱号</label>
-                        <select class="form-control" id="box_num_selected" onchange="show_channel()"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="channel_num_selected">通道号</label>
-                        <select class="form-control" id="channel_num_selected"></select>
-                    </div>
-                    <button type="button" class="btn btn-default" onclick="show_gas_table()">选择通道</button>
-                </form>
-            </div>
 
             <div class="col-lg-6">
                 <div class="table-responsive">
                     <table id="gas_control-table" class="table">
                         <thead class="thead-dark" id="gas_table_head">
                         <tr id="gas-table-head-content">
+                            <th scope="col" id="GasType">流量计编号</th>
                             <th scope="col" id="GasType">气体种类</th>
                             <th scope="col" id="GasCurr">目前设定值</th>
                             <th scope="col" id="GasNext">改变设定值</th>
@@ -96,9 +84,7 @@
     <script src="/static/js/control.js"></script>
     <script>
         $(document).ready(function () {
-            get_boxes();
             show_gas_table();
-
         });
     </script>
 {% endblock js %}

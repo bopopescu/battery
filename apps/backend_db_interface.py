@@ -3,7 +3,6 @@ import datetime
 from datetime import timezone
 from datetime import timedelta
 import datetime
-import time
 import logging
 
 # 设置时区
@@ -344,104 +343,114 @@ def get_real_time_test_data_interface(box_id, cha_id):
         logger = logging.getLogger("django")
         logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在实时数据")
         return data
-
+    timeformat = lambda x: None if x is None else int(
+        x.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000)
+    dataformat = lambda x: None if x is None else float(x)
     data = {
-        'I': {"name": int(rt_data.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-              "value": [int(rt_data.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                        float(rt_data.i) / 1000]},
-        'U': {"name": int(rt_data.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-              "value": [int(rt_data.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                        float(rt_data.u) / 1000]},
-        'Q_N2': {"name": int(rt_data.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                 "value": [int(rt_data.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           rt_data.qN2]},
-        'Q_H2': {"name": int(rt_data.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                 "value": [int(rt_data.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           rt_data.qH2]},
-        'Q_CO2': {"name": int(rt_data.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                  "value": [int(rt_data.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                            rt_data.qCO2]},
-        'Q_CH4': {"name": int(rt_data.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                  "value": [int(rt_data.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                            rt_data.qCH4]},
-        'Q_Air': {"name": int(rt_data.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                  "value": [int(rt_data.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                            rt_data.qAIR]},
-        'Q_H2O': {"name": int(rt_data.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                  "value": [int(rt_data.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                            rt_data.qH2O]},
-        'Tc0': {"name": int(rt_data.tTc0.timestamp() * 1000),
-                "value": [int(rt_data.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tc0)]},
-        'Tc1': {"name": int(rt_data.tTc1.timestamp() * 1000),
-                "value": [int(rt_data.tTc1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tc1)]},
-        'Tc2': {"name": int(rt_data.tTc2.timestamp() * 1000),
-                "value": [int(rt_data.tTc2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tc2)]},
-        'Tc3': {"name": int(rt_data.tTc3.timestamp() * 1000),
-                "value": [int(rt_data.tTc3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tc3)]},
-        'Tm0': {"name": int(rt_data.tTm0.timestamp() * 1000),
-                "value": [int(rt_data.tTm0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm0)]},
-        'Tm1': {"name": int(rt_data.tTm1.timestamp() * 1000),
-                "value": [int(rt_data.tTm1.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm1)]},
-        'Tm2': {"name": int(rt_data.tTm2.timestamp() * 1000),
-                "value": [int(rt_data.tTm2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm2)]},
-        'Tm3': {"name": int(rt_data.tTm3.timestamp() * 1000),
-                "value": [int(rt_data.tTm3.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm3)]},
-        'Tm4': {"name": int(rt_data.tTm4.timestamp() * 1000),
-                "value": [int(rt_data.tTm4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm4)]},
-        'Tm5': {"name": int(rt_data.tTm5.timestamp() * 1000),
-                "value": [int(rt_data.tTm5.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm5)]},
-        'Tm6': {"name": int(rt_data.tTm6.timestamp() * 1000),
-                "value": [int(rt_data.tTm6.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm6)]},
-        'Tm7': {"name": int(rt_data.tTm7.timestamp() * 1000),
-                "value": [int(rt_data.tTm7.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm7)]},
-        'Tm8': {"name": int(rt_data.tTm8.timestamp() * 1000),
-                "value": [int(rt_data.tTm8.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm8)]},
-        'Tm9': {"name": int(rt_data.tTm9.timestamp() * 1000),
-                "value": [int(rt_data.tTm9.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                          float(rt_data.Tm9)]},
-        'Tm10': {"name": int(rt_data.tTm10.timestamp() * 1000),
-                 "value": [int(rt_data.tTm10.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm10)]},
-        'Tm11': {"name": int(rt_data.tTm11.timestamp() * 1000),
-                 "value": [int(rt_data.tTm11.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm11)]},
-        'Tm12': {"name": int(rt_data.tTm12.timestamp() * 1000),
-                 "value": [int(rt_data.tTm12.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm12)]},
-        'Tm13': {"name": int(rt_data.tTm13.timestamp() * 1000),
-                 "value": [int(rt_data.tTm13.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm13)]},
-        'Tm14': {"name": int(rt_data.tTm14.timestamp() * 1000),
-                 "value": [int(rt_data.tTm14.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm14)]},
-        'Tm15': {"name": int(rt_data.tTm15.timestamp() * 1000),
-                 "value": [int(rt_data.tTm15.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm15)]},
-        'Tm16': {"name": int(rt_data.tTm16.timestamp() * 1000),
-                 "value": [int(rt_data.tTm16.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm16)]},
-        'Tm17': {"name": int(rt_data.tTm17.timestamp() * 1000),
-                 "value": [int(rt_data.tTm17.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm17)]},
-        'Tm18': {"name": int(rt_data.tTm18.timestamp() * 1000),
-                 "value": [int(rt_data.tTm18.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm18)]},
-        'Tm19': {"name": int(rt_data.tTm19.timestamp() * 1000),
-                 "value": [int(rt_data.tTm19.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-                           float(rt_data.Tm19)]},
+        'I': {"name": timeformat(rt_data.celldata_time),
+              "value": [timeformat(rt_data.celldata_time), None if rt_data.i is None else float(rt_data.i) / 1000]},
+        'U': {"name": timeformat(rt_data.celldata_time),
+              "value": [timeformat(rt_data.celldata_time), None if rt_data.u is None else float(rt_data.u) / 1000]},
+        'Q_N2': {"name": timeformat(rt_data.tN2),
+                 "value": [timeformat(rt_data.tN2), dataformat(rt_data.qN2)]},
+        'Q_H2': {"name": timeformat(rt_data.tH2),
+                 "value": [timeformat(rt_data.tH2), dataformat(rt_data.qH2)]},
+        'Q_CO2': {"name": timeformat(rt_data.tCO2),
+                  "value": [timeformat(rt_data.tCO2), dataformat(rt_data.qCO2)]},
+        'Q_CH4': {"name": timeformat(rt_data.tCH4),
+                  "value": [timeformat(rt_data.tCH4), dataformat(rt_data.qCH4)]},
+        'Q_Air': {"name": timeformat(rt_data.tAIR),
+                  "value": [timeformat(rt_data.tAIR), dataformat(rt_data.qAIR)]},
+        'Q_H2O': {"name": timeformat(rt_data.tH2O),
+                  "value": [timeformat(rt_data.tH2O), dataformat(rt_data.qH2O)]},
+        'Tc0': {"name": timeformat(rt_data.tTc0),
+                "value": [timeformat(rt_data.tTc0), dataformat(rt_data.Tc0)]},
+        'Tc1': {"name": timeformat(rt_data.tTc1),
+                "value": [timeformat(rt_data.tTc1), dataformat(rt_data.Tc1)]},
+        'Tc2': {"name": timeformat(rt_data.tTc2),
+                "value": [timeformat(rt_data.tTc2), dataformat(rt_data.Tc2)]},
+        'Tc3': {"name": timeformat(rt_data.tTc3),
+                "value": [timeformat(rt_data.tTc3), dataformat(rt_data.Tc3)]},
+        'Tm0': {"name": timeformat(rt_data.tTm0),
+                "value": [timeformat(rt_data.tTm0), dataformat(rt_data.Tm0)]},
+        'Tm1': {"name": timeformat(rt_data.tTm1),
+                "value": [timeformat(rt_data.tTm1), dataformat(rt_data.Tm1)]},
+        'Tm2': {"name": timeformat(rt_data.tTm2),
+                "value": [timeformat(rt_data.tTm2), dataformat(rt_data.Tm2)]},
+        'Tm3': {"name": timeformat(rt_data.tTm3),
+                "value": [timeformat(rt_data.tTm3), dataformat(rt_data.Tm3)]},
+        'Tm4': {"name": timeformat(rt_data.tTm4),
+                "value": [timeformat(rt_data.tTm4), dataformat(rt_data.Tm4)]},
+        'Tm5': {"name": timeformat(rt_data.tTm5),
+                "value": [timeformat(rt_data.tTm5), dataformat(rt_data.Tm5)]},
+        'Tm6': {"name": timeformat(rt_data.tTm6),
+                "value": [timeformat(rt_data.tTm6), dataformat(rt_data.Tm6)]},
+        'Tm7': {"name": timeformat(rt_data.tTm7),
+                "value": [timeformat(rt_data.tTm7), dataformat(rt_data.Tm7)]},
+        'Tm8': {"name": timeformat(rt_data.tTm8),
+                "value": [timeformat(rt_data.tTm8), dataformat(rt_data.Tm8)]},
+        'Tm9': {"name": timeformat(rt_data.tTm9),
+                "value": [timeformat(rt_data.tTm9), dataformat(rt_data.Tm9)]},
+        'Tm10': {"name": timeformat(rt_data.tTm10),
+                 "value": [timeformat(rt_data.tTm10), dataformat(rt_data.Tm10)]},
+        'Tm11': {"name": timeformat(rt_data.tTm11),
+                 "value": [timeformat(rt_data.tTm11), dataformat(rt_data.Tm11)]},
+        'Tm12': {"name": timeformat(rt_data.tTm12),
+                 "value": [timeformat(rt_data.tTm12), dataformat(rt_data.Tm12)]},
+        'Tm13': {"name": timeformat(rt_data.tTm13),
+                 "value": [timeformat(rt_data.tTm13), dataformat(rt_data.Tm13)]},
+        'Tm14': {"name": timeformat(rt_data.tTm14),
+                 "value": [timeformat(rt_data.tTm14), dataformat(rt_data.Tm14)]},
+        'Tm15': {"name": timeformat(rt_data.tTm15),
+                 "value": [timeformat(rt_data.tTm15), dataformat(rt_data.Tm15)]},
+        'Tm16': {"name": timeformat(rt_data.tTm16),
+                 "value": [timeformat(rt_data.tTm16), dataformat(rt_data.Tm16)]},
+        'Tm17': {"name": timeformat(rt_data.tTm17),
+                 "value": [timeformat(rt_data.tTm17), dataformat(rt_data.Tm17)]},
+        'Tm18': {"name": timeformat(rt_data.tTm18),
+                 "value": [timeformat(rt_data.tTm18), dataformat(rt_data.Tm18)]},
+        'Tm19': {"name": timeformat(rt_data.tTm19),
+                 "value": [timeformat(rt_data.tTm19), dataformat(rt_data.Tm19)]},
+        'Vm0': {"name": timeformat(rt_data.tVm0),
+                "value": [timeformat(rt_data.tVm0), dataformat(rt_data.Vm0)]},
+        'Vm1': {"name": timeformat(rt_data.tVm1),
+                "value": [timeformat(rt_data.tVm1), dataformat(rt_data.Vm1)]},
+        'Vm2': {"name": timeformat(rt_data.tVm2),
+                "value": [timeformat(rt_data.tVm2), dataformat(rt_data.Vm2)]},
+        'Vm3': {"name": timeformat(rt_data.tVm3),
+                "value": [timeformat(rt_data.tVm3), dataformat(rt_data.Vm3)]},
+        'Vm4': {"name": timeformat(rt_data.tVm4),
+                "value": [timeformat(rt_data.tVm4), dataformat(rt_data.Vm4)]},
+        'Vm5': {"name": timeformat(rt_data.tVm5),
+                "value": [timeformat(rt_data.tVm5), dataformat(rt_data.Vm5)]},
+        'Vm6': {"name": timeformat(rt_data.tVm6),
+                "value": [timeformat(rt_data.tVm6), dataformat(rt_data.Vm6)]},
+        'Vm7': {"name": timeformat(rt_data.tVm7),
+                "value": [timeformat(rt_data.tVm7), dataformat(rt_data.Vm7)]},
+        'Vm8': {"name": timeformat(rt_data.tVm8),
+                "value": [timeformat(rt_data.tVm8), dataformat(rt_data.Vm8)]},
+        'Vm9': {"name": timeformat(rt_data.tVm9),
+                "value": [timeformat(rt_data.tVm9), dataformat(rt_data.Vm9)]},
+        'Vm10': {"name": timeformat(rt_data.tVm10),
+                 "value": [timeformat(rt_data.tVm10), dataformat(rt_data.Vm10)]},
+        'Vm11': {"name": timeformat(rt_data.tVm11),
+                 "value": [timeformat(rt_data.tVm11), dataformat(rt_data.Vm11)]},
+        'Vm12': {"name": timeformat(rt_data.tVm12),
+                 "value": [timeformat(rt_data.tVm12), dataformat(rt_data.Vm12)]},
+        'Vm13': {"name": timeformat(rt_data.tVm13),
+                 "value": [timeformat(rt_data.tVm13), dataformat(rt_data.Vm13)]},
+        'Vm14': {"name": timeformat(rt_data.tVm14),
+                 "value": [timeformat(rt_data.tVm14), dataformat(rt_data.Vm14)]},
+        'Vm15': {"name": timeformat(rt_data.tVm15),
+                 "value": [timeformat(rt_data.tVm15), dataformat(rt_data.Vm15)]},
+        'Vm16': {"name": timeformat(rt_data.tVm16),
+                 "value": [timeformat(rt_data.tVm16), dataformat(rt_data.Vm16)]},
+        'Vm17': {"name": timeformat(rt_data.tVm17),
+                 "value": [timeformat(rt_data.tVm17), dataformat(rt_data.Vm17)]},
+        'Vm18': {"name": timeformat(rt_data.tVm18),
+                 "value": [timeformat(rt_data.tVm18), dataformat(rt_data.Vm18)]},
+        'Vm19': {"name": timeformat(rt_data.tVm19),
+                 "value": [timeformat(rt_data.tVm19), dataformat(rt_data.Vm19)]},
     }
     return data
 
@@ -522,36 +531,6 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
         data['Vm17'].append({"name": timeformat(i.tVm17), "value": [timeformat(i.tVm17), i.Vm17]})
         data['Vm18'].append({"name": timeformat(i.tVm18), "value": [timeformat(i.tVm18), i.Vm18]})
         data['Vm19'].append({"name": timeformat(i.tVm19), "value": [timeformat(i.tVm19), i.Vm19]})
-
-        # data['I'].append({
-        #     "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #               float(i.i) / 1000]})
-        # data['U'].append({
-        #     "name": int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.celldata_time.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #               float(i.u) / 1000]})
-        # data['Q_N2'].append({
-        #     "name": int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tN2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qN2]})
-        # data['Q_H2'].append({
-        #     "name": int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tH2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2]})
-        # data['Q_CO2'].append({
-        #     "name": int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tCO2.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCO2]})
-        # data['Q_CH4'].append({
-        #     "name": int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tCH4.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qCH4]})
-        # data['Q_Air'].append({
-        #     "name": int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tAIR.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qAIR]})
-        # data['Q_H2O'].append({
-        #     "name": int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tH2O.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), i.qH2O]})
-        # data['Tc0'].append({
-        #     "name": int(i.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000),
-        #     "value": [int(i.tTc0.replace(tzinfo=timezone(timedelta(hours=TZ))).timestamp() * 1000), float(i.T0)]})
     return data
 
 
@@ -731,18 +710,6 @@ def stop_channel_interface(box_id, cha_id):
         crt.update(nextState="stop", testID=None)
     return "停止成功"
 
-    # testid = testInfoTable.objects.filter(boxID=box_id, chnNum=cha_id)
-    # if len(testid) == 0:
-    #     print("stopchannel:testid not found")
-    #     return False
-    # elif len(testid) > 1:
-    #     print("stopchannel:当前通道有多条测试记录，选取最后一条")
-    # testid = testid.order_by("id").reverse()[0]
-    # rows = cellTestRealDataTable.objects.filter(testID=testid).update(nextState="stop")
-    # testid.completeFlag = 1
-    # testid.endDate = datetime.datetime.now()
-    # return rows
-
 
 def pause_channel_interface(box_id, cha_id):
     testid = testInfoTable.objects.filter(boxID=box_id, chnNum=cha_id, completeFlag=0)
@@ -909,15 +876,15 @@ def stop_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
         logger.error("停止电炉失败：该父测试下还有未完成的子测试，结束失败")
         return "停止电炉失败：该电炉内部还有电池正在测试！"
     # todo
-    count=0
+    count = 0
     if bt[0].oven0ID is not None and bt[0].oven0ID.nextState == "start":
-        count=count+1
+        count = count + 1
     if bt[0].oven1ID is not None and bt[0].oven1ID.nextState == "start":
-        count=count+1
+        count = count + 1
     if bt[0].oven2ID is not None and bt[0].oven2ID.nextState == "start":
-        count=count+1
+        count = count + 1
     if bt[0].oven3ID is not None and bt[0].oven3ID.nextState == "start":
-        count=count+1
+        count = count + 1
     if count > 1:
         ovenDeviceTable.objects.filter(ID=oven_id).update(nextState="stop")
         logger = logging.getLogger("django")
@@ -935,8 +902,6 @@ def stop_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
             logger = logging.getLogger("django")
             logger.info("停止电炉:成功")
             return "停止电炉成功！"
-
-
 
 
 def pause_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
@@ -990,63 +955,70 @@ def resume_oven_interface(box_id, cha_id, oven_id, oven_scheme_id):
 
 
 def get_gas_info_interface(box_id, chn_id):
-    testid = BigTestInfoTable.objects.filter(boxID=box_id, chnNum=chn_id, completeFlag=0)
-    data = {'H2': -1, 'N2': -1, 'H2O': -1, 'Air': -1, 'CH4': -1, 'CO2': -1}
-    if len(testid) == 0:
-        logger = logging.getLogger("django")
-        logger.error("getgasinfo:没有气体数据")
-        return data
-    elif len(testid) > 1:
-        logger = logging.getLogger("django")
-        logger.warning("getgasinfo:当前通道有多条测试记录，选取最后一条")
-    testid = testid.order_by("id").reverse()[0]
-    try:
-        cellid = testid.cellID
-    except:
-        logger = logging.getLogger("django")
-        logger.error("getgasinfo:没有找到该通道下的电池")
-        return data
-    data['H2'] = cellid.mH2ID.currState if cellid.mH2ID is not None else -1
-    data['N2'] = cellid.mN2ID.currState if cellid.mN2ID is not None else -1
-    data['H2O'] = cellid.mH2OID.currState if cellid.mH2OID is not None else -1
-    data['CO2'] = cellid.mCO2ID.currState if cellid.mCO2ID is not None else -1
-    data['CH4'] = cellid.mCH4ID.currState if cellid.mCH4ID is not None else -1
-    data['Air'] = cellid.mAIRID.currState if cellid.mAIRID is not None else -1
+    h2mfc = H2DeviceTable.objects.all()
+    n2mfc = N2DeviceTable.objects.all()
+    co2mfc = CO2DeviceTable.objects.all()
+    ch4mfc = CH4DeviceTable.objects.all()
+    airmfc = AIRDeviceTable.objects.all()
+    h2omfc = H2ODeviceTable.objects.all()
+
+    data = {'mfc': []}
+    for mfc in h2mfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'H2', 'currState': mfc.currState})
+    for mfc in n2mfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'N2', 'currState': mfc.currState})
+    for mfc in h2omfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'H2O', 'currState': mfc.currState})
+    for mfc in co2mfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'CO2', 'currState': mfc.currState})
+    for mfc in ch4mfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'CH4', 'currState': mfc.currState})
+    for mfc in airmfc:
+        data['mfc'].append({'ID': mfc.ID, 'type': 'AIR', 'currState': mfc.currState})
+
     return data
 
 
 def set_gas_interface(box_id, chn_id, data):
-    testid = BigTestInfoTable.objects.filter(boxID=box_id, chnNum=chn_id, completeFlag=0)
-    if len(testid) == 0:
-        logger = logging.getLogger("django")
-        logger.error("setgas:没有气体数据")
-        return False
-    elif len(testid) > 1:
-        logger = logging.getLogger("django")
-        logger.warning("setgas:当前通道有多条测试记录，选取最后一条")
-    testid = testid.order_by("id").reverse()[0]
-    try:
-        cellid = testid.cellID
-    except:
-        logger = logging.getLogger("django")
-        logger.error("setgas:没有找到该通道下的电池")
-        return False
-    if data['H2'] is not None and cellid.mH2ID is not None:
-        cellid.mH2ID.nextState = data['H2']
-        cellid.mH2ID.save()
-    if data['N2'] is not None and cellid.mN2ID is not None:
-        cellid.mN2ID.nextState = data['N2']
-        cellid.mN2ID.save()
-    if data['CH4'] is not None and cellid.mCH4ID is not None:
-        cellid.mCH4ID.nextState = data['CH4']
-        cellid.mCH4ID.save()
-    if data['Air'] is not None and cellid.mAIRID is not None:
-        cellid.mAIRID.nextState = data['Air']
-        cellid.mAIRID.save()
-    if data['CO2'] is not None and cellid.mCO2ID is not None:
-        cellid.mCO2ID.nextState = data['CO2']
-        cellid.mCO2ID.save()
-    if data['H2O'] is not None and cellid.mH2OID is not None:
-        cellid.mH2OID.nextState = data['H2O']
-        cellid.mH2OID.save()
+    for i in data.keys():
+        if data[i]['value'] is not None:
+            if data[i]['type'] == 'H2':
+                mfc = H2DeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            elif data[i]['type'] == 'N2':
+                mfc = N2DeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            elif data[i]['type'] == 'H2O':
+                mfc = H2ODeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            elif data[i]['type'] == 'CO2':
+                mfc = CO2DeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            elif data[i]['type'] == 'CH4':
+                mfc = CH4DeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            elif data[i]['type'] == 'AIR':
+                mfc = AIRDeviceTable.objects.filter(ID=i)
+                if len(mfc) == 1:
+                    mfc.update(nextState=data[i]['value'])
+                else:
+                    return False
+            else:
+                return False
     return True
+

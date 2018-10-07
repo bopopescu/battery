@@ -16,63 +16,19 @@ var intID3;
 var I = [];
 var U = [];
 var Q = {
-    Q_H2: [],
-    Q_CH4: [],
-    Q_N2: [],
-    Q_CO2: [],
-    Q_Air: [],
-    Q_H2O: []
+    Q_H2: [], Q_CH4: [], Q_N2: [], Q_CO2: [], Q_Air: [], Q_H2O: []
 };
 var Vm = {
-    V0: [],
-    V1: [],
-    V2: [],
-    V3: [],
-    V4: [],
-    V5: [],
-    V6: [],
-    V7: [],
-    V8: [],
-    V9: [],
-    V10: [],
-    V11: [],
-    V12: [],
-    V13: [],
-    V14: [],
-    V15: [],
-    V16: [],
-    V17: [],
-    V18: [],
-    V19: [],
+    V0: [], V1: [], V2: [], V3: [], V4: [], V5: [], V6: [], V7: [], V8: [], V9: [],
+    V10: [], V11: [], V12: [], V13: [], V14: [], V15: [], V16: [], V17: [], V18: [], V19: [],
 };
 var Tc = {
-    Tc0: [],
-    Tc1: [],
-    Tc2: [],
-    Tc3: [],
+    Tc0: [], Tc1: [], Tc2: [], Tc3: [],
 };
 
 var Tm = {
-    T0: [],
-    T1: [],
-    T2: [],
-    T3: [],
-    T4: [],
-    T5: [],
-    T6: [],
-    T7: [],
-    T8: [],
-    T9: [],
-    T10: [],
-    T11: [],
-    T12: [],
-    T13: [],
-    T14: [],
-    T15: [],
-    T16: [],
-    T17: [],
-    T18: [],
-    T19: [],
+    T0: [], T1: [], T2: [], T3: [], T4: [], T5: [], T6: [], T7: [], T8: [], T9: [],
+    T10: [], T11: [], T12: [], T13: [], T14: [], T15: [], T16: [], T17: [], T18: [], T19: [],
 };
 
 var refresh = 3000;
@@ -352,36 +308,15 @@ function show_chart() {
                 I = data.I;
                 U = data.U;
 
-                Q.Q_CO2 = data.Q_CO2;
-                Q.Q_CH4 = data.Q_CH4;
-                Q.Q_Air = data.Q_Air;
-                Q.Q_N2 = data.Q_N2;
-                Q.Q_H2 = data.Q_H2;
-                Q.Q_H2O = data.Q_H2O;
+                Q.Q_CO2 = data.Q_CO2;Q.Q_CH4 = data.Q_CH4;Q.Q_Air = data.Q_Air;
+                Q.Q_N2 = data.Q_N2;Q.Q_H2 = data.Q_H2;Q.Q_H2O = data.Q_H2O;
 
-                Tm.T0 = data.Tm0;
-                Tm.T1 = data.Tm1;
-                Tm.T2 = data.Tm2;
-                Tm.T3 = data.Tm3;
-                Tm.T4 = data.Tm4;
-                Tm.T5 = data.Tm5;
-                Tm.T6 = data.Tm6;
-                Tm.T7 = data.Tm7;
-                Tm.T8 = data.Tm8;
-                Tm.T9 = data.Tm9;
-                Tm.T10 = data.Tm10;
-                Tm.T11 = data.Tm11;
-                Tm.T12 = data.Tm12;
-                Tm.T13 = data.Tm13;
-                Tm.T14 = data.Tm14;
-                Tm.T15 = data.Tm15;
-                Tm.T16 = data.Tm16;
-                Tm.T17 = data.Tm17;
-                Tm.T18 = data.Tm18;
-                Tm.T19 = data.Tm19;
+                Tm.T0 = data.Tm0;Tm.T1 = data.Tm1;Tm.T2 = data.Tm2;Tm.T3 = data.Tm3;Tm.T4 = data.Tm4;
+                Tm.T5 = data.Tm5;Tm.T6 = data.Tm6;Tm.T7 = data.Tm7;Tm.T8 = data.Tm8;Tm.T9 = data.Tm9;
+                Tm.T10 = data.Tm10;Tm.T11 = data.Tm11;Tm.T12 = data.Tm12;Tm.T13 = data.Tm13;Tm.T14 = data.Tm14;
+                Tm.T15 = data.Tm15;Tm.T16 = data.Tm16;Tm.T17 = data.Tm17;Tm.T18 = data.Tm18;Tm.T19 = data.Tm19;
 
-                Tc.Tc0 = data.Tc0;
-                Tc.Tc1 = data.Tc1;
+                Tc.Tc0 = data.Tc0;Tc.Tc1 = data.Tc1;
                 Tc.Tc2 = data.Tc2;
                 Tc.Tc3 = data.Tc3;
 
@@ -757,14 +692,11 @@ function show_chart() {
                         name: '测压点19', type: 'line', showSymbol: false, hoverAnimation: false, data: Vm.V19,
                     },]
                 };
-                console.log("debug1")
                 myChart.setOption(option_U_I);
                 myChart1.setOption(option_Q);
                 myChart2.setOption(option_Tc);
                 myChart3.setOption(option_Tm);
                 myChart4.setOption(option_Vm);
-                console.log("debug2")
-
             }
         });
 }
@@ -842,23 +774,17 @@ function get_realtime_data() {
                 });
                 myChart1.setOption({
                     series: [{
-                        data: Q.Q_N2,
-                        type:'line'
+                        data: Q.Q_N2, type:'line'
                     }, {
-                        data: Q.Q_N2,
-                        type:'line'
+                        data: Q.Q_N2, type:'line'
                     }, {
-                        data: Q.Q_Air,
-                        type:'line',
+                        data: Q.Q_Air, type:'line',
                     }, {
-                        data: Q.Q_CH4,
-                        type:'line'
+                        data: Q.Q_CH4, type:'line'
                     }, {
-                        data: Q.Q_CO2,
-                        type:'line'
+                        data: Q.Q_CO2, type:'line'
                     }, {
-                        data: Q.Q_H2O,
-                        type:'line'
+                        data: Q.Q_H2O, type:'line'
                     }]
                 });
                 myChart2.setOption({

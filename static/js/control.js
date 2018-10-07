@@ -725,48 +725,51 @@ function start_oven() {
 
 function show_gas_table() {
     $("#gas-table-body").empty();
-    var box_num = $('#box_num_selected option:selected').val();//选中的值
-    var channel_num = $('#channel_num_selected option:selected').val();//选中的值
-    var old_scheme_num;
-    if (box_num != undefined && channel_num != undefined)
-        $.ajax({
-            url: "/control/get_gas_info/" + box_num + '/' + channel_num + '/',
-            type: "get",
-            dataType: 'json',
-            async: false, //同步执行
-            success: function (data) {
-                var gastypes = Object.keys(data);
-                var tb = document.getElementById("gas-table-body");
-                create_old_table_body(tb, gastypes.length, 3);
-                for (var i = 0; i < gastypes.length; i++) {
-                    var td = get_table_cell(tb, i + 1, 1);
-                    td.innerText = gastypes[i];
-                    td = get_table_cell(tb, i + 1, 2);
-                    td.innerText = data[gastypes[i]];
-                    td = get_table_cell(tb, i + 1, 3);
-                    var text = document.createElement("input");
-                    text.setAttribute("type", "text");
-                    text.setAttribute("style", "width:50px");
-                    text.setAttribute("id", gastypes[i] + "_val");
-                    td.appendChild(text);
-                }
+    $.ajax({
+        url: "/control/get_gas_info/0/0/",
+        type: "get",
+        dataType: 'json',
+        async: false, //同步执行
+        success: function (data) {
+            var mfcnum;
+            mfcnum = data['mfc'].length;
+            var tb = document.getElementById("gas-table-body");
+            create_old_table_body(tb, mfcnum, 4);
+            for (var i = 0; i < mfcnum; i++) {
+                var td = get_table_cell(tb, i + 1, 1);
+                td.innerText = data['mfc'][i]['ID'];
+                td = get_table_cell(tb, i + 1, 2);
+                td.innerText = data['mfc'][i]['type'];
+                td = get_table_cell(tb, i + 1, 3);
+                td.innerText = data['mfc'][i]['currState'];
+                td = get_table_cell(tb, i + 1, 4);
+                var text = document.createElement("input");
+                text.setAttribute("type", "text");
+                text.setAttribute("style", "width:50px");
+                text.setAttribute("id", data['mfc'][i]['ID'] + "_val");
+                td.appendChild(text);
             }
-        });
+        }
+    });
 }
 
 function set_gas() {
-    var box_num = $('#box_num_selected option:selected').val();//选中的值
-    var channel_num = $('#channel_num_selected option:selected').val();//选中的值
-    var gas_data = {H2: 0, N2: 0, CO2: 0, H2O: 0, Air: 0, CH4: 0}
-    gas_data.H2 = Number.parseFloat($('#H2_val').val());
-    gas_data.N2 = Number.parseFloat($('#N2_val').val());
-    gas_data.H2O = Number.parseFloat($('#H2O_val').val());
-    gas_data.CH4 = Number.parseFloat($('#CH4_val').val());
-    gas_data.CO2 = Number.parseFloat($('#CO2_val').val());
-    gas_data.Air = Number.parseFloat($('#Air_val').val());
-    console.log(gas_data)
+    var gas_data = {};
+    var tb = document.getElementById("gas-table-body");
+    var rows = $('#gas-table-body tr').toArray();
+
+    for (var i = 0; i < rows.length; i++) {
+        if (rows[i].children[3].children[0].value != '') {
+            gas_data[rows[i].children[0].innerText] = {
+                'type': rows[i].children[1].innerText,
+                'value': Number.parseFloat(rows[i].children[3].children[0].value)
+            };
+        }
+    }
+    console.log(gas_data);
+
     $.ajax({
-        url: "/control/set_gas/" + box_num + '/' + channel_num + '/',
+        url: "/control/set_gas/0/0/",
         type: "post",
         data: JSON.stringify(gas_data),
         dataType: 'json',

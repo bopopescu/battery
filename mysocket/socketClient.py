@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-from dbClass import dbClass
-from HardwareProtocol import Oven_7, Oven_8, Wdj_7, Wdj_8, Volt_7, Volt_8, eLoad, MFC
+# from dbClass import dbClass
+# from HardwareProtocol import Oven_7, Oven_8, Wdj_7, Wdj_8, Volt_7, Volt_8, eLoad, MFC
+from interfaces.dbClass import dbClass
+from interfaces.HardwareProtocol import Oven_7, Oven_8, Wdj_7, Wdj_8, Volt_7, Volt_8, eLoad, MFC
 import socket
 import signal
 import time
@@ -12,7 +14,7 @@ import logging
 
 class myConfig(object):
     def setConfig(self, type=None, cellid=None, ip=None, port=None, addr=None, boxid=None, chnnum=None, cmd=None,
-                  plan=None, timeout=1, waittime=1, length=1000, senddata=None, recvdata=None, testid=None,
+                  plan=None, timeout=0.5, waittime=0.2, length=100, senddata=None, recvdata=None, testid=None,
                   planid=None, gastype=None, protocolversion=None, gasfullscale=None, dbID=None):
         self.type = type
         self.cellid = cellid
@@ -49,7 +51,7 @@ class socketConnect(object):
                 # todo 需要报警，检查数据库连接
 
     def checksum(self, data):
-        # 为从电子负载发出的数据包计算校验和
+        # 为从电子负载数据包计算校验和
         csum = 0
         length = data[2] + (data[3] << 8)
         for i in range(length - 2):
@@ -57,7 +59,6 @@ class socketConnect(object):
         return csum
 
     def buildCmdMessage(self, config):
-        # 若正常，则返回的是命令；若不正常，则直接返回None
         if config.type == 'box':
             load = eLoad(boxid=config.boxid, chnnum=config.chnnum, plan=config.plan)
             if config.cmd == 'start':
@@ -212,7 +213,6 @@ class socketConnect(object):
             logging.error("构建命令时出错：unknown config.type")
             return None
 
-    # 若不正常，则直接返回None
     def sendCmdMessage(self, config):
         if config.senddata is None:
             logging.error('待发送命令为None，失败！')
@@ -225,21 +225,21 @@ class socketConnect(object):
             s.settimeout(config.timeout)
             s.connect((config.ip, config.port))
             try:
-                logging.info('连接' + config.type + '成功！ip:' + config.ip + '  port:' + str(config.port))
+                logging.debug('连接' + config.type + '成功！ip:' + config.ip + '  port:' + str(config.port))
                 s.send(config.senddata)
                 try:
                     time.sleep(config.waittime)
                     recvdata = s.recv(config.length)
                     s.close()
                     return recvdata
-                except:  # 接收数据失败
+                except:
                     logging.error('发送命令后无响应，接收数据超时！')
                     s.close()
                     return None
-            except:  # 读取数据失败
+            except:
                 logging.error('发送命令失败，请检查网络连接！')
                 return None
-        except:  # 建立连接失败
+        except:
             logging.error('连接' + config.type + '失败！ip:' + config.ip + '  port:' + str(config.port))
             return None
 
@@ -259,7 +259,6 @@ class socketConnect(object):
 
     def mainProcess(self):
         config = myConfig()
-        cellPlan = []
         while True:
             time.sleep(1)
             logging.debug('--------start main process loop--------')
@@ -269,10 +268,9 @@ class socketConnect(object):
             # 4.查询bigtestinfotable，提取出正在运行执行的Test对应的电池、电炉、流量计、温度计、电压表
             # 5.查询数据，更新实时数据表与历史数据表
 
-            ovenUnderHandle = self.db.getOvenUnderHandle()  # 获取待处理的炉子
-            cellsUnderHandle = self.db.getCellsUnderHandle()  # 获取待处理的电池测试组
-            lljUnderHandle = self.db.getLljUnderHandle()  # 获取待处理的流量计
-            # 炉子控制的主逻辑
+            ovenUnderHandle = self.db.getOvenUnderHandle()
+            cellsUnderHandle = self.db.getCellsUnderHandle()
+            lljUnderHandle = self.db.getLljUnderHandle()
             for i in ovenUnderHandle:
                 # 温控器
                 if i['currState'] == 'stop' and i['nextState'] == 'start':
@@ -335,7 +333,6 @@ class socketConnect(object):
                 else:
                     logging.error("处理待处理温控器时出错：unknown currstate & nextstate")
 
-            # 流量计主逻辑
             for i in lljUnderHandle:
                 settingValue = i['nextState']
                 if settingValue > i["fullScale"]:
@@ -343,12 +340,11 @@ class socketConnect(object):
                     logging.error('流量计写入值超量程！')
                     continue
                 config.setConfig(type="gas", ip=i["IP"], port=i["PortNum"], cmd="set", addr=i['Addr'],
-                                 plan=settingValue, gasfullscale=i["fullScale"])
+                                 plan=settingValue, gasfullscale=i["fullScale"],waittime=0.5,length=200)
                 config.senddata = self.buildCmdMessage(config)
                 config.recvdata = self.sendCmdMessageRepeat(config)
                 self.updateGasState(config, i["type"], i["ID"])
 
-            # 电子负载控制的主逻辑
             for i in cellsUnderHandle:
                 COM = (self.db.getCellsComponetCOM(i))[0]
                 if (i['currState'] == "start") and (i['nextState'] == "pause"):
@@ -472,7 +468,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="AIR",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -494,7 +492,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="H2",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -516,7 +516,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="N2",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -538,7 +540,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="CH4",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -560,7 +564,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="CO2",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -582,7 +588,9 @@ class socketConnect(object):
                                      addr=COM['Addr'],
                                      cmd='read',
                                      gastype="H2O",
-                                     gasfullscale=COM["fullScale"]
+                                     gasfullscale=COM["fullScale"],
+                                     waittime=0.5,
+                                     length=200
                                      )
                     config.senddata = self.buildCmdMessage(config)
                     config.recvdata = self.sendCmdMessageRepeat(config)
@@ -678,14 +686,6 @@ class socketConnect(object):
                         AllData.update(
                             {'Vm' + str(chn): 0, 'tVm' + str(chn): datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
 
-                # if i["cellID_id"] is not None:
-                #     testid = self.db.getTestIDfromCell(i["cellID_id"])[0]["testID_id"]
-                # else:
-                #     testid = None
-                # AllData.update({
-                #     "bigTestID_id": i["id"],
-                #     "testID_id": testid,
-                # })
                 logging.debug('..................update history........................')
                 self.insertHistoryData(AllData)
 
@@ -752,20 +752,6 @@ class socketConnect(object):
             logging.error("更新MFC状态出错，返回帧结构不对！")
             return None
 
-    # if ((data[0] == ord(config.addr)) and data[-1] == 0x0D):  # 帧头帧尾校验
-    #     data = data.decode()
-    #     data = data.split()
-    #     if (len(data) == 7 and config.cmd == 'set'):  # 数据长度校验
-    #         DataDict = {}
-    #         DataDict['currState'] = config.plan
-    #         db.updateGasTable(gastype, DataDict, MFCid)
-    #         return DataDict
-    #     else:
-    #         print("update gas state: wrong frame")
-    #         return None
-    # else:
-    #     print("update gas state: wrong frame")
-    #     return None
 
     def updateOvenState(self, config, Ovenid):
         data = config.recvdata
@@ -1032,26 +1018,6 @@ class socketConnect(object):
             else:
                 logging.error("更新电压巡检仪数据失败：wrong data length")
                 return None
-        # elif config.type == "wdj":
-        #     if ((data[0] == 1) and (data[1] == 0x03) and (data[2] == 0x10)):  # 帧头帧尾校验
-        #         if (len(data) == data[2] + 5):  # 数据长度校验
-        #             wdjDataDict = {}
-        #             wdjDataDict['T1'] = ((data[3] << 8) + data[4]) / 10
-        #             wdjDataDict['T2'] = ((data[5] << 8) + data[6]) / 10
-        #             wdjDataDict['T3'] = ((data[7] << 8) + data[8]) / 10
-        #             wdjDataDict['T4'] = ((data[9] << 8) + data[10]) / 10
-        #             wdjDataDict['tT1'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        #             wdjDataDict['tT2'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        #             wdjDataDict['tT3'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        #             wdjDataDict['tT4'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        #             db.updateCellRealData(cellid, wdjDataDict)
-        #             return wdjDataDict
-        #         else:
-        #             print("update_cell_data_gas: wrong data length")
-        #             return None
-        #     else:
-        #         print("update_cell_data_wdj: wrong frame")
-        #         return None
 
     def insertHistoryData(self, data):
         self.db.insertHistoryData(data)
@@ -1060,7 +1026,7 @@ class socketConnect(object):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='[%(asctime)s] [%(levelname)s] %(message)s',
                         filename='socket.log',
                         filemode='a')
