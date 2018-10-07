@@ -1,11 +1,11 @@
-from HardwareProtocol import Oven_8,Oven_7
+from interfaces.HardwareProtocol import Oven_8,Oven_7
 import signal
 import socket
 import time
 
-addr=0x03
-oven=Oven_7(addr)
-cmd=oven.buildcmd(name="Addr",mode="read")
+addr=0x02
+oven=Oven_8(addr)
+cmd=oven.buildcmd(name="t1",mode="set",value=20)
 print(cmd)
 
 signal.signal(signal.SIGINT, quit)
@@ -14,7 +14,7 @@ try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.settimeout(1)
-    s.connect(('192.168.0.4', 20008))
+    s.connect(('192.168.0.4', 20007))
     try:
         s.send(cmd)
         try:

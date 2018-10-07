@@ -140,10 +140,16 @@ class socketConnect(object):
             elif config.cmd == "setplan":
                 i = 1
                 cmd_list = []
-                for step in config.plan:
-                    cmd_list.append(o.buildcmd("C" + str(i), "set", int(step["T"] * 10)))
-                    cmd_list.append(o.buildcmd("t" + str(i), "set", int(step["time"])))
-                    i = i + 1
+                if config.protocolversion == '7':
+                    for step in config.plan:
+                        cmd_list.append(o.buildcmd("C" + str(i), "set", int(step["T"] * 10)))
+                        cmd_list.append(o.buildcmd("t" + str(i), "set", int(step["time"])))
+                        i = i + 1
+                elif config.protocolversion == '8':
+                    for step in config.plan:
+                        cmd_list.append(o.buildcmd("C" + str(i), "set", int(step["T"] * 10)))
+                        cmd_list.append(o.buildcmd("t" + str(i), "set", int(step["time"] * 10)))
+                        i = i + 1
                 return cmd_list
             else:
                 logging.error('构建电炉温控器命令时出错：unknown config.cmd')
@@ -340,7 +346,7 @@ class socketConnect(object):
                     logging.error('流量计写入值超量程！')
                     continue
                 config.setConfig(type="gas", ip=i["IP"], port=i["PortNum"], cmd="set", addr=i['Addr'],
-                                 plan=settingValue, gasfullscale=i["fullScale"],waittime=0.5,length=200)
+                                 plan=settingValue, gasfullscale=i["fullScale"], waittime=0.5, length=200)
                 config.senddata = self.buildCmdMessage(config)
                 config.recvdata = self.sendCmdMessageRepeat(config)
                 self.updateGasState(config, i["type"], i["ID"])
@@ -751,7 +757,6 @@ class socketConnect(object):
         else:
             logging.error("更新MFC状态出错，返回帧结构不对！")
             return None
-
 
     def updateOvenState(self, config, Ovenid):
         data = config.recvdata
