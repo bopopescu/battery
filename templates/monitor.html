@@ -4,50 +4,49 @@
 
 {% block aside %}
     <ul class="sidebar-menu tree" data-widget="tree">
-    <li class="header">功能菜单</li>
-    {#    <li>#}
-    {#        <a href="{% url 'index' %}">#}
-    {#            <i class="fa fa-dashboard"></i>#}
-    {#            <span>主界面</span>#}
-    {#            <span class="pull-right-container"></span>#}
-    {#        </a>#}
-    {#    </li>#}
-    <li class="active">
-        <a href="{% url 'monitor' %}">
-            <i class="fa fa-dashboard"></i>
-            <span>运行状态监测</span>
-            <span class="pull-right-container"></span>
-        </a>
-    </li>
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-area-chart"></i>
-            <span>测试系统控制</span>
-            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li>
-                <a href="{% url 'control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    电子负载控制
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'oven_control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    电炉控制
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'gas_control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    气流量控制
-                </a>
-            </li>
-        </ul>
-    </li>
+        <li class="header">功能菜单</li>
+        <li class="active">
+            <a href="{% url 'monitor' %}">
+                <i class="fa fa-dashboard"></i>
+                <span>运行状态监测</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-gears"></i>
+                <span>测试系统控制</span>
+                <span class="pull-right-container"></span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{% url 'control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电子负载控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'oven_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电炉控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'gas_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        气流量控制
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{% url 'data_export' %}">
+                <i class="fa fa-save"></i>
+                <span>测试数据导出</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+    </ul>
 {% endblock %}
 {% block main %}
     <section class="content">
@@ -96,11 +95,6 @@
 
         <div class="row">
             <ul id="myTab" class="nav nav-tabs">
-{#                <li class="active">#}
-{#                    <a href="#briefinfo" data-toggle="tab">#}
-{#                        通道实时数据#}
-{#                    </a>#}
-{#                </li>#}
                 <li class="dropdown active">
                     <a href="#" id="myTabDrop0" class="dropdown-toggle"
                        data-toggle="dropdown">通道实时数据
@@ -406,7 +400,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
                         <div class="small-box bg-red-gradient">
                             <div class="inner" id="Tm0">
@@ -760,34 +754,6 @@
                 </div>
             </div>
         </div>
-
-
-        {#        <hr>#}
-        {##}
-        {##}
-        {#        <div class="row">#}
-        {#            <div class="table-responsive">#}
-        {#                <table class="table" id="test_scheme_table">#}
-        {#                    <thead class="thead-dark" id="table_head">#}
-        {#                    <tr>#}
-        {#                        <th scope="col" id="schemeID_th">方案号</th>#}
-        {#                        <th scope="col" id="step_th">No.</th>#}
-        {#                        <th scope="col" id="LoadMode_th">负载工作模式</th>#}
-        {#                        <th scope="col" id="U_th">电压/mV</th>#}
-        {#                        <th scope="col" id="I_th">电流/mA</th>#}
-        {#                        <th scope="col" id="tLM_th">时间限制/s</th>#}
-        {#                        <th scope="col" id="ULM_th">电压限制/mV</th>#}
-        {#                        <th scope="col" id="ILM_th">电流限制/mA</th>#}
-        {#                    </tr>#}
-        {#                    </thead>#}
-        {#                    <tbody id="table_body">#}
-        {#                    </tbody>#}
-        {#                </table>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <hr>#}
-
-
     </section>
 {% endblock main %}
 

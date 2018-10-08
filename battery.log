@@ -1,0 +1,1304 @@
+[2018-10-08 18:35:03,349] [INFO] "GET /monitor/ HTTP/1.1" 200 48866
+[2018-10-08 18:35:03,529] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-10-08 18:35:04,356] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 18:35:04,720] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 18:35:04,983] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 18:35:05,353] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 18:35:11,756] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 18:35:14,265] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 18:35:15,118] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 18:35:15,152] [WARNING] Not Found: /favicon.ico
+[2018-10-08 18:35:15,157] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6612
+[2018-10-08 18:35:17,262] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 18:35:17,353] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 18:35:18,392] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 268, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:35:18,484] [ERROR] "GET /data_export/ HTTP/1.1" 500 84287
+[2018-10-08 18:35:19,167] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 18:35:19,223] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 18:35:19,596] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 18:36:12,430] [INFO] "GET /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 18:46:58,864] [INFO] "GET /monitor/ HTTP/1.1" 200 48866
+[2018-10-08 18:46:59,481] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 18:46:59,515] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 18:46:59,889] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 18:47:00,506] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 18:47:06,799] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 18:47:09,683] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 18:47:10,163] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 18:47:12,352] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 18:47:12,402] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 18:47:14,567] [INFO] "GET /control/ HTTP/1.1" 200 12819
+[2018-10-08 18:47:14,585] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 18:47:14,706] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 18:47:14,807] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 18:47:15,032] [INFO] "GET /static/js/control.js HTTP/1.1" 304 0
+[2018-10-08 18:47:15,225] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 18:47:15,419] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 198
+[2018-10-08 18:54:56,431] [INFO] "GET /data_export HTTP/1.1" 301 0
+[2018-10-08 18:54:56,936] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 271, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:54:57,051] [ERROR] "GET /data_export/ HTTP/1.1" 500 84369
+[2018-10-08 18:55:23,928] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 272, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:55:24,052] [ERROR] "GET /data_export/ HTTP/1.1" 500 84492
+[2018-10-08 18:55:54,658] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 272, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:55:54,891] [ERROR] "GET /data_export/ HTTP/1.1" 500 84492
+[2018-10-08 18:56:29,539] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 273, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:56:29,660] [ERROR] "GET /data_export/ HTTP/1.1" 500 84443
+[2018-10-08 18:56:38,420] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 273, in data_export_streaming_csv_view
+    datarecv = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 18:56:38,521] [ERROR] "GET /data_export/ HTTP/1.1" 500 84443
+[2018-10-08 18:57:01,186] [INFO] "GET /data_export/ HTTP/1.1" 200 7307
+[2018-10-08 18:57:03,947] [INFO] "GET /data_export/ HTTP/1.1" 200 7307
+[2018-10-08 19:06:05,559] [INFO] "GET /data_export/ HTTP/1.1" 200 7719
+[2018-10-08 19:06:24,235] [INFO] "GET /data_export/ HTTP/1.1" 200 7210
+[2018-10-08 19:06:44,840] [INFO] "GET /data_export/ HTTP/1.1" 200 7176
+[2018-10-08 19:07:21,464] [INFO] "GET /data_export/ HTTP/1.1" 200 7196
+[2018-10-08 19:08:11,897] [INFO] "GET /data_export/ HTTP/1.1" 200 7218
+[2018-10-08 19:08:14,608] [INFO] "GET /data_export/ HTTP/1.1" 200 7218
+[2018-10-08 19:08:19,508] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 19:10:06,746] [INFO] "GET /data_export/ HTTP/1.1" 200 7232
+[2018-10-08 19:12:22,373] [INFO] "GET /data_export/ HTTP/1.1" 200 7226
+[2018-10-08 19:13:17,084] [INFO] "GET /data_export/ HTTP/1.1" 200 7300
+[2018-10-08 19:13:35,178] [INFO] "GET /data_export/ HTTP/1.1" 200 7300
+[2018-10-08 19:16:04,413] [INFO] "GET /data_export/ HTTP/1.1" 200 7549
+[2018-10-08 19:16:47,411] [INFO] "GET /data_export/ HTTP/1.1" 200 7800
+[2018-10-08 19:17:15,400] [INFO] "GET /data_export/ HTTP/1.1" 200 7768
+[2018-10-08 19:17:35,490] [INFO] "GET /data_export/ HTTP/1.1" 200 7773
+[2018-10-08 19:26:37,369] [INFO] "GET /data_export/ HTTP/1.1" 200 7797
+[2018-10-08 19:26:43,174] [INFO] "POST /data_export/ HTTP/1.1" 200 7797
+[2018-10-08 19:26:54,292] [INFO] "POST /data_export/ HTTP/1.1" 200 7797
+[2018-10-08 19:26:59,936] [INFO] "POST /data_export/ HTTP/1.1" 200 7797
+[2018-10-08 19:28:25,821] [INFO] "POST /data_export/ HTTP/1.1" 200 7815
+[2018-10-08 19:28:27,351] [INFO] "POST /data_export/ HTTP/1.1" 200 7815
+[2018-10-08 19:28:33,206] [INFO] "POST /data_export/ HTTP/1.1" 200 7815
+[2018-10-08 19:28:40,369] [INFO] "POST /data_export/ HTTP/1.1" 200 7815
+[2018-10-08 19:29:00,704] [INFO] "POST /data_export/ HTTP/1.1" 200 7833
+[2018-10-08 19:29:04,704] [INFO] "POST /data_export/ HTTP/1.1" 200 7833
+[2018-10-08 19:30:10,707] [INFO] "POST /data_export/ HTTP/1.1" 200 7832
+[2018-10-08 19:30:12,713] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 270, in data_export_streaming_csv_view
+    data = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 19:30:12,837] [ERROR] "POST /data_export/ HTTP/1.1" 500 85072
+[2018-10-08 19:31:12,678] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 271, in data_export_streaming_csv_view
+    data = json.loads(request.body.decode())
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2018-10-08 19:31:12,812] [ERROR] "POST /data_export/ HTTP/1.1" 500 85045
+[2018-10-08 19:31:38,055] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 19:32:28,296] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 19:32:45,539] [INFO] "GET /data_export/ HTTP/1.1" 200 7832
+[2018-10-08 19:34:25,946] [INFO] "GET /data_export/ HTTP/1.1" 200 7901
+[2018-10-08 19:34:31,115] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 19:34:44,133] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 19:45:58,721] [INFO] "GET /data_export/ HTTP/1.1" 200 8221
+[2018-10-08 19:45:59,670] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 272, in data_export_streaming_csv_view
+    data = [bt.ID for bt in bts]
+  File "/mnt/d/battery/apps/views.py", line 272, in <listcomp>
+    data = [bt.ID for bt in bts]
+AttributeError: 'BigTestInfoTable' object has no attribute 'ID'
+[2018-10-08 19:45:59,788] [ERROR] "POST /data_export/ HTTP/1.1" 500 16114
+[2018-10-08 19:46:58,983] [INFO] "GET /data_export/ HTTP/1.1" 200 8221
+[2018-10-08 19:46:59,183] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 19:47:19,085] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 19:52:41,722] [INFO] "GET /data_export/ HTTP/1.1" 200 8178
+[2018-10-08 19:52:42,161] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 19:52:42,240] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 19:53:39,775] [INFO] "GET /data_export/ HTTP/1.1" 200 8188
+[2018-10-08 19:53:40,209] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 19:53:40,296] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:00:04,319] [INFO] "GET /data_export/ HTTP/1.1" 200 8615
+[2018-10-08 20:00:04,763] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:00:04,837] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:02:31,151] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 20:03:29,287] [INFO] "GET /data_export/ HTTP/1.1" 200 8606
+[2018-10-08 20:03:29,835] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:03:38,509] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:03:41,897] [INFO] "POST /data_export/ HTTP/1.1" 200 44508
+[2018-10-08 20:10:26,715] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view apps.views.data_export_streaming_csv_view didn't return an HttpResponse object. It returned None instead.
+[2018-10-08 20:10:26,805] [ERROR] "POST /data_export/ HTTP/1.1" 500 56863
+[2018-10-08 20:10:51,244] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view apps.views.data_export_streaming_csv_view didn't return an HttpResponse object. It returned None instead.
+[2018-10-08 20:10:51,329] [ERROR] "POST /data_export/ HTTP/1.1" 500 56863
+[2018-10-08 20:18:59,066] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view apps.views.data_export_streaming_csv_view didn't return an HttpResponse object. It returned None instead.
+[2018-10-08 20:18:59,176] [ERROR] "POST /data_export/ HTTP/1.1" 500 56863
+[2018-10-08 20:21:05,144] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view apps.views.data_export_streaming_csv_view didn't return an HttpResponse object. It returned None instead.
+[2018-10-08 20:21:05,236] [ERROR] "POST /data_export/ HTTP/1.1" 500 56863
+[2018-10-08 20:28:12,323] [INFO] "POST /data_export/ HTTP/1.1" 200 10
+[2018-10-08 20:28:36,502] [INFO] "GET /data_export/ HTTP/1.1" 200 8606
+[2018-10-08 20:28:37,086] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:28:37,191] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:28:47,314] [INFO] "POST /data_export/ HTTP/1.1" 200 10
+[2018-10-08 20:29:37,753] [INFO] "POST /data_export/ HTTP/1.1" 200 51
+[2018-10-08 20:30:31,296] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 303, in data_export_streaming_csv_view
+    row.append(timeformat(eval("i." + header[i])))
+TypeError: list indices must be integers or slices, not cellTestHistoryDataTable
+[2018-10-08 20:30:31,405] [ERROR] "POST /data_export/ HTTP/1.1" 500 73511
+[2018-10-08 20:31:03,317] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 303, in data_export_streaming_csv_view
+    row.append(timeformat(eval("i." + header[i])))
+TypeError: list indices must be integers or slices, not cellTestHistoryDataTable
+[2018-10-08 20:31:03,421] [ERROR] "POST /data_export/ HTTP/1.1" 500 73511
+[2018-10-08 20:31:49,806] [INFO] "POST /data_export/ HTTP/1.1" 200 1941
+[2018-10-08 20:32:15,777] [INFO] "GET /data_export/ HTTP/1.1" 200 8606
+[2018-10-08 20:32:16,165] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:32:16,261] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:32:30,666] [ERROR] Internal Server Error: /data_export/
+Traceback (most recent call last):
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/chiyt/.local/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/mnt/d/battery/apps/views.py", line 303, in data_export_streaming_csv_view
+    row.append(timeformat(eval("i." + header[j])))
+  File "<string>", line 1, in <module>
+AttributeError: 'cellTestHistoryDataTable' object has no attribute 'tqH2'
+[2018-10-08 20:32:30,777] [ERROR] "POST /data_export/ HTTP/1.1" 500 94948
+[2018-10-08 20:34:49,645] [INFO] "GET /data_export/ HTTP/1.1" 200 8600
+[2018-10-08 20:34:49,970] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:34:50,047] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:34:52,549] [INFO] "GET /data_export/ HTTP/1.1" 200 8600
+[2018-10-08 20:34:53,022] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:34:53,106] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:35:05,912] [INFO] "POST /data_export/ HTTP/1.1" 200 152299
+[2018-10-08 20:35:37,299] [INFO] "POST /data_export/ HTTP/1.1" 200 2097181
+[2018-10-08 20:37:13,421] [INFO] "GET /data_export/ HTTP/1.1" 200 8657
+[2018-10-08 20:37:13,843] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:37:13,927] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:37:32,850] [INFO] "POST /data_export/ HTTP/1.1" 200 2097181
+[2018-10-08 20:37:38,487] [INFO] "GET /monitor/ HTTP/1.1" 200 48866
+[2018-10-08 20:37:38,938] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-10-08 20:37:39,041] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:37:39,371] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 20:37:39,622] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 20:37:39,805] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 20:37:45,711] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 20:37:48,186] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 20:37:48,589] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 20:37:51,512] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:37:51,599] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:37:53,309] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:37:53,358] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:37:53,720] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:37:54,207] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:37:54,305] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:37:56,287] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:37:56,366] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:37:56,561] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:37:58,168] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:37:58,247] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:00,276] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:38:00,361] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:38:01,989] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:38:02,347] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:02,424] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:04,003] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:38:04,054] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:38:04,397] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:04,452] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:05,962] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:38:06,651] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:06,726] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:08,424] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:38:08,474] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:38:08,824] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:38:09,336] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:09,383] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:12,391] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:38:12,461] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:38:12,653] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:38:12,826] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:12,904] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:15,659] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:38:15,710] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:38:16,082] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:16,163] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:38:18,885] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:38:19,247] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:38:19,332] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:40:21,621] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:40:21,700] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:40:21,869] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:40:21,954] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:40:23,976] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:40:24,512] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:40:24,592] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:40:26,127] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:40:26,193] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:40:26,560] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:40:27,208] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:40:27,298] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:40:29,126] [INFO] "GET /gas_control/ HTTP/1.1" 200 7342
+[2018-10-08 20:40:29,139] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:40:29,215] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:40:29,370] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:40:29,746] [INFO] "GET /control/get_gas_info/0/0/ HTTP/1.1" 200 167
+[2018-10-08 20:41:58,208] [INFO] "GET /gas_control/ HTTP/1.1" 200 7545
+[2018-10-08 20:41:58,608] [INFO] "GET /control/get_gas_info/0/0/ HTTP/1.1" 200 167
+[2018-10-08 20:42:00,184] [INFO] "GET /data_export/ HTTP/1.1" 200 8657
+[2018-10-08 20:42:00,459] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:43:16,657] [INFO] "GET /data_export/ HTTP/1.1" 200 8667
+[2018-10-08 20:43:16,943] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:44:23,440] [INFO] "GET /oven_control/ HTTP/1.1" 200 13212
+[2018-10-08 20:44:23,824] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:44:23,860] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:44:25,967] [INFO] "GET /data_export/ HTTP/1.1" 200 8667
+[2018-10-08 20:44:26,173] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:45:48,234] [INFO] "GET /monitor/ HTTP/1.1" 200 49069
+[2018-10-08 20:45:48,671] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:45:48,698] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 20:45:49,058] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 20:45:49,599] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 20:45:55,493] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 20:45:58,109] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 20:45:58,205] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 20:46:00,821] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:00,904] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:02,955] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:03,039] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:03,215] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:03,815] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:03,905] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:05,812] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:05,886] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:06,072] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:06,813] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:06,900] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:08,941] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:09,019] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:09,199] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:09,810] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:09,896] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:11,929] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:12,005] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:12,187] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:12,817] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:12,876] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:14,823] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:14,893] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:15,085] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:15,811] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:15,896] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:17,771] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:17,844] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:18,033] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:18,814] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:18,898] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:20,852] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:20,933] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:21,108] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:21,814] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:21,899] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:23,792] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:23,881] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:24,054] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:24,823] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:24,898] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:26,705] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:26,788] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:26,983] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:27,814] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:46:27,913] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:46:29,777] [INFO] "GET /data_export/ HTTP/1.1" 200 8667
+[2018-10-08 20:46:29,795] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:46:29,884] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:46:30,031] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:46:30,243] [INFO] "GET /data_export/ HTTP/1.1" 200 8667
+[2018-10-08 20:46:30,649] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:47:07,303] [INFO] "GET /data_export/ HTTP/1.1" 200 8678
+[2018-10-08 20:47:07,508] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:48:00,758] [INFO] "GET /data_export/ HTTP/1.1" 200 8673
+[2018-10-08 20:48:01,153] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:49:16,995] [INFO] "GET /data_export/ HTTP/1.1" 200 8673
+[2018-10-08 20:49:17,356] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:49:19,790] [INFO] "GET /control/ HTTP/1.1" 200 13017
+[2018-10-08 20:49:20,055] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:49:20,404] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 198
+[2018-10-08 20:49:21,155] [INFO] "GET /oven_control/ HTTP/1.1" 200 13207
+[2018-10-08 20:49:21,433] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:49:21,778] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:49:22,283] [INFO] "GET /gas_control/ HTTP/1.1" 200 7540
+[2018-10-08 20:49:22,579] [INFO] "GET /control/get_gas_info/0/0/ HTTP/1.1" 200 167
+[2018-10-08 20:49:24,212] [INFO] "GET /monitor/ HTTP/1.1" 200 49064
+[2018-10-08 20:49:24,469] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:49:24,496] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 20:49:24,864] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 20:49:25,441] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 20:49:31,482] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 20:49:34,064] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 20:49:34,158] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 20:49:36,768] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:36,861] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:39,047] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:39,133] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:39,304] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:39,762] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:39,839] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:41,863] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:41,951] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:42,119] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:42,761] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:42,845] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:44,726] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:44,806] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:44,984] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:45,737] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:45,789] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:47,484] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:47,566] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:49,625] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:49,988] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:50,083] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:51,711] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:51,763] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:52,113] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:52,198] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:53,928] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:53,979] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:54,336] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:54,756] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:54,835] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:56,609] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:56,661] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:49:56,869] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:49:57,772] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:49:57,857] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:49:59,803] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:49:59,876] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:00,077] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:00,757] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:00,836] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:02,808] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:02,893] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:03,073] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:03,768] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:03,855] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:05,809] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:05,887] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:06,068] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:06,747] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:06,801] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:08,734] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:08,811] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:08,984] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:09,756] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:09,842] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:11,760] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:11,846] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:12,026] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:12,742] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:12,792] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:14,732] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:14,813] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:14,992] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:15,760] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:15,843] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:17,672] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:17,746] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:17,934] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:18,758] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:18,840] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:20,704] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:20,787] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:20,951] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:21,756] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:21,835] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:23,810] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:23,886] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:24,080] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:24,760] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:24,833] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:26,610] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:26,683] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:26,872] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:27,762] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:27,836] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:29,555] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:29,624] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:29,815] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:30,758] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:30,810] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:32,613] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:32,686] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:32,881] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:33,759] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:33,835] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:35,727] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:35,802] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:35,984] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:36,758] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:36,830] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:38,661] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:38,733] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:38,914] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:39,757] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:39,831] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:41,696] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:41,770] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:41,963] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:42,755] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:42,828] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:44,622] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:44,696] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:44,888] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:45,756] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:45,837] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:47,803] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:47,881] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:48,076] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:48,757] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:48,834] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:50,635] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:50,709] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:50,896] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:51,759] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:51,839] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:53,712] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:53,782] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:53,967] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:54,759] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:54,839] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:56,593] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:56,694] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:50:56,852] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:50:57,757] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:50:57,833] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:50:59,762] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:50:59,836] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:51:00,041] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:51:00,760] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:51:00,839] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:51:02,663] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:51:02,739] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:51:02,925] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:51:03,167] [INFO] "GET /data_export/ HTTP/1.1" 200 8673
+[2018-10-08 20:51:03,472] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 20:51:48,411] [INFO] "GET /oven_control/ HTTP/1.1" 200 13268
+[2018-10-08 20:51:48,669] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:51:48,689] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:52:07,480] [INFO] "GET /oven_control/ HTTP/1.1" 200 13239
+[2018-10-08 20:52:07,764] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:52:07,785] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:52:09,602] [INFO] "GET /oven_control/ HTTP/1.1" 200 13239
+[2018-10-08 20:52:09,858] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:52:09,882] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:53:01,701] [INFO] "GET /oven_control/ HTTP/1.1" 200 12842
+[2018-10-08 20:53:02,066] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:53:02,087] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:53:24,583] [INFO] "GET /oven_control/ HTTP/1.1" 200 12842
+[2018-10-08 20:53:24,650] [INFO] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+[2018-10-08 20:53:24,814] [INFO] "GET /static/css/ionicons.min.css HTTP/1.1" 200 51284
+[2018-10-08 20:53:24,961] [INFO] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31000
+[2018-10-08 20:53:24,967] [INFO] "GET /static/css/_all-skins.min.css HTTP/1.1" 200 41583
+[2018-10-08 20:53:24,975] [INFO] "GET /static/css/AdminLTE.min.css HTTP/1.1" 200 91501
+[2018-10-08 20:53:24,977] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-10-08 20:53:24,995] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-10-08 20:53:25,136] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-10-08 20:53:25,288] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-10-08 20:53:25,289] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-08 20:53:25,309] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-08 20:53:25,313] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-10-08 20:53:25,339] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-10-08 20:53:25,452] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-10-08 20:53:25,608] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-10-08 20:53:25,610] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-10-08 20:53:25,642] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-08 20:53:25,646] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-08 20:53:25,745] [INFO] "GET /static/js/control.js HTTP/1.1" 200 28623
+[2018-10-08 20:53:25,763] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-08 20:53:26,080] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:53:26,150] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 20:55:11,594] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 20:55:11,655] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 41937
+[2018-10-08 20:55:12,091] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 20:55:12,440] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 20:55:12,704] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 20:55:13,105] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 20:55:19,384] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 20:55:22,085] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 20:55:22,152] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 20:55:24,785] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:24,877] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:27,155] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:27,227] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:27,427] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:27,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:27,846] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:30,006] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:30,120] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:30,274] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:30,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:30,850] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:32,994] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:33,069] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:33,257] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:33,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:33,853] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:36,018] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:36,099] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:36,284] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:36,786] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:36,872] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:39,011] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:39,093] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:39,268] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:39,772] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:39,844] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:41,963] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:42,039] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:42,221] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:42,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:42,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:45,128] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:45,198] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:45,394] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:45,770] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:45,842] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:47,921] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:47,988] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:48,185] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:48,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:48,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:50,998] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:51,075] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:51,254] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:51,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:51,844] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:53,939] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:54,013] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:54,203] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:54,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:54,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:56,950] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:55:57,026] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:55:57,210] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:55:57,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:55:57,849] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:55:59,961] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:00,037] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:00,228] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:00,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:00,856] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:02,999] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:03,075] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:03,257] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:03,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:03,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:06,103] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:06,173] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:06,379] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:06,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:06,847] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:08,926] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:08,996] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:09,191] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:09,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:09,845] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:11,940] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:12,012] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:12,202] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:12,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:12,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:15,067] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:15,144] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:15,309] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:15,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:15,849] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:18,095] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:18,166] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:18,350] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:18,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:18,850] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:20,920] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:20,993] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:21,180] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:21,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:21,847] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:23,953] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:24,023] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:24,214] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:24,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:24,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:26,953] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:27,033] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:27,207] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:27,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:27,853] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:29,925] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:29,998] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:30,182] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:30,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:30,858] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:32,952] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:33,024] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:33,212] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:33,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:33,855] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:35,960] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:36,037] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:36,218] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:36,793] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:36,868] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:39,084] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:39,138] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:39,343] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:39,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:39,857] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:41,906] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:41,986] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:42,162] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:42,771] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:42,854] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:44,954] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:45,054] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:45,211] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:45,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:45,854] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:47,985] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:48,057] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:48,243] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:48,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:48,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:51,132] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:51,183] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:51,400] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:51,772] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:51,844] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:53,907] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:53,982] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:54,167] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:54,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:54,847] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:56:56,950] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:56:57,022] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:56:57,206] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:56:57,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:56:57,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:00,119] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:00,190] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:00,384] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:00,784] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:00,860] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:02,938] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:03,014] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:03,197] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:03,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:03,846] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:05,934] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:06,015] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:06,190] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:06,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:06,854] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:08,949] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:09,028] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:09,207] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:09,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:09,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:12,152] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:12,224] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:12,407] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:12,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:12,829] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:14,865] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:14,937] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:15,122] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:15,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:15,842] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:17,902] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:17,974] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:18,162] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:18,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:18,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:20,955] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:21,032] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:21,211] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:21,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:21,858] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:24,120] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:24,199] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:24,376] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:24,784] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:24,867] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:26,924] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:27,001] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:27,179] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:27,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:27,851] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:29,957] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:30,030] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:30,220] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:30,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:30,847] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:32,949] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:33,021] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:33,210] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:33,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:33,846] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:35,932] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:36,002] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:36,194] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:36,783] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:36,856] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:38,905] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:38,978] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:39,163] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:39,772] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:39,844] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:41,927] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:42,000] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:42,186] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:42,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:42,849] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:45,183] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:45,255] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:45,451] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:45,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:45,840] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:47,875] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:47,947] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:48,137] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:48,778] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:48,830] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:50,903] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:50,976] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:51,163] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:51,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:51,850] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:53,919] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:53,991] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:54,184] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:54,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:54,851] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:57,101] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:57:57,176] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:57:57,359] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:57:57,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:57:57,855] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:57:59,934] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:00,053] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:00,193] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:00,785] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:00,861] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:02,937] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:03,007] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:03,199] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:03,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:03,850] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:06,100] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:06,174] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:06,363] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:06,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:06,856] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:08,942] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:09,014] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:09,201] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:09,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:09,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:11,966] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:12,040] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:12,222] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:12,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:12,852] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:14,892] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:14,961] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:15,143] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:15,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:15,851] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:18,092] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:18,170] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:18,348] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:18,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:18,856] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:20,938] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:21,007] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:21,203] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:21,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:21,856] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:23,983] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:24,059] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:24,244] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:24,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:24,855] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:26,992] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:27,066] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:27,244] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:27,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:27,845] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:30,145] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:30,219] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:30,407] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:30,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:30,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:32,933] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:33,005] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:33,191] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:33,771] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:33,843] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:35,935] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:36,008] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:36,195] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:36,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:36,846] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:39,006] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:39,082] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:39,259] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:39,772] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:39,844] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:42,100] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:42,168] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:42,378] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:42,774] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:42,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:44,967] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:45,038] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:45,222] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:45,769] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:45,837] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:47,936] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:48,009] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:48,198] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:48,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:48,849] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:51,127] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:51,181] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:51,392] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:51,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:51,845] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:53,946] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:54,017] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:54,204] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:54,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:54,843] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:56,914] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:58:56,981] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:58:57,176] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:58:57,770] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:58:57,841] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:58:59,970] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:00,068] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:00,213] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:00,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:00,855] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:03,138] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:03,191] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:03,391] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:03,776] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:03,846] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:05,876] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:05,947] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:06,136] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:06,777] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:06,851] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:08,952] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:09,020] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:09,211] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:09,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:09,849] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:11,960] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:12,029] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:12,219] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:12,775] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:12,848] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:15,095] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:15,178] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:15,356] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:15,831] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:15,890] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:17,960] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:18,032] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:18,218] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:18,773] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:18,847] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:20,970] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:21,049] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:21,228] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:22,343] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:22,412] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:24,674] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:24,765] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:24,931] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 20:59:25,354] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:25,450] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 20:59:29,052] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 20:59:29,101] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 20:59:29,321] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 20:59:29,406] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:02:39,655] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:02:43,546] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:02:43,602] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:02:43,954] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:02:44,037] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:02:45,769] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:02:46,151] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:02:46,159] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:02:46,250] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:02:47,798] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:02:47,850] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:02:48,574] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:02:48,815] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:02:48,951] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:02:49,493] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:02:56,717] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:02:59,810] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:02:59,900] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:03:01,907] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:03:02,171] [INFO] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+[2018-10-08 21:03:02,288] [INFO] "GET /static/css/ionicons.min.css HTTP/1.1" 200 51284
+[2018-10-08 21:03:02,298] [INFO] "GET /static/css/AdminLTE.min.css HTTP/1.1" 200 91501
+[2018-10-08 21:03:02,299] [INFO] "GET /static/css/_all-skins.min.css HTTP/1.1" 200 41583
+[2018-10-08 21:03:02,301] [INFO] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31000
+[2018-10-08 21:03:02,331] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-10-08 21:03:02,480] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-10-08 21:03:02,607] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-08 21:03:02,624] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-10-08 21:03:02,627] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-10-08 21:03:02,627] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-10-08 21:03:02,658] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-10-08 21:03:02,791] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-10-08 21:03:02,923] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-08 21:03:02,957] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-10-08 21:03:02,959] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-08 21:03:02,964] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-10-08 21:03:02,976] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-08 21:03:03,104] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 41937
+[2018-10-08 21:03:03,299] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:03:03,305] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-08 21:03:03,464] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:03:03,565] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:03:03,986] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:03:10,319] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:03:12,457] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:03:12,513] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:03:30,809] [INFO] "GET /control/ HTTP/1.1" 200 12940
+[2018-10-08 21:03:30,863] [INFO] "GET /static/js/control.js HTTP/1.1" 200 28623
+[2018-10-08 21:03:31,281] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:03:31,630] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 198
+[2018-10-08 21:03:31,889] [INFO] "GET /oven_control/ HTTP/1.1" 200 13020
+[2018-10-08 21:03:32,105] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:03:32,446] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-10-08 21:03:33,998] [INFO] "GET /gas_control/ HTTP/1.1" 200 7683
+[2018-10-08 21:03:34,288] [INFO] "GET /control/get_gas_info/0/0/ HTTP/1.1" 200 167
+[2018-10-08 21:03:35,685] [INFO] "GET /data_export/ HTTP/1.1" 200 8851
+[2018-10-08 21:03:35,902] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 21:03:37,596] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:03:37,878] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:03:38,238] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:03:38,502] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:03:38,938] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:03:44,949] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:03:47,740] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:03:47,855] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:03:50,458] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:03:50,565] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:03:53,120] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:03:53,218] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:03:53,391] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:03:53,587] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:03:53,695] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:05:39,267] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:05:39,709] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:05:39,737] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:05:40,099] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:05:40,710] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:05:46,638] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:05:49,354] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:05:49,459] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:05:52,070] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:05:52,182] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:05:54,251] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:05:54,383] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:05:54,495] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:05:55,057] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:05:55,144] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:05:57,047] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:05:57,124] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:05:57,301] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:05:58,054] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:05:58,137] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:11,868] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:06:12,242] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:06:12,269] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:06:12,643] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:06:13,223] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:06:19,958] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:06:23,221] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:06:23,333] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:06:25,921] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:06:26,053] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:28,501] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:06:28,586] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:06:28,764] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:06:28,934] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:06:29,003] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:30,952] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:06:31,006] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:06:31,367] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:06:31,919] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:06:32,031] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:34,412] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:06:34,474] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:06:34,691] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:06:35,343] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:06:35,437] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:37,695] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:06:37,808] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:06:37,930] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:06:38,170] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:06:38,271] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:06:38,326] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:06:38,424] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:06:39,886] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:06:40,071] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:06:40,132] [INFO] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+[2018-10-08 21:06:40,421] [INFO] "GET /static/css/_all-skins.min.css HTTP/1.1" 200 41583
+[2018-10-08 21:06:40,426] [INFO] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31000
+[2018-10-08 21:06:40,431] [INFO] "GET /static/css/ionicons.min.css HTTP/1.1" 200 51284
+[2018-10-08 21:06:40,434] [INFO] "GET /static/css/AdminLTE.min.css HTTP/1.1" 200 91501
+[2018-10-08 21:06:40,451] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-10-08 21:06:40,460] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-10-08 21:06:40,737] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-10-08 21:06:40,765] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-10-08 21:06:40,766] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-10-08 21:06:40,769] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-10-08 21:06:40,784] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-10-08 21:06:40,798] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-10-08 21:06:41,053] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-10-08 21:06:41,093] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-10-08 21:06:41,099] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-10-08 21:06:41,102] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-10-08 21:06:41,110] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-10-08 21:06:41,181] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 41946
+[2018-10-08 21:06:41,378] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:06:41,602] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:06:41,700] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:06:41,704] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-10-08 21:06:42,043] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:06:47,801] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:06:50,539] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:06:50,620] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-10-08 21:07:17,285] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:07:17,371] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:07:19,087] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:07:19,140] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:07:19,503] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:07:19,974] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:07:20,060] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:07:22,120] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:07:22,212] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:07:22,371] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:07:22,978] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:07:23,064] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:07:24,963] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:07:25,036] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:07:25,235] [INFO] "GET /monitor/testline_status/10001/0/ HTTP/1.1" 200 27
+[2018-10-08 21:07:25,970] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时数据
+[2018-10-08 21:07:26,051] [INFO] "GET /monitor/get_testdata_real_time/10001/0/ HTTP/1.1" 200 598
+[2018-10-08 21:07:28,035] [ERROR] boxID:10001  chaID:0  testID:7    不存在实时信息
+[2018-10-08 21:07:28,116] [INFO] "GET /monitor/testline_info/10001/0/ HTTP/1.1" 200 562
+[2018-10-08 21:07:43,268] [INFO] "GET /data_export/ HTTP/1.1" 200 8851
+[2018-10-08 21:07:43,321] [INFO] "GET /static/js/control.js HTTP/1.1" 200 28623
+[2018-10-08 21:07:43,693] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-10-08 21:07:46,657] [INFO] "GET /control/ HTTP/1.1" 200 12940
+[2018-10-08 21:07:46,882] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:07:46,902] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 198
+[2018-10-08 21:07:48,660] [INFO] "GET /monitor/ HTTP/1.1" 200 48857
+[2018-10-08 21:07:48,706] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-10-08 21:07:48,888] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-10-08 21:07:49,239] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-10-08 21:07:49,514] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-10-08 21:07:49,964] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-10-08 21:07:55,714] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 6615932
+[2018-10-08 21:07:58,388] [ERROR] 当前通道无正在进行的测试
+[2018-10-08 21:07:58,446] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28

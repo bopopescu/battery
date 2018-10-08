@@ -1,51 +1,50 @@
 {% extends 'base.html' %}
 {% block aside %}
     <ul class="sidebar-menu tree" data-widget="tree">
-    <li class="header">功能菜单</li>
-{#   <li>#}
-{#        <a href="{% url 'index' %}">#}
-{#            <i class="fa fa-dashboard"></i>#}
-{#            <span>主界面</span>#}
-{#            <span class="pull-right-container"></span>#}
-{#        </a>#}
-{#    </li>#}
-    <li>
-        <a href="{% url 'monitor' %}">
-            <i class="fa fa-dashboard"></i>
-            <span>运行状态监测</span>
-            <span class="pull-right-container"></span>
-        </a>
-    </li>
-    <li class="treeview active menu-open">
-        <a href="#">
-            <i class="fa fa-area-chart"></i>
-            <span>测试系统控制</span>
-            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li>
-                <a href="{% url 'control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    电子负载控制
-                </a>
-            </li>
-            <li class="active">
-                <a href="{% url 'oven_control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    电炉控制
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'gas_control' %}">
-                    <i class="fa fa-circle-o"></i>
-                    气流量控制
-                </a>
-            </li>
-        </ul>
+        <li class="header">功能菜单</li>
+        <li>
+            <a href="{% url 'monitor' %}">
+                <i class="fa fa-dashboard"></i>
+                <span>运行状态监测</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+        <li class="treeview active menu-open">
+            <a href="#">
+                <i class="fa fa-gears"></i>
+                <span>测试系统控制</span>
+                <span class="pull-right-container"></span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{% url 'control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电子负载控制
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="{% url 'oven_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电炉控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'gas_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        气流量控制
+                    </a>
+                </li>
+            </ul>
 
-    </li>
+        </li>
+        <li>
+            <a href="{% url 'data_export' %}">
+                <i class="fa fa-save"></i>
+                <span>测试数据导出</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+    </ul>
 {% endblock %}
 {% block main %}
     <section class="content">
@@ -84,31 +83,13 @@
         </div>
         <div class="row" style="margin-left:0px">
             <div class="col-lg-12">
-{##}
-{#                <span>箱号：</span>#}
-{#                <select id="box_num_selected" onchange="show_channel()">#}
-{#                </select>#}
-{#                &nbsp;&nbsp;#}
-{##}
-{#                <span>通道号：</span>#}
-{#                <select id="channel_num_selected" onchange="show_oven()">#}
-{#                </select>#}
-
                 &nbsp;&nbsp;
                 <span>电炉id：</span>
                 <select id="oven_num_selected">
-                    {#                    <option value="1">1</option>#}
-                    {#                    <option value="2">2</option>#}
-                    {#                    <option value="3">3</option>#}
-                    {#                    <option value="4">4</option>#}
                 </select>
                 &nbsp;&nbsp;
                 <span>电炉方案id：</span>
                 <select id="oven_scheme_num_selected">
-                    {#                    <option value="1">1</option>#}
-                    {#                    <option value="2">2</option>#}
-                    {#                    <option value="3">3</option>#}
-                    {#                    <option value="4">4</option>#}
                 </select>
                 &nbsp;&nbsp;
                 <button type="button" class="btn btn-danger" style="width: 120px" onclick="start_oven()">启动电炉</button>
@@ -126,9 +107,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title" id="exampleModalLongTitle">查看/新建测试方案</h2>
-                        {#                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
-                        {#                            <span aria-hidden="true">&times;</span>#}
-                        {#                        </button>#}
                     </div>
                     <div class="modal-body">
                         <div id="status-dialog-content" class="container-fluid">

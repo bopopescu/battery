@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block aside %}
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li class="header">功能菜单</li>
+        <li>
+            <a href="{% url 'monitor' %}">
+                <i class="fa fa-dashboard"></i>
+                <span>运行状态监测</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-gears"></i>
+                <span>测试系统控制</span>
+                <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{% url 'control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电子负载控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'oven_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电炉控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'gas_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        气流量控制
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="active">
+            <a href="{% url 'data_export' %}">
+                <i class="fa fa-save"></i>
+                <span>测试数据导出</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+{% block main %}
+    <section class="content">
+        <div class="row" style="margin-left:0px">
+            <form action="" method="POST">
+                <div class="form-group row">
+                    <label for="BigTestID" class="col-sm-1 col-form-label">父测试ID</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="BigTestID" name="BigTestID">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Variables" class="col-sm-1 col-form-label">导出数据种类</label>
+                    <div class="col-sm-4">
+                        <select multiple size="10" class="form-control" id="Variables" name="Variables">
+
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">导出数据</button>
+            </form>
+
+        </div>
+    </section>
+{% endblock main %}
+
+{% block js %}
+    <script src="/static/js/common/bootstrap-table.min.js"></script>
+    <script src="/static/js/common/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/static/js/common/bootstrap-table-export.min.js"></script>
+    <script src="/static/js/control.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "/data_export/",
+                type: "post",
+                data: "GetBigTestID",
+                dataType: 'json',
+                async: false, //同步执行
+                success: function (data) {
+                    console.log(data);
+                    var bts = data["BigTestID"];
+                    for (var bt in bts) {
+                        $('#BigTestID').append("<option value=" + bts[bt] + ">" + bts[bt] + "</option>");
+                    }
+                }
+            });
+            var varlist = {"u": "电子负载电压", "i": "电子负载电流"};
+            for (var i = 0; i < 4; i++) {
+                varlist["Tc" + i] = "控温点" + i + "温度";
+            }
+            for (var i = 0; i < 20; i++) {
+                varlist["Tm" + i] = "测温点" + i + "温度";
+            }
+            for (var i = 0; i < 20; i++) {
+                varlist["Vm" + i] = "测压点" + i + "电压";
+            }
+            var gas = ["H2", "H2O", "N2", "CH4", "CO2", "AIR"];
+            for (var i in gas) {
+                varlist[gas[i]] = gas[i] + "流量";
+            }
+            for (var v in varlist) {
+                $('#Variables').append("<option value=" + v + ">" + varlist[v] + "</option>");
+            }
+        });
+    </script>
+{% endblock js %}

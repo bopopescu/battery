@@ -16,7 +16,7 @@
     <SUITE FILE_PATH="coverage/battery1$dbtest.coverage" NAME="dbtest Coverage Results" MODIFIED="1535433509465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysocket" />
     <SUITE FILE_PATH="coverage/battery1$ovenControl.coverage" NAME="ovenControl Coverage Results" MODIFIED="1535601815200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oven" />
     <SUITE FILE_PATH="coverage/battery$ovenControl.coverage" NAME="ovenControl Coverage Results" MODIFIED="1538616750692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oven" />
-    <SUITE FILE_PATH="coverage/battery$modifyDeviceAddress.coverage" NAME="modifyDeviceAddress Coverage Results" MODIFIED="1538892379025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysocket" />
+    <SUITE FILE_PATH="coverage/battery$modifyDeviceAddress.coverage" NAME="modifyDeviceAddress Coverage Results" MODIFIED="1538914025782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysocket" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -163,115 +163,62 @@
     <session id="-690678890">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
-          <entry key="html" value="17" />
-          <entry key="js" value="3" />
+          <entry key="css" value="4" />
+          <entry key="html" value="32" />
+          <entry key="js" value="4" />
           <entry key="json" value="10" />
           <entry key="log" value="5" />
-          <entry key="py" value="55" />
+          <entry key="py" value="56" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="17" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="32" />
           <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="55" />
+          <entry key="Python" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="274" />
+          <entry key="html" value="990" />
           <entry key="js" value="1072" />
           <entry key="json" value="22" />
-          <entry key="py" value="9872" />
+          <entry key="py" value="11052" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="274" />
+          <entry key="HTML" value="990" />
           <entry key="JSON" value="22" />
           <entry key="JavaScript" value="1072" />
-          <entry key="Python" value="9872" />
+          <entry key="Python" value="11052" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="150" column="93" selection-start-line="150" selection-start-column="93" selection-end-line="150" selection-end-column="93" />
-              <folding>
-                <element signature="e#162#200#0" expanded="true" />
-                <element signature="e#8008#9152#0" />
-                <element signature="e#9206#9606#0" />
-                <element signature="e#9790#9840#0" />
-                <element signature="e#18247#18360#0" />
-                <element signature="e#18428#20265#0" />
-                <element signature="e#37514#41283#0" />
-                <element signature="e#41332#43810#0" />
-                <element signature="e#43858#46270#0" />
-                <element signature="e#46319#47988#0" />
-                <element signature="e#48036#49645#0" />
-                <element signature="e#49694#51303#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysocket/interfaces/HardwareProtocol.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-525">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#89#2987#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysocket/interfaces/dbClass.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1206">
-              <caret line="283" column="46" selection-start-line="283" selection-start-column="46" selection-end-line="283" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/gas_control.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/control.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="762" column="55" selection-start-line="762" selection-start-column="55" selection-end-line="764" selection-end-column="81" />
+            <state relative-caret-position="564">
+              <caret line="770" column="4" selection-start-line="770" selection-start-column="4" selection-end-line="780" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -279,50 +226,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="740" lean-forward="true" selection-start-line="740" selection-end-line="759" selection-end-column="111" />
+            <state relative-caret-position="-131">
+              <caret line="981" column="4" selection-start-line="981" selection-start-column="4" selection-end-line="981" selection-end-column="4" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#47587#47775#0" />
-                <element signature="e#47834#48022#0" />
-                <element signature="e#48082#48271#0" />
-                <element signature="e#48331#48520#0" />
-                <element signature="e#48580#48769#0" />
-                <element signature="e#48829#49018#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysocket/modifyDeviceAddress.py">
+        <entry file="file://$PROJECT_DIR$/templates/monitor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-17981">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/models.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2331">
-              <caret line="502" selection-start-line="502" selection-end-line="502" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/battery/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="71" column="12" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="73" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -330,11 +256,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
+            <state relative-caret-position="-6">
+              <caret line="219" column="12" lean-forward="true" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/control.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="843">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3806">
+              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -345,14 +289,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DataDict</find>
       <find>没有该参数值</find>
       <find>没</find>
       <find>readRealData</find>
@@ -382,6 +325,7 @@
       <find>, 'nextState': mfc.nextState</find>
       <find>eturn</find>
       <find>data[i]['ID']</find>
+      <find>i</find>
     </findStrings>
     <replaceStrings>
       <replace>hours=TZ</replace>
@@ -421,9 +365,7 @@
         <option value="$PROJECT_DIR$/MFC/mfcControl.py" />
         <option value="$PROJECT_DIR$/templates/control.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/load_control.html" />
         <option value="$PROJECT_DIR$/mysocket/dbtest.py" />
-        <option value="$PROJECT_DIR$/templates/oven_control.html" />
         <option value="$PROJECT_DIR$/templates/videotest.html" />
         <option value="$PROJECT_DIR$/mysocket/ovenControl.py" />
         <option value="D:/global-wind-visualization.html" />
@@ -434,21 +376,24 @@
         <option value="$PROJECT_DIR$/mysocket/db_config.json" />
         <option value="$PROJECT_DIR$/apps/admin.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/battery/urls.py" />
-        <option value="$PROJECT_DIR$/apps/views.py" />
-        <option value="$PROJECT_DIR$/templates/monitor.html" />
         <option value="$PROJECT_DIR$/mysocket/socket.txt" />
         <option value="$PROJECT_DIR$/mysocket/dbClass.py" />
         <option value="$PROJECT_DIR$/apps/models.py" />
-        <option value="$PROJECT_DIR$/static/js/monitor.js" />
         <option value="$PROJECT_DIR$/mysocket/HardwareProtocol.py" />
         <option value="$PROJECT_DIR$/mysocket/__init__.py" />
         <option value="$PROJECT_DIR$/static/js/control.js" />
         <option value="$PROJECT_DIR$/apps/backend_db_interface.py" />
-        <option value="$PROJECT_DIR$/templates/gas_control.html" />
         <option value="$PROJECT_DIR$/mysocket/interfaces/dbClass.py" />
-        <option value="$PROJECT_DIR$/mysocket/modifyDeviceAddress.py" />
         <option value="$PROJECT_DIR$/mysocket/socketClient.py" />
+        <option value="$PROJECT_DIR$/mysocket/modifyDeviceAddress.py" />
+        <option value="$PROJECT_DIR$/battery/urls.py" />
+        <option value="$PROJECT_DIR$/apps/views.py" />
+        <option value="$PROJECT_DIR$/templates/monitor.html" />
+        <option value="$PROJECT_DIR$/templates/oven_control.html" />
+        <option value="$PROJECT_DIR$/templates/load_control.html" />
+        <option value="$PROJECT_DIR$/templates/gas_control.html" />
+        <option value="$PROJECT_DIR$/templates/data_export.html" />
+        <option value="$PROJECT_DIR$/static/js/monitor.js" />
       </list>
     </option>
   </component>
@@ -487,6 +432,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -541,7 +487,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -748,12 +693,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16151386" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49966055" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.80117273" visible="true" weight="0.29718006" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80117273" weight="0.29718006" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -801,17 +746,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/global-wind-visualization.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="82" lean-forward="true" selection-start-line="7" selection-start-column="82" selection-end-line="7" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/global-wind-visualization.html" />
-    <entry file="file://$PROJECT_DIR$/battery/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/videotest.html" />
     <entry file="file://$PROJECT_DIR$/templates/home - 副本.html" />
     <entry file="file://$PROJECT_DIR$/templates/home.html" />
@@ -826,13 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="85422" selection-start-line="6" selection-start-column="85422" selection-end-line="6" selection-end-column="85422" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="54" selection-start-line="54" selection-start-column="2" selection-end-line="59" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -856,23 +783,6 @@
     <entry file="file://$PROJECT_DIR$/mysocket/socket.txt" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa14284.17189/dbClass.py" />
     <entry file="file://$PROJECT_DIR$/mysocket/socket.log" />
-    <entry file="file://$PROJECT_DIR$/templates/monitor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="763" selection-start-line="763" selection-end-line="788" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#7;n#div#0;n#div#2;n#section#0;n#ul#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2680">
-          <caret line="942" column="39" selection-start-line="942" selection-start-column="39" selection-end-line="942" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -903,33 +813,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="216" column="101" selection-start-line="216" selection-start-column="92" selection-end-line="216" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/oven_control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="115" column="96" lean-forward="true" selection-start-line="115" selection-start-column="96" selection-end-line="115" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/setting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1281" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysocket/dbClass.py" />
-    <entry file="file://$PROJECT_DIR$/battery.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577385">
-          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/battery.log" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -955,47 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/load_control.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/interfaces/dbClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1206">
-          <caret line="283" column="46" selection-start-line="283" selection-start-column="46" selection-end-line="283" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gas_control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/control.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="762" column="55" selection-start-line="762" selection-start-column="55" selection-end-line="764" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2331">
-          <caret line="502" selection-start-line="502" selection-end-line="502" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battery/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -1010,45 +859,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/views.py">
+    <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
+        <state relative-caret-position="25">
+          <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="740" lean-forward="true" selection-start-line="740" selection-end-line="759" selection-end-column="111" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#47587#47775#0" />
-            <element signature="e#47834#48022#0" />
-            <element signature="e#48082#48271#0" />
-            <element signature="e#48331#48520#0" />
-            <element signature="e#48580#48769#0" />
-            <element signature="e#48829#49018#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/modifyDeviceAddress.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#162#200#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysocket/interfaces/HardwareProtocol.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525">
+        <state relative-caret-position="300">
           <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -1057,24 +880,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysocket/socketClient.py">
+    <entry file="file://$PROJECT_DIR$/mysocket/interfaces/dbClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="150" column="93" selection-start-line="150" selection-start-column="93" selection-end-line="150" selection-end-column="93" />
+        <state relative-caret-position="7000">
+          <caret line="283" column="46" selection-start-line="283" selection-start-column="46" selection-end-line="283" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysocket/modifyDeviceAddress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-606">
+          <caret line="502" selection-start-line="502" selection-end-line="502" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/battery/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
           <folding>
-            <element signature="e#162#200#0" expanded="true" />
-            <element signature="e#8008#9152#0" />
-            <element signature="e#9206#9606#0" />
-            <element signature="e#9790#9840#0" />
-            <element signature="e#18247#18360#0" />
-            <element signature="e#18428#20265#0" />
-            <element signature="e#37514#41283#0" />
-            <element signature="e#41332#43810#0" />
-            <element signature="e#43858#46270#0" />
-            <element signature="e#46319#47988#0" />
-            <element signature="e#48036#49645#0" />
-            <element signature="e#49694#51303#0" />
+            <element signature="e#631#663#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/control.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="770" column="4" selection-start-line="770" selection-start-column="4" selection-end-line="780" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3806">
+          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/data_export.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/oven_control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/load_control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4850">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gas_control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="219" column="12" lean-forward="true" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/backend_db_interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-131">
+          <caret line="981" column="4" selection-start-line="981" selection-start-column="4" selection-end-line="981" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17981">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/monitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="71" column="12" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="73" selection-end-column="67" />
         </state>
       </provider>
     </entry>

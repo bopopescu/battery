@@ -69,9 +69,9 @@ $(document).ready(function () {
         var channel_num = $('#channel_num_selected option:selected').val();//选中的值
         if (box_num != undefined && channel_num != undefined) {
             show_chart();
-            intID1 = setInterval(get_realtime_data, refresh);
-            intID2 = setInterval(show_brief_info, refresh);
-            intID3 = setInterval(show_testline_status, refresh);
+            // intID1 = setInterval(get_realtime_data, refresh);
+            // intID2 = setInterval(show_brief_info, refresh);
+            // intID3 = setInterval(show_testline_status, refresh);
             show_test_scheme();
         }
         window.onresize = function () {
