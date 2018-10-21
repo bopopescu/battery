@@ -784,8 +784,10 @@ class socketConnect(object):
         logging.debug("更新实时测试数据...type:" + str(config.type) + "...cmd:" + str(cmd))
         if config.type == 'box':
             if cmd == 'read':
-                if ((data[0] == 0xAA) and (data[1] == 0x55) and (data[-1] == 0xAA) and (data[-2] == 0x55)):  # 帧头帧尾校验
-                    if ((len(data) == data[2] + (data[3] << 8) + 6) and len(data) == 3471):  # 数据长度校验
+                #if ((data[0] == 0xAA) and (data[1] == 0x55) and (data[-1] == 0xAA) and (data[-2] == 0x55)):  # 帧头帧尾校验
+                    #if ((len(data) == data[2] + (data[3] << 8) + 6) and len(data) == 3471):  # 数据长度校验
+                if True:
+                    if(len(data)==3471):
                         if data[6] == boxid:
                             # if data[6] == 0x00:
                             logging.debug("更新电子负载实时数据成功")
@@ -885,7 +887,7 @@ class socketConnect(object):
             if data[0] == 0x06:  # 帧头校验
                 if (len(data) == 12):  # 数据长度校验
                     GasDataDict = {}
-                    data = (data[8] + data[9] << 8 - 0x4000) / (0xc000 - 0x4000) * config.gasfullscale
+                    data = (data[8] + (data[9] << 8) - 0x4000) / (0xc000 - 0x4000) * config.gasfullscale
                     if config.gastype == 'H2':
                         GasDataDict['qH2'] = data
                         GasDataDict['tH2'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

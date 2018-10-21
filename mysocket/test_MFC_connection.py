@@ -4,9 +4,10 @@ import socket
 import time
 
 for port in [20003,]:
-    for addr in range(0x20,0x60):
+    for addr in range(0x20,0x24):
         mfc=MFC(addr)
         cmd=mfc.buildcmd(type='ReadFlow')
+        #cmd=mfc.buildcmd(type="SetDigitalSetpoint", value=0x4000)
         signal.signal(signal.SIGINT, quit)
         signal.signal(signal.SIGTERM, quit)
         ip = '192.168.0.4'
@@ -20,14 +21,16 @@ for port in [20003,]:
                 try:
                     time.sleep(2)
                     data = s.recv(1000)
+                    print(data)
                     s.close()
                     if len(data) == 12 and data[0] == 0x06:  # 帧长校验
-                        result = (data[8] + data[9] << 8 - 0x4000) / (0xc000 - 0x4000)
+                        result = (data[8] + (data[9] << 8) - 0x4000) / (0xc000 - 0x4000)
                         print('485地址:' + str(addr) + '   IP:' + ip + '   Port:' + str(port) + ' 成功！')
-                        print(data)
+                        print(result)
                     else:
                         print('485地址:' + str(addr) + '   IP:' + ip + '   Port:' + str(port) + ' 接收数据格式错误')
-                except:  # 接收数据失败
+                except Exception as e:  # 接收数据失败
+                    print(e)
                     print('485地址:' + str(addr) + '   IP:' + ip + '   Port:' + str(port) + ' 接收数据超时')
                     s.close()
             except:  # 读取数据失败
