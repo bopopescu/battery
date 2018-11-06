@@ -275,11 +275,11 @@ class dbClass(object):
         data = []
         tables = {'H2': self.H2DeviceTable, 'N2': self.N2DeviceTable, 'CO2': self.CO2DeviceTable,
                   'CH4': self.CH4DeviceTable, 'AIR': self.AIRDeviceTable, 'H2O': self.H2ODeviceTable}
-        for i in tables.keys():
-            sql = 'SELECT ' + keystr + ' FROM ' + tables[i] + ' WHERE (currState!=nextState)'
+        for j in tables.keys():
+            sql = 'SELECT ' + keystr + ' FROM ' + tables[j] + ' WHERE (currState!=nextState)'
             result = self.executeGetSQL(sql, keys)
             for i in result:
-                i["type"] = i
+                i["type"] = j
             data = data + result
         logging.debug("获取待处理MFC:" + str(data))
         return data

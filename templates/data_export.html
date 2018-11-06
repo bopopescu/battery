@@ -96,13 +96,13 @@
                 }
             });
             var varlist = {"u": "电子负载电压", "i": "电子负载电流"};
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 2; i++) {
                 varlist["Tc" + i] = "控温点" + i + "温度";
             }
-            for (var i = 0; i < 20; i++) {
+            for (var i = 0; i < 6; i++) {
                 varlist["Tm" + i] = "测温点" + i + "温度";
             }
-            for (var i = 0; i < 20; i++) {
+            for (var i = 0; i < 9; i++) {
                 varlist["Vm" + i] = "测压点" + i + "电压";
             }
             var gas = ["H2", "H2O", "N2", "CH4", "CO2", "AIR"];

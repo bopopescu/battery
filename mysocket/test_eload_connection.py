@@ -23,7 +23,7 @@ for port in [20004, ]:
                 try:
                     time.sleep(2)
                     data = s.recv(4000)
-                    print(list(data))
+                    print(len(data))
                     s.close()
                     if True:
                         if len(data) == 3471:  # 数据长度校验
@@ -35,6 +35,12 @@ for port in [20004, ]:
                             DataDict['n'] = data[11 + i * 54 + 5]
                             DataDict['k'] = (data[11 + i * 54 + 6]) + (data[11 + i * 54 + 7] << 8)
                             DataDict['mode'] = data[11 + i * 54 + 8]
+
+                            DataDict['tc'] = (data[11 + i * 54 + 10] << 24) + (data[11 + i * 54 + 11] << 16) + (
+                                    data[11 + i * 54 + 12] << 8) + (data[11 + i * 54 + 13])
+                            DataDict['ta'] = (data[11 + i * 54 + 14] << 24) + (data[11 + i * 54 + 15] << 16) + (
+                                    data[11 + i * 54 + 16] << 8) + (data[11 + i * 54 + 17])
+
                             DataDict['u'] = (data[11 + i * 54 + 19] << 24) + (data[11 + i * 54 + 20] << 16) + (
                                     data[11 + i * 54 + 21] << 8) + (data[11 + i * 54 + 22])
                             DataDict['i'] = (data[11 + i * 54 + 23] << 24) + (data[11 + i * 54 + 24] << 16) + (
@@ -43,6 +49,15 @@ for port in [20004, ]:
                                     data[11 + i * 54 + 29] << 8) + (data[11 + i * 54 + 30])
                             DataDict['qA'] = (data[11 + i * 54 + 31] << 24) + (data[11 + i * 54 + 32] << 16) + (
                                     data[11 + i * 54 + 33] << 8) + (data[11 + i * 54 + 34])
+                            DataDict['T'] = (data[11 + i * 54 + 35] << 24) + (data[11 + i * 54 + 36] << 16) + (
+                                    data[11 + i * 54 + 37] << 8) + (data[11 + i * 54 + 38])
+                            DataDict['r'] = (data[11 + i * 54 + 39] << 24) + (data[11 + i * 54 + 40] << 16) + (
+                                    data[11 + i * 54 + 41] << 8) + (data[11 + i * 54 + 42])
+
+                            DataDict['detailDataFlag'] = (data[11 + i * 54 + 43] << 8) + data[11 + i * 54 + 44]
+                            DataDict['resultDataFlag'] = (data[11 + i * 54 + 45] << 8) + data[11 + i * 54 + 46]
+                            DataDict['overOutDataFlag'] = (data[11 + i * 54 + 47] << 8) + data[11 + i * 54 + 48]
+                            DataDict['powerDownFlag'] = (data[11 + i * 54 + 49] << 8)
                             print(DataDict)
                         else:
                             print('485地址:' + str(addr) + '   IP:' + ip + '   Port:' + str(port) + ' 接收数据长度错误')

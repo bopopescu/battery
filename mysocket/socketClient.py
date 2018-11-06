@@ -201,8 +201,8 @@ class socketConnect(object):
             mfc = MFC(config.addr)
             if config.cmd == 'set':
                 # value=0x4000~0xC000
-                config.plan = int(config.plan / config.gasfullscale * (0xc000 - 0x4000)) + 0x4000
-                cmd = mfc.buildcmd(type="SetDigitalSetpoint", value=config.plan)
+                plan = int(config.plan / config.gasfullscale * (0xc000 - 0x4000)) + 0x4000
+                cmd = mfc.buildcmd(type="SetDigitalSetpoint", value=plan)
                 return cmd
             elif config.cmd == 'read':
                 cmd = mfc.buildcmd(type="ReadFlow")
@@ -349,7 +349,7 @@ class socketConnect(object):
                                  plan=settingValue, gasfullscale=i["fullScale"], waittime=0.5, length=200)
                 config.senddata = self.buildCmdMessage(config)
                 config.recvdata = self.sendCmdMessageRepeat(config)
-                self.updateGasState(config, i["type"], i["ID"])
+                self.updateGasState(config=config, gastype=i["type"], MFCid=i["ID"])
 
             for i in cellsUnderHandle:
                 COM = (self.db.getCellsComponetCOM(i))[0]
@@ -887,7 +887,7 @@ class socketConnect(object):
             if data[0] == 0x06:  # 帧头校验
                 if (len(data) == 12):  # 数据长度校验
                     GasDataDict = {}
-                    data = (data[8] + (data[9] << 8) - 0x4000) / (0xc000 - 0x4000) * config.gasfullscale
+                    data = (data[8] + (data[9] << 8) - 0x4000) / (0xc000 - 0x4000) * float(config.gasfullscale)
                     if config.gastype == 'H2':
                         GasDataDict['qH2'] = data
                         GasDataDict['tH2'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

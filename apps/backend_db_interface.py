@@ -327,14 +327,20 @@ def get_real_time_test_data_interface(box_id, cha_id):
     data = {
         'I': {}, 'U': {},
         'Q_N2': {}, 'Q_H2': {}, 'Q_CO2': {}, 'Q_CH4': {}, 'Q_Air': {}, 'Q_H2O': {},
-        'Tc0': {}, 'Tc1': {}, 'Tc2': {}, 'Tc3': {},
-        'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {}, 'Tm6': {}, 'Tm7': {}, 'Tm8': {}, 'Tm9': {},
-        'Tm10': {}, 'Tm11': {}, 'Tm12': {}, 'Tm13': {}, 'Tm14': {}, 'Tm15': {}, 'Tm16': {}, 'Tm17': {}, 'Tm18': {},
-        'Tm19': {},
-        'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {}, 'Vm9': {},
-        'Vm10': {}, 'Vm11': {}, 'Vm12': {}, 'Vm13': {}, 'Vm14': {}, 'Vm15': {}, 'Vm16': {}, 'Vm17': {}, 'Vm18': {},
-        'Vm19': {},
+        'Tc0': {}, 'Tc1': {}, 'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {},
+        'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {},
     }
+    # data = {
+    #     'I': {}, 'U': {},
+    #     'Q_N2': {}, 'Q_H2': {}, 'Q_CO2': {}, 'Q_CH4': {}, 'Q_Air': {}, 'Q_H2O': {},
+    #     'Tc0': {}, 'Tc1': {}, 'Tc2': {}, 'Tc3': {},
+    #     'Tm0': {}, 'Tm1': {}, 'Tm2': {}, 'Tm3': {}, 'Tm4': {}, 'Tm5': {}, 'Tm6': {}, 'Tm7': {}, 'Tm8': {}, 'Tm9': {},
+    #     'Tm10': {}, 'Tm11': {}, 'Tm12': {}, 'Tm13': {}, 'Tm14': {}, 'Tm15': {}, 'Tm16': {}, 'Tm17': {}, 'Tm18': {},
+    #     'Tm19': {},
+    #     'Vm0': {}, 'Vm1': {}, 'Vm2': {}, 'Vm3': {}, 'Vm4': {}, 'Vm5': {}, 'Vm6': {}, 'Vm7': {}, 'Vm8': {}, 'Vm9': {},
+    #     'Vm10': {}, 'Vm11': {}, 'Vm12': {}, 'Vm13': {}, 'Vm14': {}, 'Vm15': {}, 'Vm16': {}, 'Vm17': {}, 'Vm18': {},
+    #     'Vm19': {},
+    # }
     if test_id == -1:
         return data
     try:
@@ -367,10 +373,10 @@ def get_real_time_test_data_interface(box_id, cha_id):
                 "value": [timeformat(rt_data.tTc0), dataformat(rt_data.Tc0)]},
         'Tc1': {"name": timeformat(rt_data.tTc1),
                 "value": [timeformat(rt_data.tTc1), dataformat(rt_data.Tc1)]},
-        'Tc2': {"name": timeformat(rt_data.tTc2),
-                "value": [timeformat(rt_data.tTc2), dataformat(rt_data.Tc2)]},
-        'Tc3': {"name": timeformat(rt_data.tTc3),
-                "value": [timeformat(rt_data.tTc3), dataformat(rt_data.Tc3)]},
+        # 'Tc2': {"name": timeformat(rt_data.tTc2),
+        #         "value": [timeformat(rt_data.tTc2), dataformat(rt_data.Tc2)]},
+        # 'Tc3': {"name": timeformat(rt_data.tTc3),
+        #         "value": [timeformat(rt_data.tTc3), dataformat(rt_data.Tc3)]},
         'Tm0': {"name": timeformat(rt_data.tTm0),
                 "value": [timeformat(rt_data.tTm0), dataformat(rt_data.Tm0)]},
         'Tm1': {"name": timeformat(rt_data.tTm1),
@@ -383,34 +389,34 @@ def get_real_time_test_data_interface(box_id, cha_id):
                 "value": [timeformat(rt_data.tTm4), dataformat(rt_data.Tm4)]},
         'Tm5': {"name": timeformat(rt_data.tTm5),
                 "value": [timeformat(rt_data.tTm5), dataformat(rt_data.Tm5)]},
-        'Tm6': {"name": timeformat(rt_data.tTm6),
-                "value": [timeformat(rt_data.tTm6), dataformat(rt_data.Tm6)]},
-        'Tm7': {"name": timeformat(rt_data.tTm7),
-                "value": [timeformat(rt_data.tTm7), dataformat(rt_data.Tm7)]},
-        'Tm8': {"name": timeformat(rt_data.tTm8),
-                "value": [timeformat(rt_data.tTm8), dataformat(rt_data.Tm8)]},
-        'Tm9': {"name": timeformat(rt_data.tTm9),
-                "value": [timeformat(rt_data.tTm9), dataformat(rt_data.Tm9)]},
-        'Tm10': {"name": timeformat(rt_data.tTm10),
-                 "value": [timeformat(rt_data.tTm10), dataformat(rt_data.Tm10)]},
-        'Tm11': {"name": timeformat(rt_data.tTm11),
-                 "value": [timeformat(rt_data.tTm11), dataformat(rt_data.Tm11)]},
-        'Tm12': {"name": timeformat(rt_data.tTm12),
-                 "value": [timeformat(rt_data.tTm12), dataformat(rt_data.Tm12)]},
-        'Tm13': {"name": timeformat(rt_data.tTm13),
-                 "value": [timeformat(rt_data.tTm13), dataformat(rt_data.Tm13)]},
-        'Tm14': {"name": timeformat(rt_data.tTm14),
-                 "value": [timeformat(rt_data.tTm14), dataformat(rt_data.Tm14)]},
-        'Tm15': {"name": timeformat(rt_data.tTm15),
-                 "value": [timeformat(rt_data.tTm15), dataformat(rt_data.Tm15)]},
-        'Tm16': {"name": timeformat(rt_data.tTm16),
-                 "value": [timeformat(rt_data.tTm16), dataformat(rt_data.Tm16)]},
-        'Tm17': {"name": timeformat(rt_data.tTm17),
-                 "value": [timeformat(rt_data.tTm17), dataformat(rt_data.Tm17)]},
-        'Tm18': {"name": timeformat(rt_data.tTm18),
-                 "value": [timeformat(rt_data.tTm18), dataformat(rt_data.Tm18)]},
-        'Tm19': {"name": timeformat(rt_data.tTm19),
-                 "value": [timeformat(rt_data.tTm19), dataformat(rt_data.Tm19)]},
+        # 'Tm6': {"name": timeformat(rt_data.tTm6),
+        #         "value": [timeformat(rt_data.tTm6), dataformat(rt_data.Tm6)]},
+        # 'Tm7': {"name": timeformat(rt_data.tTm7),
+        #         "value": [timeformat(rt_data.tTm7), dataformat(rt_data.Tm7)]},
+        # 'Tm8': {"name": timeformat(rt_data.tTm8),
+        #         "value": [timeformat(rt_data.tTm8), dataformat(rt_data.Tm8)]},
+        # 'Tm9': {"name": timeformat(rt_data.tTm9),
+        #         "value": [timeformat(rt_data.tTm9), dataformat(rt_data.Tm9)]},
+        # 'Tm10': {"name": timeformat(rt_data.tTm10),
+        #          "value": [timeformat(rt_data.tTm10), dataformat(rt_data.Tm10)]},
+        # 'Tm11': {"name": timeformat(rt_data.tTm11),
+        #          "value": [timeformat(rt_data.tTm11), dataformat(rt_data.Tm11)]},
+        # 'Tm12': {"name": timeformat(rt_data.tTm12),
+        #          "value": [timeformat(rt_data.tTm12), dataformat(rt_data.Tm12)]},
+        # 'Tm13': {"name": timeformat(rt_data.tTm13),
+        #          "value": [timeformat(rt_data.tTm13), dataformat(rt_data.Tm13)]},
+        # 'Tm14': {"name": timeformat(rt_data.tTm14),
+        #          "value": [timeformat(rt_data.tTm14), dataformat(rt_data.Tm14)]},
+        # 'Tm15': {"name": timeformat(rt_data.tTm15),
+        #          "value": [timeformat(rt_data.tTm15), dataformat(rt_data.Tm15)]},
+        # 'Tm16': {"name": timeformat(rt_data.tTm16),
+        #          "value": [timeformat(rt_data.tTm16), dataformat(rt_data.Tm16)]},
+        # 'Tm17': {"name": timeformat(rt_data.tTm17),
+        #          "value": [timeformat(rt_data.tTm17), dataformat(rt_data.Tm17)]},
+        # 'Tm18': {"name": timeformat(rt_data.tTm18),
+        #          "value": [timeformat(rt_data.tTm18), dataformat(rt_data.Tm18)]},
+        # 'Tm19': {"name": timeformat(rt_data.tTm19),
+        #          "value": [timeformat(rt_data.tTm19), dataformat(rt_data.Tm19)]},
         'Vm0': {"name": timeformat(rt_data.tVm0),
                 "value": [timeformat(rt_data.tVm0), dataformat(rt_data.Vm0)]},
         'Vm1': {"name": timeformat(rt_data.tVm1),
@@ -429,28 +435,28 @@ def get_real_time_test_data_interface(box_id, cha_id):
                 "value": [timeformat(rt_data.tVm7), dataformat(rt_data.Vm7)]},
         'Vm8': {"name": timeformat(rt_data.tVm8),
                 "value": [timeformat(rt_data.tVm8), dataformat(rt_data.Vm8)]},
-        'Vm9': {"name": timeformat(rt_data.tVm9),
-                "value": [timeformat(rt_data.tVm9), dataformat(rt_data.Vm9)]},
-        'Vm10': {"name": timeformat(rt_data.tVm10),
-                 "value": [timeformat(rt_data.tVm10), dataformat(rt_data.Vm10)]},
-        'Vm11': {"name": timeformat(rt_data.tVm11),
-                 "value": [timeformat(rt_data.tVm11), dataformat(rt_data.Vm11)]},
-        'Vm12': {"name": timeformat(rt_data.tVm12),
-                 "value": [timeformat(rt_data.tVm12), dataformat(rt_data.Vm12)]},
-        'Vm13': {"name": timeformat(rt_data.tVm13),
-                 "value": [timeformat(rt_data.tVm13), dataformat(rt_data.Vm13)]},
-        'Vm14': {"name": timeformat(rt_data.tVm14),
-                 "value": [timeformat(rt_data.tVm14), dataformat(rt_data.Vm14)]},
-        'Vm15': {"name": timeformat(rt_data.tVm15),
-                 "value": [timeformat(rt_data.tVm15), dataformat(rt_data.Vm15)]},
-        'Vm16': {"name": timeformat(rt_data.tVm16),
-                 "value": [timeformat(rt_data.tVm16), dataformat(rt_data.Vm16)]},
-        'Vm17': {"name": timeformat(rt_data.tVm17),
-                 "value": [timeformat(rt_data.tVm17), dataformat(rt_data.Vm17)]},
-        'Vm18': {"name": timeformat(rt_data.tVm18),
-                 "value": [timeformat(rt_data.tVm18), dataformat(rt_data.Vm18)]},
-        'Vm19': {"name": timeformat(rt_data.tVm19),
-                 "value": [timeformat(rt_data.tVm19), dataformat(rt_data.Vm19)]},
+        # 'Vm9': {"name": timeformat(rt_data.tVm9),
+        #         "value": [timeformat(rt_data.tVm9), dataformat(rt_data.Vm9)]},
+        # 'Vm10': {"name": timeformat(rt_data.tVm10),
+        #          "value": [timeformat(rt_data.tVm10), dataformat(rt_data.Vm10)]},
+        # 'Vm11': {"name": timeformat(rt_data.tVm11),
+        #          "value": [timeformat(rt_data.tVm11), dataformat(rt_data.Vm11)]},
+        # 'Vm12': {"name": timeformat(rt_data.tVm12),
+        #          "value": [timeformat(rt_data.tVm12), dataformat(rt_data.Vm12)]},
+        # 'Vm13': {"name": timeformat(rt_data.tVm13),
+        #          "value": [timeformat(rt_data.tVm13), dataformat(rt_data.Vm13)]},
+        # 'Vm14': {"name": timeformat(rt_data.tVm14),
+        #          "value": [timeformat(rt_data.tVm14), dataformat(rt_data.Vm14)]},
+        # 'Vm15': {"name": timeformat(rt_data.tVm15),
+        #          "value": [timeformat(rt_data.tVm15), dataformat(rt_data.Vm15)]},
+        # 'Vm16': {"name": timeformat(rt_data.tVm16),
+        #          "value": [timeformat(rt_data.tVm16), dataformat(rt_data.Vm16)]},
+        # 'Vm17': {"name": timeformat(rt_data.tVm17),
+        #          "value": [timeformat(rt_data.tVm17), dataformat(rt_data.Vm17)]},
+        # 'Vm18': {"name": timeformat(rt_data.tVm18),
+        #          "value": [timeformat(rt_data.tVm18), dataformat(rt_data.Vm18)]},
+        # 'Vm19': {"name": timeformat(rt_data.tVm19),
+        #          "value": [timeformat(rt_data.tVm19), dataformat(rt_data.Vm19)]},
     }
     return data
 
@@ -459,16 +465,22 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
     # 获取给定通道，给定测试id的历史数据
     ## bug:数据必须按照时间顺序排列 否则显示会有问题
     hs_data = cellTestHistoryDataTable.objects.filter(testID=test_id).order_by("celldata_time")
+    # data = {
+    #     'I': [], 'U': [],
+    #     'Q_N2': [], 'Q_H2': [], 'Q_CO2': [], 'Q_CH4': [], 'Q_Air': [], 'Q_H2O': [],
+    #     'Tc0': [], 'Tc1': [], 'Tc2': [], 'Tc3': [],
+    #     'Tm0': [], 'Tm1': [], 'Tm2': [], 'Tm3': [], 'Tm4': [], 'Tm5': [], 'Tm6': [], 'Tm7': [], 'Tm8': [], 'Tm9': [],
+    #     'Tm10': [], 'Tm11': [], 'Tm12': [], 'Tm13': [], 'Tm14': [], 'Tm15': [], 'Tm16': [], 'Tm17': [], 'Tm18': [],
+    #     'Tm19': [],
+    #     'Vm0': [], 'Vm1': [], 'Vm2': [], 'Vm3': [], 'Vm4': [], 'Vm5': [], 'Vm6': [], 'Vm7': [], 'Vm8': [], 'Vm9': [],
+    #     'Vm10': [], 'Vm11': [], 'Vm12': [], 'Vm13': [], 'Vm14': [], 'Vm15': [], 'Vm16': [], 'Vm17': [], 'Vm18': [],
+    #     'Vm19': [],
+    # }
     data = {
         'I': [], 'U': [],
         'Q_N2': [], 'Q_H2': [], 'Q_CO2': [], 'Q_CH4': [], 'Q_Air': [], 'Q_H2O': [],
-        'Tc0': [], 'Tc1': [], 'Tc2': [], 'Tc3': [],
-        'Tm0': [], 'Tm1': [], 'Tm2': [], 'Tm3': [], 'Tm4': [], 'Tm5': [], 'Tm6': [], 'Tm7': [], 'Tm8': [], 'Tm9': [],
-        'Tm10': [], 'Tm11': [], 'Tm12': [], 'Tm13': [], 'Tm14': [], 'Tm15': [], 'Tm16': [], 'Tm17': [], 'Tm18': [],
-        'Tm19': [],
-        'Vm0': [], 'Vm1': [], 'Vm2': [], 'Vm3': [], 'Vm4': [], 'Vm5': [], 'Vm6': [], 'Vm7': [], 'Vm8': [], 'Vm9': [],
-        'Vm10': [], 'Vm11': [], 'Vm12': [], 'Vm13': [], 'Vm14': [], 'Vm15': [], 'Vm16': [], 'Vm17': [], 'Vm18': [],
-        'Vm19': [],
+        'Tc0': [], 'Tc1': [], 'Tm0': [], 'Tm1': [], 'Tm2': [], 'Tm3': [], 'Tm4': [], 'Tm5': [],
+        'Vm0': [], 'Vm1': [], 'Vm2': [], 'Vm3': [], 'Vm4': [], 'Vm5': [], 'Vm6': [], 'Vm7': [], 'Vm8': [],
     }
     if len(hs_data) == 0:
         logger = logging.getLogger("django")
@@ -482,35 +494,35 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
         data['U'].append({
             "name": timeformat(i.celldata_time), "value": [timeformat(i.celldata_time), float(i.u) / 1000]})
         data['Q_N2'].append({"name": timeformat(i.tN2), "value": [timeformat(i.tN2), i.qN2]})
-        data['Q_H2'].append({"name": timeformat(i.tH2), "value": [timeformat(i.tN2), i.qH2]})
+        data['Q_H2'].append({"name": timeformat(i.tH2), "value": [timeformat(i.tH2), i.qH2]})
         data['Q_H2O'].append({"name": timeformat(i.tH2O), "value": [timeformat(i.tH2O), i.qH2O]})
         data['Q_CO2'].append({"name": timeformat(i.tCO2), "value": [timeformat(i.tCO2), i.qCO2]})
         data['Q_Air'].append({"name": timeformat(i.tAIR), "value": [timeformat(i.tAIR), i.qAIR]})
         data['Q_CH4'].append({"name": timeformat(i.tCH4), "value": [timeformat(i.tCH4), i.qCH4]})
         data['Tc0'].append({"name": timeformat(i.tTc0), "value": [timeformat(i.tTc0), i.Tc0]})
         data['Tc1'].append({"name": timeformat(i.tTc1), "value": [timeformat(i.tTc1), i.Tc1]})
-        data['Tc2'].append({"name": timeformat(i.tTc2), "value": [timeformat(i.tTc2), i.Tc2]})
-        data['Tc3'].append({"name": timeformat(i.tTc3), "value": [timeformat(i.tTc3), i.Tc3]})
+        # data['Tc2'].append({"name": timeformat(i.tTc2), "value": [timeformat(i.tTc2), i.Tc2]})
+        # data['Tc3'].append({"name": timeformat(i.tTc3), "value": [timeformat(i.tTc3), i.Tc3]})
         data['Tm0'].append({"name": timeformat(i.tTm0), "value": [timeformat(i.tTm0), i.Tm0]})
         data['Tm1'].append({"name": timeformat(i.tTm1), "value": [timeformat(i.tTm1), i.Tm1]})
         data['Tm2'].append({"name": timeformat(i.tTm2), "value": [timeformat(i.tTm2), i.Tm2]})
         data['Tm3'].append({"name": timeformat(i.tTm3), "value": [timeformat(i.tTm3), i.Tm3]})
         data['Tm4'].append({"name": timeformat(i.tTm4), "value": [timeformat(i.tTm4), i.Tm4]})
         data['Tm5'].append({"name": timeformat(i.tTm5), "value": [timeformat(i.tTm5), i.Tm5]})
-        data['Tm6'].append({"name": timeformat(i.tTm6), "value": [timeformat(i.tTm6), i.Tm6]})
-        data['Tm7'].append({"name": timeformat(i.tTm7), "value": [timeformat(i.tTm7), i.Tm7]})
-        data['Tm8'].append({"name": timeformat(i.tTm8), "value": [timeformat(i.tTm8), i.Tm8]})
-        data['Tm9'].append({"name": timeformat(i.tTm9), "value": [timeformat(i.tTm9), i.Tm9]})
-        data['Tm10'].append({"name": timeformat(i.tTm10), "value": [timeformat(i.tTm10), i.Tm10]})
-        data['Tm11'].append({"name": timeformat(i.tTm11), "value": [timeformat(i.tTm11), i.Tm11]})
-        data['Tm12'].append({"name": timeformat(i.tTm12), "value": [timeformat(i.tTm12), i.Tm12]})
-        data['Tm13'].append({"name": timeformat(i.tTm13), "value": [timeformat(i.tTm13), i.Tm13]})
-        data['Tm14'].append({"name": timeformat(i.tTm14), "value": [timeformat(i.tTm14), i.Tm14]})
-        data['Tm15'].append({"name": timeformat(i.tTm15), "value": [timeformat(i.tTm15), i.Tm15]})
-        data['Tm16'].append({"name": timeformat(i.tTm16), "value": [timeformat(i.tTm16), i.Tm16]})
-        data['Tm17'].append({"name": timeformat(i.tTm17), "value": [timeformat(i.tTm17), i.Tm17]})
-        data['Tm18'].append({"name": timeformat(i.tTm18), "value": [timeformat(i.tTm18), i.Tm18]})
-        data['Tm19'].append({"name": timeformat(i.tTm19), "value": [timeformat(i.tTm19), i.Tm19]})
+        # data['Tm6'].append({"name": timeformat(i.tTm6), "value": [timeformat(i.tTm6), i.Tm6]})
+        # data['Tm7'].append({"name": timeformat(i.tTm7), "value": [timeformat(i.tTm7), i.Tm7]})
+        # data['Tm8'].append({"name": timeformat(i.tTm8), "value": [timeformat(i.tTm8), i.Tm8]})
+        # data['Tm9'].append({"name": timeformat(i.tTm9), "value": [timeformat(i.tTm9), i.Tm9]})
+        # data['Tm10'].append({"name": timeformat(i.tTm10), "value": [timeformat(i.tTm10), i.Tm10]})
+        # data['Tm11'].append({"name": timeformat(i.tTm11), "value": [timeformat(i.tTm11), i.Tm11]})
+        # data['Tm12'].append({"name": timeformat(i.tTm12), "value": [timeformat(i.tTm12), i.Tm12]})
+        # data['Tm13'].append({"name": timeformat(i.tTm13), "value": [timeformat(i.tTm13), i.Tm13]})
+        # data['Tm14'].append({"name": timeformat(i.tTm14), "value": [timeformat(i.tTm14), i.Tm14]})
+        # data['Tm15'].append({"name": timeformat(i.tTm15), "value": [timeformat(i.tTm15), i.Tm15]})
+        # data['Tm16'].append({"name": timeformat(i.tTm16), "value": [timeformat(i.tTm16), i.Tm16]})
+        # data['Tm17'].append({"name": timeformat(i.tTm17), "value": [timeformat(i.tTm17), i.Tm17]})
+        # data['Tm18'].append({"name": timeformat(i.tTm18), "value": [timeformat(i.tTm18), i.Tm18]})
+        # data['Tm19'].append({"name": timeformat(i.tTm19), "value": [timeformat(i.tTm19), i.Tm19]})
         data['Vm0'].append({"name": timeformat(i.tVm0), "value": [timeformat(i.tVm0), i.Vm0]})
         data['Vm1'].append({"name": timeformat(i.tVm1), "value": [timeformat(i.tVm1), i.Vm1]})
         data['Vm2'].append({"name": timeformat(i.tVm2), "value": [timeformat(i.tVm2), i.Vm2]})
@@ -520,39 +532,112 @@ def get_history_test_data_interface(box_id, cha_id, test_id):
         data['Vm6'].append({"name": timeformat(i.tVm6), "value": [timeformat(i.tVm6), i.Vm6]})
         data['Vm7'].append({"name": timeformat(i.tVm7), "value": [timeformat(i.tVm7), i.Vm7]})
         data['Vm8'].append({"name": timeformat(i.tVm8), "value": [timeformat(i.tVm8), i.Vm8]})
-        data['Vm9'].append({"name": timeformat(i.tVm9), "value": [timeformat(i.tVm9), i.Vm9]})
-        data['Vm10'].append({"name": timeformat(i.tVm10), "value": [timeformat(i.tVm10), i.Vm10]})
-        data['Vm11'].append({"name": timeformat(i.tVm11), "value": [timeformat(i.tVm11), i.Vm11]})
-        data['Vm12'].append({"name": timeformat(i.tVm12), "value": [timeformat(i.tVm12), i.Vm12]})
-        data['Vm13'].append({"name": timeformat(i.tVm13), "value": [timeformat(i.tVm13), i.Vm13]})
-        data['Vm14'].append({"name": timeformat(i.tVm14), "value": [timeformat(i.tVm14), i.Vm14]})
-        data['Vm15'].append({"name": timeformat(i.tVm15), "value": [timeformat(i.tVm15), i.Vm15]})
-        data['Vm16'].append({"name": timeformat(i.tVm16), "value": [timeformat(i.tVm16), i.Vm16]})
-        data['Vm17'].append({"name": timeformat(i.tVm17), "value": [timeformat(i.tVm17), i.Vm17]})
-        data['Vm18'].append({"name": timeformat(i.tVm18), "value": [timeformat(i.tVm18), i.Vm18]})
-        data['Vm19'].append({"name": timeformat(i.tVm19), "value": [timeformat(i.tVm19), i.Vm19]})
+        # data['Vm9'].append({"name": timeformat(i.tVm9), "value": [timeformat(i.tVm9), i.Vm9]})
+        # data['Vm10'].append({"name": timeformat(i.tVm10), "value": [timeformat(i.tVm10), i.Vm10]})
+        # data['Vm11'].append({"name": timeformat(i.tVm11), "value": [timeformat(i.tVm11), i.Vm11]})
+        # data['Vm12'].append({"name": timeformat(i.tVm12), "value": [timeformat(i.tVm12), i.Vm12]})
+        # data['Vm13'].append({"name": timeformat(i.tVm13), "value": [timeformat(i.tVm13), i.Vm13]})
+        # data['Vm14'].append({"name": timeformat(i.tVm14), "value": [timeformat(i.tVm14), i.Vm14]})
+        # data['Vm15'].append({"name": timeformat(i.tVm15), "value": [timeformat(i.tVm15), i.Vm15]})
+        # data['Vm16'].append({"name": timeformat(i.tVm16), "value": [timeformat(i.tVm16), i.Vm16]})
+        # data['Vm17'].append({"name": timeformat(i.tVm17), "value": [timeformat(i.tVm17), i.Vm17]})
+        # data['Vm18'].append({"name": timeformat(i.tVm18), "value": [timeformat(i.tVm18), i.Vm18]})
+        # data['Vm19'].append({"name": timeformat(i.tVm19), "value": [timeformat(i.tVm19), i.Vm19]})
     return data
 
 
+# def get_real_time_info_interface(box_id, cha_id):
+#     test_id = get_latest_testid_interface(box_id, cha_id)
+#     data = {
+#         "I": 0, "U": 0, "q": 0, "k": 0,
+#         "Tc0": 0, "Tc1": 0, "Tc2": 0, "Tc3": 0,
+#         "Tm0": 0, "Tm1": 0, "Tm2": 0, "Tm3": 0, "Tm4": 0, "Tm5": 0, "Tm6": 0, "Tm7": 0, "Tm8": 0, "Tm9": 0,
+#         "Tm10": 0, "Tm11": 0, "Tm12": 0, "Tm13": 0, "Tm14": 0, "Tm15": 0, "Tm16": 0, "Tm17": 0, "Tm18": 0, "Tm19": 0,
+#         "Vm0": 0, "Vm1": 0, "Vm2": 0, "Vm3": 0, "Vm4": 0, "Vm5": 0, "Vm6": 0, "Vm7": 0, "Vm8": 0, "Vm9": 0,
+#         "Vm10": 0, "Vm11": 0, "Vm12": 0, "Vm13": 0, "Vm14": 0, "Vm15": 0, "Vm16": 0, "Vm17": 0, "Vm18": 0, "Vm19": 0,
+#         "Q_H2": 0, "Q_CO2": 0, "Q_N2": 0, "Q_CH4": 0, "Q_Air": 0, "Q_H2O": 0,
+#
+#     }
+#     if test_id == -1:
+#         return data
+#     try:
+#         rt_data = cellTestRealDataTable.objects.get(testID=test_id)  # 数据的时间戳是秒级，而js默认是ms级，因此需要*1000
+#     except:
+#         logger = logging.getLogger("django")
+#         logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在实时信息")
+#         return data
+#     dataformat = lambda x: float(x) if x is not None else 0
+#     data['I'] = float(rt_data.i) / 1000 if rt_data.i is not None else 0
+#     data['U'] = float(rt_data.u) / 1000 if rt_data.u is not None else 0
+#     data['q'] = float(rt_data.q) if rt_data.q is not None else 0
+#     data['k'] = rt_data.n if rt_data.n is not None else 0
+#     data['Tc0'] = dataformat(rt_data.Tc0)
+#     data['Tc1'] = dataformat(rt_data.Tc1)
+#     data['Tc2'] = dataformat(rt_data.Tc2)
+#     data['Tc3'] = dataformat(rt_data.Tc3)
+#     data['Q_N2'] = dataformat(rt_data.qN2)
+#     data['Q_H2'] = dataformat(rt_data.qH2)
+#     data['Q_CO2'] = dataformat(rt_data.qCO2)
+#     data['Q_CH4'] = dataformat(rt_data.qCH4)
+#     data['Q_Air'] = dataformat(rt_data.qAIR)
+#     data['Q_H2O'] = dataformat(rt_data.qH2O)
+#     data['Tm0'] = dataformat(rt_data.Tm0)
+#     data['Tm1'] = dataformat(rt_data.Tm1)
+#     data['Tm2'] = dataformat(rt_data.Tm2)
+#     data['Tm3'] = dataformat(rt_data.Tm3)
+#     data['Tm4'] = dataformat(rt_data.Tm4)
+#     data['Tm5'] = dataformat(rt_data.Tm5)
+#     data['Tm6'] = dataformat(rt_data.Tm6)
+#     data['Tm7'] = dataformat(rt_data.Tm7)
+#     data['Tm8'] = dataformat(rt_data.Tm8)
+#     data['Tm9'] = dataformat(rt_data.Tm9)
+#     data['Tm10'] = dataformat(rt_data.Tm10)
+#     data['Tm11'] = dataformat(rt_data.Tm11)
+#     data['Tm12'] = dataformat(rt_data.Tm12)
+#     data['Tm13'] = dataformat(rt_data.Tm13)
+#     data['Tm14'] = dataformat(rt_data.Tm14)
+#     data['Tm15'] = dataformat(rt_data.Tm15)
+#     data['Tm16'] = dataformat(rt_data.Tm16)
+#     data['Tm17'] = dataformat(rt_data.Tm17)
+#     data['Tm18'] = dataformat(rt_data.Tm18)
+#     data['Tm19'] = dataformat(rt_data.Tm19)
+#     data['Vm0'] = dataformat(rt_data.Vm0)
+#     data['Vm1'] = dataformat(rt_data.Vm1)
+#     data['Vm2'] = dataformat(rt_data.Vm2)
+#     data['Vm3'] = dataformat(rt_data.Vm3)
+#     data['Vm4'] = dataformat(rt_data.Vm4)
+#     data['Vm5'] = dataformat(rt_data.Vm5)
+#     data['Vm6'] = dataformat(rt_data.Vm6)
+#     data['Vm7'] = dataformat(rt_data.Vm7)
+#     data['Vm8'] = dataformat(rt_data.Vm8)
+#     data['Vm9'] = dataformat(rt_data.Vm9)
+#     data['Vm10'] = dataformat(rt_data.Vm10)
+#     data['Vm11'] = dataformat(rt_data.Vm11)
+#     data['Vm12'] = dataformat(rt_data.Vm12)
+#     data['Vm13'] = dataformat(rt_data.Vm13)
+#     data['Vm14'] = dataformat(rt_data.Vm14)
+#     data['Vm15'] = dataformat(rt_data.Vm15)
+#     data['Vm16'] = dataformat(rt_data.Vm16)
+#     data['Vm17'] = dataformat(rt_data.Vm17)
+#     data['Vm18'] = dataformat(rt_data.Vm18)
+#     data['Vm19'] = dataformat(rt_data.Vm19)
+#     return data
 def get_real_time_info_interface(box_id, cha_id):
-    test_id = get_latest_testid_interface(box_id, cha_id)
+    # test_id = get_latest_testid_interface(box_id, cha_id)
     data = {
         "I": 0, "U": 0, "q": 0, "k": 0,
-        "Tc0": 0, "Tc1": 0, "Tc2": 0, "Tc3": 0,
-        "Tm0": 0, "Tm1": 0, "Tm2": 0, "Tm3": 0, "Tm4": 0, "Tm5": 0, "Tm6": 0, "Tm7": 0, "Tm8": 0, "Tm9": 0,
-        "Tm10": 0, "Tm11": 0, "Tm12": 0, "Tm13": 0, "Tm14": 0, "Tm15": 0, "Tm16": 0, "Tm17": 0, "Tm18": 0, "Tm19": 0,
-        "Vm0": 0, "Vm1": 0, "Vm2": 0, "Vm3": 0, "Vm4": 0, "Vm5": 0, "Vm6": 0, "Vm7": 0, "Vm8": 0, "Vm9": 0,
-        "Vm10": 0, "Vm11": 0, "Vm12": 0, "Vm13": 0, "Vm14": 0, "Vm15": 0, "Vm16": 0, "Vm17": 0, "Vm18": 0, "Vm19": 0,
+        "Tc0": 0, "Tc1": 0, "Tm0": 0, "Tm1": 0, "Tm2": 0, "Tm3": 0, "Tm4": 0, "Tm5": 0,
+        "Vm0": 0, "Vm1": 0, "Vm2": 0, "Vm3": 0, "Vm4": 0, "Vm5": 0, "Vm6": 0, "Vm7": 0, "Vm8": 0,
         "Q_H2": 0, "Q_CO2": 0, "Q_N2": 0, "Q_CH4": 0, "Q_Air": 0, "Q_H2O": 0,
-
     }
-    if test_id == -1:
-        return data
+    # if test_id == -1:
+    #     return data
     try:
-        rt_data = cellTestRealDataTable.objects.get(testID=test_id)  # 数据的时间戳是秒级，而js默认是ms级，因此需要*1000
+        rt_data = cellTestRealDataTable.objects.get(boxID=box_id, chnNum=cha_id)  # 数据的时间戳是秒级，而js默认是ms级，因此需要*1000
     except:
         logger = logging.getLogger("django")
-        logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在实时信息")
+        logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "    不存在实时信息")
+        # logger.error("boxID:" + str(box_id) + "  chaID:" + str(cha_id) + "  testID:" + str(test_id) + "    不存在实时信息")
         return data
     dataformat = lambda x: float(x) if x is not None else 0
     data['I'] = float(rt_data.i) / 1000 if rt_data.i is not None else 0
@@ -561,8 +646,6 @@ def get_real_time_info_interface(box_id, cha_id):
     data['k'] = rt_data.n if rt_data.n is not None else 0
     data['Tc0'] = dataformat(rt_data.Tc0)
     data['Tc1'] = dataformat(rt_data.Tc1)
-    data['Tc2'] = dataformat(rt_data.Tc2)
-    data['Tc3'] = dataformat(rt_data.Tc3)
     data['Q_N2'] = dataformat(rt_data.qN2)
     data['Q_H2'] = dataformat(rt_data.qH2)
     data['Q_CO2'] = dataformat(rt_data.qCO2)
@@ -575,20 +658,6 @@ def get_real_time_info_interface(box_id, cha_id):
     data['Tm3'] = dataformat(rt_data.Tm3)
     data['Tm4'] = dataformat(rt_data.Tm4)
     data['Tm5'] = dataformat(rt_data.Tm5)
-    data['Tm6'] = dataformat(rt_data.Tm6)
-    data['Tm7'] = dataformat(rt_data.Tm7)
-    data['Tm8'] = dataformat(rt_data.Tm8)
-    data['Tm9'] = dataformat(rt_data.Tm9)
-    data['Tm10'] = dataformat(rt_data.Tm10)
-    data['Tm11'] = dataformat(rt_data.Tm11)
-    data['Tm12'] = dataformat(rt_data.Tm12)
-    data['Tm13'] = dataformat(rt_data.Tm13)
-    data['Tm14'] = dataformat(rt_data.Tm14)
-    data['Tm15'] = dataformat(rt_data.Tm15)
-    data['Tm16'] = dataformat(rt_data.Tm16)
-    data['Tm17'] = dataformat(rt_data.Tm17)
-    data['Tm18'] = dataformat(rt_data.Tm18)
-    data['Tm19'] = dataformat(rt_data.Tm19)
     data['Vm0'] = dataformat(rt_data.Vm0)
     data['Vm1'] = dataformat(rt_data.Vm1)
     data['Vm2'] = dataformat(rt_data.Vm2)
@@ -598,17 +667,6 @@ def get_real_time_info_interface(box_id, cha_id):
     data['Vm6'] = dataformat(rt_data.Vm6)
     data['Vm7'] = dataformat(rt_data.Vm7)
     data['Vm8'] = dataformat(rt_data.Vm8)
-    data['Vm9'] = dataformat(rt_data.Vm9)
-    data['Vm10'] = dataformat(rt_data.Vm10)
-    data['Vm11'] = dataformat(rt_data.Vm11)
-    data['Vm12'] = dataformat(rt_data.Vm12)
-    data['Vm13'] = dataformat(rt_data.Vm13)
-    data['Vm14'] = dataformat(rt_data.Vm14)
-    data['Vm15'] = dataformat(rt_data.Vm15)
-    data['Vm16'] = dataformat(rt_data.Vm16)
-    data['Vm17'] = dataformat(rt_data.Vm17)
-    data['Vm18'] = dataformat(rt_data.Vm18)
-    data['Vm19'] = dataformat(rt_data.Vm19)
     return data
 
 
@@ -1021,4 +1079,3 @@ def set_gas_interface(box_id, chn_id, data):
             else:
                 return False
     return True
-

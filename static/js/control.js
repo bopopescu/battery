@@ -760,8 +760,8 @@ function set_gas() {
 
     for (var i = 0; i < rows.length; i++) {
         if (rows[i].children[3].children[0].value != '') {
-            gas_data[rows[i].children[0].innerText] = {
-                'type': rows[i].children[1].innerText,
+            gas_data[rows[i].children[0].innerHTML] = {
+                'type': rows[i].children[1].innerHTML,
                 'value': Number.parseFloat(rows[i].children[3].children[0].value)
             };
         }
