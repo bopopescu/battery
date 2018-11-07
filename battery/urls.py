@@ -23,7 +23,7 @@ from apps.views import IndexView, monitor, control, testline_status, testline_in
     get_testdata_from_start, get_testdata_real_time, get_test_scheme, get_old_scheme, delete_old_scheme, save_scheme, \
     get_b_c_num, start_channel, pause_channel, stop_channel, continue_channel, get_old_oven_scheme, \
     delete_old_oven_scheme, save_oven_scheme, start_oven, get_gas_info, set_gas, gas_control, oven_control, \
-    stop_oven, pause_oven, oven_status, cells_info, tests_info, resume_oven,data_export_streaming_csv_view
+    stop_oven, pause_oven, oven_status, cells_info, tests_info, resume_oven,data_export_streaming_csv_view,big_screen
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -67,4 +67,5 @@ urlpatterns = [
     url(r'^gas_control/$', gas_control, name="gas_control"),
     url(r'^oven_control/$', oven_control, name="oven_control"),
     url(r'^data_export/$',data_export_streaming_csv_view,name="data_export"),
+    url(r'^big_screen/$',big_screen,name="big_screen"),
 ]

@@ -1532,3 +1532,596 @@ AttributeError: 'cellTestHistoryDataTable' object has no attribute 'tqH2'
 [2018-11-06 14:27:58,579] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
 [2018-11-06 14:28:00,066] [ERROR] 当前通道无正在进行的测试
 [2018-11-06 14:28:00,124] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-06 14:51:40,890] [INFO] "GET /big_screen/ HTTP/1.1" 200 32640
+[2018-11-06 14:51:40,951] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-11-06 14:51:41,052] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-11-06 14:51:41,267] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-11-06 14:51:41,339] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-11-06 14:51:41,399] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 14:51:41,594] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 14:51:41,597] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 14:51:41,726] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 14:51:41,729] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 14:51:41,930] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 14:51:41,933] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 14:51:42,060] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 14:51:42,064] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 14:51:42,276] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 14:51:42,279] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 14:51:42,400] [WARNING] Not Found: /favicon.ico
+[2018-11-06 14:51:42,403] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6744
+[2018-11-06 20:15:57,421] [INFO] "GET /monitor/ HTTP/1.1" 200 32897
+[2018-11-06 20:15:57,464] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-11-06 20:15:57,546] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-11-06 20:15:57,805] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-11-06 20:15:57,817] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-11-06 20:15:57,938] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-11-06 20:15:57,948] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:15:58,129] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-11-06 20:15:58,171] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-11-06 20:15:58,256] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-11-06 20:15:58,394] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-11-06 20:16:01,352] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-06 20:16:02,495] [ERROR] 当前通道无正在进行的测试
+[2018-11-06 20:16:02,963] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-06 20:16:03,331] [WARNING] Not Found: /favicon.ico
+[2018-11-06 20:16:03,335] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6744
+[2018-11-06 20:16:05,263] [INFO] "GET /big_screen/ HTTP/1.1" 200 36247
+[2018-11-06 20:16:05,530] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:16:05,856] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:16:05,859] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:16:06,114] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:16:06,118] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:16:06,177] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:16:06,178] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:16:06,451] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:16:06,454] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:16:06,506] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:16:06,509] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:18:00,874] [INFO] "GET /big_screen/ HTTP/1.1" 200 148316
+[2018-11-06 20:18:01,286] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:18:01,297] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:18:01,298] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:18:01,636] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:18:01,639] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:18:01,895] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:18:01,899] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:18:01,975] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:18:01,979] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:18:02,246] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:18:02,249] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:18:49,407] [INFO] "GET /big_screen/ HTTP/1.1" 200 77302
+[2018-11-06 20:18:49,816] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:18:49,827] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:18:49,828] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:18:50,157] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:18:50,160] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:18:50,407] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:18:50,411] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:18:50,498] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:18:50,501] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:18:50,768] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:18:50,771] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:19:04,479] [INFO] "GET /big_screen/ HTTP/1.1" 200 77304
+[2018-11-06 20:19:04,885] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:19:04,902] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:19:04,903] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:19:05,231] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:19:05,233] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:19:05,481] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:19:05,483] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:19:05,565] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:19:05,568] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:19:05,827] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:19:05,830] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:20:36,029] [INFO] "GET /big_screen/ HTTP/1.1" 200 80435
+[2018-11-06 20:20:36,427] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:20:36,439] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:20:36,439] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:20:36,765] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:20:36,767] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:20:37,020] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:20:37,022] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:20:37,104] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:20:37,107] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:20:37,368] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:20:37,371] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:21:42,579] [INFO] "GET /big_screen/ HTTP/1.1" 200 83536
+[2018-11-06 20:21:43,012] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:21:43,024] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:21:43,025] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:21:43,350] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:21:43,354] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:21:43,603] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:21:43,605] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:21:43,685] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:21:43,688] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:21:43,957] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:21:43,960] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:22:06,985] [INFO] "GET /big_screen/ HTTP/1.1" 200 83534
+[2018-11-06 20:22:07,410] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:22:07,421] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:22:07,422] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:22:07,749] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:22:07,753] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:08,001] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:22:08,005] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:08,085] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:22:08,088] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:22:08,337] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:22:08,338] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:22:35,043] [INFO] "GET /big_screen/ HTTP/1.1" 200 83521
+[2018-11-06 20:22:35,485] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:22:35,495] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:22:35,496] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:22:35,819] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:22:35,821] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:36,073] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:22:36,076] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:36,145] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:22:36,147] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:22:36,421] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:22:36,424] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:22:38,961] [INFO] "GET /big_screen/ HTTP/1.1" 200 83521
+[2018-11-06 20:22:39,224] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:22:39,548] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:22:39,551] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:22:39,801] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:22:39,803] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:39,882] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:22:39,885] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:22:40,135] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:22:40,138] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:22:40,210] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:22:40,211] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:23:52,519] [INFO] "GET /big_screen/ HTTP/1.1" 200 83440
+[2018-11-06 20:23:52,941] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:23:52,952] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:23:52,953] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:23:53,279] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:23:53,282] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:23:53,532] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:23:53,536] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:23:53,614] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:23:53,616] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:23:53,872] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:23:53,873] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:24:28,927] [INFO] "GET /big_screen/ HTTP/1.1" 200 83410
+[2018-11-06 20:24:29,376] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:24:29,388] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:24:29,388] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:24:29,714] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:24:29,716] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:24:29,965] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:24:29,968] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:24:30,048] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:24:30,050] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:24:30,315] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:24:30,318] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:26:46,973] [INFO] "GET /big_screen/ HTTP/1.1" 200 83528
+[2018-11-06 20:26:47,466] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:26:47,478] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:26:47,479] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:26:47,803] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:26:47,805] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:26:48,056] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:26:48,060] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:26:48,136] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:26:48,138] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:26:48,434] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:26:48,438] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:26:57,225] [INFO] "GET /big_screen/ HTTP/1.1" 200 83528
+[2018-11-06 20:26:57,535] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:26:57,866] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:26:57,869] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:26:58,124] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:26:58,127] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:26:58,198] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:26:58,202] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:26:58,458] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:26:58,460] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:26:58,540] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:26:58,543] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:27:17,932] [INFO] "GET /big_screen/ HTTP/1.1" 200 83527
+[2018-11-06 20:27:18,127] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:27:18,178] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:27:18,179] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:27:18,507] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:27:18,510] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:27:18,761] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:27:18,766] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:27:18,841] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:27:18,843] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:27:19,107] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:27:19,109] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:27:46,960] [INFO] "GET /big_screen/ HTTP/1.1" 200 122158
+[2018-11-06 20:27:47,379] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:27:47,390] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:27:47,391] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:27:47,716] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:27:47,720] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:27:47,968] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:27:47,971] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:27:48,052] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:27:48,054] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:27:48,313] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:27:48,316] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:28:00,273] [INFO] "GET /big_screen/ HTTP/1.1" 200 160812
+[2018-11-06 20:28:00,710] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:28:00,723] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:28:00,724] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:28:01,050] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:28:01,052] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:28:01,300] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:28:01,303] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:28:01,384] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:28:01,386] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:28:01,646] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:28:01,648] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:31:01,605] [INFO] "GET /big_screen/ HTTP/1.1" 200 161042
+[2018-11-06 20:31:02,045] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:31:02,056] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:31:02,057] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:31:02,398] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:31:02,401] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:31:02,634] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:31:02,636] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:31:02,740] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:31:02,745] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:31:02,983] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:31:02,985] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:35:36,938] [INFO] "GET /big_screen/ HTTP/1.1" 200 161044
+[2018-11-06 20:35:37,380] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:35:37,394] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:35:37,394] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:35:37,719] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:35:37,722] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:35:37,972] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:35:37,974] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:35:38,054] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:35:38,057] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:35:38,318] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:35:38,321] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:35:39,146] [INFO] "GET /monitor/ HTTP/1.1" 200 33129
+[2018-11-06 20:35:39,411] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:35:39,763] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-11-06 20:35:40,023] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-11-06 20:35:40,388] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-11-06 20:35:42,966] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-06 20:35:44,390] [ERROR] 当前通道无正在进行的测试
+[2018-11-06 20:35:44,470] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-06 20:35:46,287] [INFO] "GET /oven_control/ HTTP/1.1" 200 13251
+[2018-11-06 20:35:46,583] [INFO] "GET /static/js/control.js HTTP/1.1" 200 28623
+[2018-11-06 20:35:46,970] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:35:47,233] [INFO] "GET /control/get_old_oven_scheme/ HTTP/1.1" 200 213
+[2018-11-06 20:35:47,313] [INFO] "GET /control/ HTTP/1.1" 200 13168
+[2018-11-06 20:35:47,605] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:35:47,769] [INFO] "GET /control/get_old_scheme/ HTTP/1.1" 200 198
+[2018-11-06 20:35:47,962] [INFO] "GET /gas_control/ HTTP/1.1" 200 7915
+[2018-11-06 20:35:48,221] [INFO] "GET /control/get_gas_info/0/0/ HTTP/1.1" 200 167
+[2018-11-06 20:35:49,212] [INFO] "GET /data_export/ HTTP/1.1" 200 9081
+[2018-11-06 20:35:49,352] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-11-06 20:35:50,437] [INFO] "GET /big_screen/ HTTP/1.1" 200 161044
+[2018-11-06 20:35:50,710] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:35:51,040] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:35:51,041] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:35:51,297] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:35:51,299] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:35:51,364] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:35:51,366] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:35:51,638] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:35:51,639] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:35:51,683] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:35:51,683] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:51:23,826] [INFO] "GET /big_screen/ HTTP/1.1" 200 160743
+[2018-11-06 20:51:23,931] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-11-06 20:51:24,249] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:51:24,579] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:51:24,582] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:51:24,826] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:51:24,839] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:51:24,916] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:51:24,919] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:51:25,174] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:51:25,176] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:51:25,264] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:51:25,267] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:59:30,113] [INFO] "GET /big_screen/ HTTP/1.1" 200 151873
+[2018-11-06 20:59:30,522] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:59:30,533] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:59:30,534] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:59:30,860] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:59:30,862] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:59:31,113] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:59:31,115] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:59:31,196] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:59:31,199] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:59:31,459] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:59:31,462] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 20:59:39,082] [INFO] "GET /big_screen/ HTTP/1.1" 200 151591
+[2018-11-06 20:59:39,373] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 20:59:39,713] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 20:59:39,716] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 20:59:39,965] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 20:59:39,968] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:59:40,047] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 20:59:40,050] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 20:59:40,297] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 20:59:40,300] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 20:59:40,386] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 20:59:40,388] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:01:13,068] [INFO] "GET /big_screen/ HTTP/1.1" 200 150993
+[2018-11-06 21:01:13,330] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:01:13,340] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 21:01:13,341] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 21:01:13,659] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 21:01:13,660] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:01:13,919] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 21:01:13,923] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:01:13,979] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 21:01:13,980] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 21:01:14,262] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 21:01:14,264] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:02:47,193] [INFO] "GET /big_screen/ HTTP/1.1" 200 150989
+[2018-11-06 21:02:47,529] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:02:47,540] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 21:02:47,541] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 21:02:47,865] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 21:02:47,882] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:02:48,116] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 21:02:48,118] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:02:48,215] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 21:02:48,219] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 21:02:48,460] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 21:02:48,463] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:03:19,214] [WARNING] Not Found: /big_screen/get_testdata_real_time/10001/0/
+[2018-11-06 21:03:19,217] [WARNING] "GET /big_screen/get_testdata_real_time/10001/0/ HTTP/1.1" 404 6837
+[2018-11-06 21:03:19,464] [WARNING] Not Found: /big_screen/testline_info/10001/0/
+[2018-11-06 21:03:19,466] [WARNING] "GET /big_screen/testline_info/10001/0/ HTTP/1.1" 404 6810
+[2018-11-06 21:03:19,567] [WARNING] Not Found: /big_screen/testline_status/10001/0/
+[2018-11-06 21:03:19,569] [WARNING] "GET /big_screen/testline_status/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:03:21,913] [WARNING] Not Found: /big_screen/get_testdata_real_time/10001/0/
+[2018-11-06 21:03:21,916] [WARNING] "GET /big_screen/get_testdata_real_time/10001/0/ HTTP/1.1" 404 6837
+[2018-11-06 21:03:22,248] [WARNING] Not Found: /big_screen/testline_info/10001/0/
+[2018-11-06 21:03:22,251] [WARNING] "GET /big_screen/testline_info/10001/0/ HTTP/1.1" 404 6810
+[2018-11-06 21:03:22,500] [WARNING] Not Found: /big_screen/testline_status/10001/0/
+[2018-11-06 21:03:22,503] [WARNING] "GET /big_screen/testline_status/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:03:24,921] [WARNING] Not Found: /big_screen/get_testdata_real_time/10001/0/
+[2018-11-06 21:03:24,924] [WARNING] "GET /big_screen/get_testdata_real_time/10001/0/ HTTP/1.1" 404 6837
+[2018-11-06 21:03:25,244] [WARNING] Not Found: /big_screen/testline_info/10001/0/
+[2018-11-06 21:03:25,245] [WARNING] "GET /big_screen/testline_info/10001/0/ HTTP/1.1" 404 6810
+[2018-11-06 21:03:25,507] [WARNING] Not Found: /big_screen/testline_status/10001/0/
+[2018-11-06 21:03:25,510] [WARNING] "GET /big_screen/testline_status/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:04:54,110] [INFO] "GET /big_screen/ HTTP/1.1" 200 150701
+[2018-11-06 21:04:54,456] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:04:54,468] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 21:04:54,469] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 21:04:54,793] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 21:04:54,796] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:04:55,046] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 21:04:55,049] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:04:55,129] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 21:04:55,133] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 21:04:55,389] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 21:04:55,390] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:05:26,542] [INFO] "GET /big_screen/ HTTP/1.1" 200 150697
+[2018-11-06 21:05:26,942] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:05:26,954] [WARNING] Not Found: /big_screen/oven_status/
+[2018-11-06 21:05:26,955] [WARNING] "GET /big_screen/oven_status/ HTTP/1.1" 404 6780
+[2018-11-06 21:05:27,271] [WARNING] Not Found: /big_screen/cells_info/
+[2018-11-06 21:05:27,273] [WARNING] "GET /big_screen/cells_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:05:27,532] [WARNING] Not Found: /big_screen/tests_info/
+[2018-11-06 21:05:27,535] [WARNING] "GET /big_screen/tests_info/ HTTP/1.1" 404 6777
+[2018-11-06 21:05:27,603] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-06 21:05:27,605] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-06 21:05:27,887] [WARNING] Not Found: /big_screen/get_test_scheme/10001/0/
+[2018-11-06 21:05:27,890] [WARNING] "GET /big_screen/get_test_scheme/10001/0/ HTTP/1.1" 404 6816
+[2018-11-06 21:06:02,428] [INFO] "GET /big_screen/ HTTP/1.1" 200 119656
+[2018-11-06 21:06:02,786] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:10:20,604] [INFO] "GET /big_screen/ HTTP/1.1" 200 119582
+[2018-11-06 21:10:20,987] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:11:05,985] [INFO] "GET /big_screen/ HTTP/1.1" 200 119434
+[2018-11-06 21:11:06,390] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:14:05,249] [INFO] "GET /big_screen/ HTTP/1.1" 200 119434
+[2018-11-06 21:14:05,616] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:19:43,251] [INFO] "GET /big_screen/ HTTP/1.1" 200 119434
+[2018-11-06 21:19:43,664] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-06 21:23:55,781] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-06 21:23:55,832] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 26025
+[2018-11-06 21:23:56,162] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 08:56:36,710] [INFO] "GET /monitor/ HTTP/1.1" 200 33129
+[2018-11-07 08:56:36,746] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-11-07 08:56:36,875] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-11-07 08:56:37,079] [INFO] "GET /static/js/monitor.js HTTP/1.1" 304 0
+[2018-11-07 08:56:37,110] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-11-07 08:56:37,390] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 08:56:37,409] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-11-07 08:56:37,410] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-11-07 08:56:37,671] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-11-07 08:56:37,735] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-11-07 08:56:38,174] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-11-07 08:56:41,262] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 08:56:42,869] [ERROR] 当前通道无正在进行的测试
+[2018-11-07 08:56:43,416] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-07 08:56:43,505] [WARNING] Not Found: /favicon.ico
+[2018-11-07 08:56:43,506] [WARNING] "GET /favicon.ico HTTP/1.1" 404 6744
+[2018-11-07 08:56:46,242] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 08:56:46,281] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 24867
+[2018-11-07 08:57:25,785] [INFO] "GET /data_export/ HTTP/1.1" 200 9081
+[2018-11-07 08:57:25,961] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-11-07 08:57:26,826] [INFO] "GET /monitor/ HTTP/1.1" 200 33129
+[2018-11-07 08:57:27,112] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 08:57:27,433] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-11-07 08:57:27,689] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-11-07 08:57:27,863] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-11-07 08:57:30,918] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 08:57:32,205] [ERROR] 当前通道无正在进行的测试
+[2018-11-07 08:57:32,242] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-07 08:57:32,576] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 09:07:21,565] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:10:23,920] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 09:10:24,289] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:14:15,784] [INFO] "GET /big_screen/ HTTP/1.1" 200 119456
+[2018-11-07 09:14:16,222] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:14:16,337] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:14:16,675] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:14:16,680] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:14:16,923] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:14:17,039] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:14:17,041] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:14:17,279] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:14:17,391] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:14:17,393] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:14:17,622] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:14:17,748] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:14:17,751] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:15:58,872] [INFO] "GET /big_screen/ HTTP/1.1" 200 119456
+[2018-11-07 09:15:59,298] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:15:59,374] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:15:59,725] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:15:59,727] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:15:59,987] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:00,074] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:00,075] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:00,338] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:00,453] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:00,456] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:00,684] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:00,805] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:00,807] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:31,525] [INFO] "GET /big_screen/ HTTP/1.1" 200 119456
+[2018-11-07 09:16:31,836] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:16:31,906] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:32,240] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:32,244] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:32,499] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:32,600] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:32,602] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:32,832] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:32,954] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:32,957] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:33,169] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:33,308] [WARNING] Not Found: /big_screen/get_testdata_from_start/10001/0/
+[2018-11-07 09:16:33,311] [WARNING] "GET /big_screen/get_testdata_from_start/10001/0/ HTTP/1.1" 404 6840
+[2018-11-07 09:16:52,621] [INFO] "GET /big_screen/ HTTP/1.1" 200 119456
+[2018-11-07 09:16:52,683] [INFO] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+[2018-11-07 09:16:52,859] [INFO] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 31000
+[2018-11-07 09:16:52,982] [INFO] "GET /static/css/_all-skins.min.css HTTP/1.1" 200 41583
+[2018-11-07 09:16:52,983] [INFO] "GET /static/css/ionicons.min.css HTTP/1.1" 200 51284
+[2018-11-07 09:16:52,987] [INFO] "GET /static/css/AdminLTE.min.css HTTP/1.1" 200 91501
+[2018-11-07 09:16:53,003] [INFO] "GET /static/js/common/jquery.min.js HTTP/1.1" 200 86927
+[2018-11-07 09:16:53,015] [INFO] "GET /static/js/common/echarts.min.js HTTP/1.1" 200 701506
+[2018-11-07 09:16:53,187] [INFO] "GET /static/js/common/bootstrap.min.js HTTP/1.1" 200 37045
+[2018-11-07 09:16:53,302] [INFO] "GET /static/js/common/adminlte.min.js HTTP/1.1" 200 14548
+[2018-11-07 09:16:53,307] [INFO] "GET /static/js/common/bootstrap-datepicker.min.js HTTP/1.1" 200 33529
+[2018-11-07 09:16:53,336] [INFO] "GET /static/js/common/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 593
+[2018-11-07 09:16:53,369] [INFO] "GET /static/js/common/bootstrap-table.min.js HTTP/1.1" 200 58939
+[2018-11-07 09:16:53,382] [INFO] "GET /static/js/common/bootstrap-table-zh-CN.min.js HTTP/1.1" 200 951
+[2018-11-07 09:16:53,491] [INFO] "GET /static/js/common/bootstrap-table-export.min.js HTTP/1.1" 200 3046
+[2018-11-07 09:16:53,622] [INFO] "GET /static/js/common/tableExport.min.js HTTP/1.1" 200 36330
+[2018-11-07 09:16:53,623] [INFO] "GET /static/js/common/moment.min.js HTTP/1.1" 200 51599
+[2018-11-07 09:16:53,650] [INFO] "GET /static/img/logo.png HTTP/1.1" 200 20323
+[2018-11-07 09:16:53,689] [INFO] "GET /static/img/noavatar_small.gif HTTP/1.1" 200 1574
+[2018-11-07 09:16:54,000] [INFO] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[2018-11-07 09:16:54,050] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 25981
+[2018-11-07 09:16:54,145] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:16:54,481] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:16:57,489] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:16:58,627] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:17:01,761] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:17:02,477] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:17:05,469] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:17:06,225] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:17:09,166] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:18:40,469] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 09:18:40,523] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 304 0
+[2018-11-07 09:18:40,866] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:18:41,265] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:18:44,141] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:18:45,236] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:18:48,127] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:18:48,793] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:18:51,787] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:18:52,494] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:18:55,494] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:19:56,174] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 09:19:56,220] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 304 0
+[2018-11-07 09:19:56,619] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:19:57,005] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:19:59,787] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:00,879] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:03,937] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:04,672] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:07,777] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:08,495] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:11,476] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:14,775] [INFO] "GET /big_screen/ HTTP/1.1" 200 119436
+[2018-11-07 09:20:15,134] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:20:15,525] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:18,319] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:19,456] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:22,508] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:23,266] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:26,578] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:20:27,249] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:20:30,368] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:25:04,255] [INFO] "GET /big_screen/ HTTP/1.1" 200 119424
+[2018-11-07 09:25:04,358] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 25392
+[2018-11-07 09:25:04,752] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:25:05,144] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:25:08,122] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:25:09,205] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:25:12,071] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:25:12,791] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:25:15,745] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:25:16,413] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:25:19,328] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:27:26,992] [INFO] "GET /big_screen/ HTTP/1.1" 200 115012
+[2018-11-07 09:27:27,090] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 304 0
+[2018-11-07 09:27:27,386] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:27:27,781] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:27:30,610] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:27:31,730] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:27:34,635] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:27:35,301] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:27:37,972] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:27:38,551] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:27:41,464] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:28:45,103] [INFO] "GET /big_screen/ HTTP/1.1" 200 115012
+[2018-11-07 09:28:45,196] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 25458
+[2018-11-07 09:28:45,517] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:29:13,378] [INFO] "GET /big_screen/ HTTP/1.1" 200 115012
+[2018-11-07 09:29:13,435] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 200 25455
+[2018-11-07 09:29:13,832] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:29:14,169] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:14,428] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:14,514] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:14,769] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:33,759] [INFO] "GET /data_export/ HTTP/1.1" 200 9081
+[2018-11-07 09:29:33,818] [INFO] "GET /static/js/control.js HTTP/1.1" 200 28623
+[2018-11-07 09:29:34,004] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:29:34,361] [INFO] "POST /data_export/ HTTP/1.1" 200 42
+[2018-11-07 09:29:35,314] [INFO] "GET /big_screen/ HTTP/1.1" 200 115012
+[2018-11-07 09:29:35,598] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 304 0
+[2018-11-07 09:29:35,906] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:29:35,911] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:35,983] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:36,226] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:36,299] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:41,877] [INFO] "GET /monitor/ HTTP/1.1" 200 33129
+[2018-11-07 09:29:42,195] [INFO] "GET /static/js/monitor.js HTTP/1.1" 200 44467
+[2018-11-07 09:29:42,446] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:42,596] [INFO] "GET /monitor/oven_status/ HTTP/1.1" 200 81
+[2018-11-07 09:29:42,768] [INFO] "GET /monitor/cells_info/ HTTP/1.1" 200 264
+[2018-11-07 09:29:43,038] [INFO] "GET /monitor/tests_info/ HTTP/1.1" 200 3268
+[2018-11-07 09:29:43,444] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699
+[2018-11-07 09:29:45,647] [INFO] "GET /monitor/get_testdata_from_start/10001/0/ HTTP/1.1" 200 3185121
+[2018-11-07 09:29:47,126] [ERROR] 当前通道无正在进行的测试
+[2018-11-07 09:29:47,157] [INFO] "GET /monitor/get_test_scheme/10001/0/ HTTP/1.1" 200 28
+[2018-11-07 09:29:47,809] [INFO] "GET /big_screen/ HTTP/1.1" 200 115012
+[2018-11-07 09:29:48,096] [INFO] "GET /static/js/bigscreen.js HTTP/1.1" 304 0
+[2018-11-07 09:29:48,345] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:48,463] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:48,677] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:48,796] [INFO] "GET /get_b_c_num/ HTTP/1.1" 200 69
+[2018-11-07 09:29:48,998] [WARNING] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1699

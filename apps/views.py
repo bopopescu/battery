@@ -20,6 +20,8 @@ def get_b_c_num(request):
     data = get_box_info_interface()
     return JsonResponse(data)
 
+def big_screen(request):
+    return render(request, 'bigscreen.html')
 
 def monitor(request):
     return render(request, 'monitor.html')

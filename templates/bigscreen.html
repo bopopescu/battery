@@ -1,0 +1,1590 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock %}
+
+{% block aside %}
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li class="header">功能菜单</li>
+        <li>
+            <a href="{% url 'monitor' %}">
+                <i class="fa fa-dashboard"></i>
+                <span>运行状态监测</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-gears"></i>
+                <span>测试系统控制</span>
+                <span class="pull-right-container"></span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{% url 'control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电子负载控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'oven_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        电炉控制
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'gas_control' %}">
+                        <i class="fa fa-circle-o"></i>
+                        气流量控制
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{% url 'data_export' %}">
+                <i class="fa fa-save"></i>
+                <span>测试数据导出</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="{% url 'big_screen' %}">
+                <i class="fa fa-object-group"></i>
+                <span>数据大屏</span>
+                <span class="pull-right-container"></span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+{% block main %}
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="box_num_selected">箱号</label>
+                                        <select class="form-control" id="box_num_selected0"
+                                                onchange="show_channel(0)"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="channel_num_selected">通道号</label>
+                                        <select class="form-control" id="channel_num_selected0"></select>
+                                    </div>
+                                    <button type="button" class="btn btn-default" onclick="refresh_page()">确认</button>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"
+                                                onclick="set_interval()">开始刷新</button>
+                                        <button class="btn btn-default" type="button"
+                                                onclick="stop_refresh()">停止刷新</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>当前通道状态：</span>
+                                <span class="label label-success" id="testline_status0"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul id="myTab0" class="nav nav-tabs">
+                                    <li class="dropdown active">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实时数据
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="active"><a href="#UIbriefinfo0" tabindex="-1"
+                                                                  data-toggle="tab">电流/电压</a>
+                                            </li>
+                                            <li><a href="#Tbriefinfo0" tabindex="-1" data-toggle="tab">温度</a></li>
+                                            <li><a href="#Qbriefinfo0" tabindex="-1" data-toggle="tab">气流量</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li class="dropdown">#}
+{#                                        <a href="#" class="dropdown-toggle"#}
+{#                                           data-toggle="dropdown">监测图表#}
+{#                                            <b class="caret"></b>#}
+{#                                        </a>#}
+{#                                        <ul class="dropdown-menu" role="menu">#}
+{#                                            <li><a href="#UIchart0" tabindex="-1" data-toggle="tab">电子负载电流/电压</a></li>#}
+{#                                            <li><a href="#Tcchart0" tabindex="-1" data-toggle="tab">控温点温度</a></li>#}
+{#                                            <li><a href="#Tmchart0" tabindex="-1" data-toggle="tab">测温点温度</a></li>#}
+{#                                            <li><a href="#Vmchart0" tabindex="-1" data-toggle="tab">电池电压</a></li>#}
+{#                                            <li><a href="#Qchart0" tabindex="-1" data-toggle="tab">气流量</a></li>#}
+{#                                        </ul>#}
+{#                                    </li>#}
+                                </ul>
+                                <div id="myTabContent0" class="tab-content">
+                                    <div class="tab-pane fade in active" id="UIbriefinfo0">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0I">
+                                                    <p>电流</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0I_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">A</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0U">
+                                                    <p>电压</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0U_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">V</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0q">
+                                                    <p>容量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0q_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">C(mAh)</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0Vm0">
+                                                    <p>测压点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0Vm1">
+                                                    <p>测压点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0Vm2">
+                                                    <p>测压点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0Vm3">
+                                                    <p>测压点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner" id="0Vm4">
+                                                    <p>测压点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点6</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm6_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点7</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm7_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点8</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Vm8_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tbriefinfo0">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点0温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tc0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点1温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tc1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Tm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qbriefinfo0">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氢气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_H2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氮气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_N2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>空气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_Air_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>甲烷流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_CH4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>二氧化碳流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_CO2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>水蒸气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="0Q_H2O_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="UIchart0">
+                                        <div id="U_I_t_chart0" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tcchart0">
+                                        <div id="Tc_t_chart0" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tmchart0">
+                                        <div id="Tm_t_chart0" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Vmchart0">
+                                        <div id="Vm_t_chart0" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qchart0">
+                                        <div id="Q_t_chart0" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="box_num_selected">箱号</label>
+                                        <select class="form-control" id="box_num_selected1"
+                                                onchange="show_channel(1)"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="channel_num_selected">通道号</label>
+                                        <select class="form-control" id="channel_num_selected1"></select>
+                                    </div>
+                                    <button type="button" class="btn btn-default" onclick="refresh_page()">确认</button>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"
+                                                onclick="set_interval()">开始刷新</button>
+                                        <button class="btn btn-default" type="button"
+                                                onclick="stop_refresh()">停止刷新</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>当前通道状态：</span>
+                                <span class="label label-success" id="testline_status1"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul id="myTab1" class="nav nav-tabs">
+                                    <li class="dropdown active">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实时数据
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="active"><a href="#UIbriefinfo1" tabindex="-1"
+                                                                  data-toggle="tab">电流/电压</a>
+                                            </li>
+                                            <li><a href="#Tbriefinfo1" tabindex="-1" data-toggle="tab">温度</a></li>
+                                            <li><a href="#Qbriefinfo1" tabindex="-1" data-toggle="tab">气流量</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li class="dropdown">#}
+{#                                        <a href="#" class="dropdown-toggle"#}
+{#                                           data-toggle="dropdown">监测图表#}
+{#                                            <b class="caret"></b>#}
+{#                                        </a>#}
+{#                                        <ul class="dropdown-menu" role="menu">#}
+{#                                            <li><a href="#UIchart1" tabindex="-1" data-toggle="tab">电子负载电流/电压</a></li>#}
+{#                                            <li><a href="#Tcchart1" tabindex="-1" data-toggle="tab">控温点温度</a></li>#}
+{#                                            <li><a href="#Tmchart1" tabindex="-1" data-toggle="tab">测温点温度</a></li>#}
+{#                                            <li><a href="#Vmchart1" tabindex="-1" data-toggle="tab">电池电压</a></li>#}
+{#                                            <li><a href="#Qchart1" tabindex="-1" data-toggle="tab">气流量</a></li>#}
+{#                                        </ul>#}
+{#                                    </li>#}
+                                </ul>
+                                <div id="myTabContent1" class="tab-content">
+                                    <div class="tab-pane fade in active" id="UIbriefinfo1">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电流</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1I_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">A</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电压</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1U_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">V</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>容量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1q_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">C(mAh)</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点6</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm6_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点7</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm7_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点8</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Vm8_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tbriefinfo1">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点0温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tc0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点1温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tc1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Tm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qbriefinfo1">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氢气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_H2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氮气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_N2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>空气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_Air_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>甲烷流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_CH4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>二氧化碳流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_CO2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>水蒸气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="1Q_H2O_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="UIchart1">
+                                        <div id="U_I_t_chart1" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tcchart1">
+                                        <div id="Tc_t_chart1" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tmchart1">
+                                        <div id="Tm_t_chart1" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Vmchart1">
+                                        <div id="Vm_t_chart1" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qchart1">
+                                        <div id="Q_t_chart1" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="box_num_selected">箱号</label>
+                                        <select class="form-control" id="box_num_selected2"
+                                                onchange="show_channel(2)"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="channel_num_selected">通道号</label>
+                                        <select class="form-control" id="channel_num_selected2"></select>
+                                    </div>
+                                    <button type="button" class="btn btn-default" onclick="refresh_page()">确认</button>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"
+                                                onclick="set_interval()">开始刷新</button>
+                                        <button class="btn btn-default" type="button"
+                                                onclick="stop_refresh()">停止刷新</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>当前通道状态：</span>
+                                <span class="label label-success" id="testline_status2"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul id="myTab2" class="nav nav-tabs">
+                                    <li class="dropdown active">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实时数据
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="active"><a href="#UIbriefinfo2" tabindex="-1"
+                                                                  data-toggle="tab">电流/电压</a>
+                                            </li>
+                                            <li><a href="#Tbriefinfo2" tabindex="-1" data-toggle="tab">温度</a></li>
+                                            <li><a href="#Qbriefinfo2" tabindex="-1" data-toggle="tab">气流量</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li class="dropdown">#}
+{#                                        <a href="#" class="dropdown-toggle"#}
+{#                                           data-toggle="dropdown">监测图表#}
+{#                                            <b class="caret"></b>#}
+{#                                        </a>#}
+{#                                        <ul class="dropdown-menu" role="menu">#}
+{#                                            <li><a href="#UIchart2" tabindex="-1" data-toggle="tab">电子负载电流/电压</a></li>#}
+{#                                            <li><a href="#Tcchart2" tabindex="-1" data-toggle="tab">控温点温度</a></li>#}
+{#                                            <li><a href="#Tmchart2" tabindex="-1" data-toggle="tab">测温点温度</a></li>#}
+{#                                            <li><a href="#Vmchart2" tabindex="-1" data-toggle="tab">电池电压</a></li>#}
+{#                                            <li><a href="#Qchart2" tabindex="-1" data-toggle="tab">气流量</a></li>#}
+{#                                        </ul>#}
+{#                                    </li>#}
+                                </ul>
+                                <div id="myTabContent2" class="tab-content">
+                                    <div class="tab-pane fade in active" id="UIbriefinfo2">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电流</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2I_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">A</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电压</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2U_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">V</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>容量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2q_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">C(mAh)</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点6</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm6_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点7</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm7_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点8</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Vm8_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tbriefinfo2">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点0温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tc0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点1温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tc1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Tm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qbriefinfo2">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氢气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_H2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氮气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_N2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>空气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_Air_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>甲烷流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_CH4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>二氧化碳流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_CO2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>水蒸气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="2Q_H2O_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="UIchart2">
+                                        <div id="U_I_t_chart2" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tcchart2">
+                                        <div id="Tc_t_chart2" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tmchart2">
+                                        <div id="Tm_t_chart2" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Vmchart2">
+                                        <div id="Vm_t_chart2" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qchart2">
+                                        <div id="Q_t_chart2" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="box_num_selected">箱号</label>
+                                        <select class="form-control" id="box_num_selected3"
+                                                onchange="show_channel(3)"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="channel_num_selected">通道号</label>
+                                        <select class="form-control" id="channel_num_selected3"></select>
+                                    </div>
+                                    <button type="button" class="btn btn-default" onclick="refresh_page()">确认</button>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"
+                                                onclick="set_interval()">开始刷新</button>
+                                        <button class="btn btn-default" type="button"
+                                                onclick="stop_refresh()">停止刷新</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>当前通道状态：</span>
+                                <span class="label label-success" id="testline_status3"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul id="myTab3" class="nav nav-tabs">
+                                    <li class="dropdown active">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实时数据
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="active"><a href="#UIbriefinfo3" tabindex="-1"
+                                                                  data-toggle="tab">电流/电压</a>
+                                            </li>
+                                            <li><a href="#Tbriefinfo3" tabindex="-1" data-toggle="tab">温度</a></li>
+                                            <li><a href="#Qbriefinfo3" tabindex="-1" data-toggle="tab">气流量</a></li>
+                                        </ul>
+                                    </li>
+{#                                    <li class="dropdown">#}
+{#                                        <a href="#" class="dropdown-toggle"#}
+{#                                           data-toggle="dropdown">监测图表#}
+{#                                            <b class="caret"></b>#}
+{#                                        </a>#}
+{#                                        <ul class="dropdown-menu" role="menu">#}
+{#                                            <li><a href="#UIchart3" tabindex="-1" data-toggle="tab">电子负载电流/电压</a></li>#}
+{#                                            <li><a href="#Tcchart3" tabindex="-1" data-toggle="tab">控温点温度</a></li>#}
+{#                                            <li><a href="#Tmchart3" tabindex="-1" data-toggle="tab">测温点温度</a></li>#}
+{#                                            <li><a href="#Vmchart3" tabindex="-1" data-toggle="tab">电池电压</a></li>#}
+{#                                            <li><a href="#Qchart3" tabindex="-1" data-toggle="tab">气流量</a></li>#}
+{#                                        </ul>#}
+{#                                    </li>#}
+                                </ul>
+                                <div id="myTabContent3" class="tab-content">
+                                    <div class="tab-pane fade in active" id="UIbriefinfo3">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电流</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3I_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">A</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>电压</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3U_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">V</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>容量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3q_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">C(mAh)</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点6</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm6_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点7</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm7_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-yellow-gradient">
+                                                <div class="inner">
+                                                    <p>测压点8</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Vm8_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">mV</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tbriefinfo3">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点0温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tc0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>控温点1温度</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tc1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点0</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm0_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点1</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm1_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点2</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点3</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm3_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点4</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-red-gradient">
+                                                <div class="inner">
+                                                    <p>测温点5</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Tm5_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">&#176C</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qbriefinfo3">
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氢气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_H2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>氮气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_N2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>空气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_Air_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>甲烷流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_CH4_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>二氧化碳流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_CO2_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-4" style="margin-left:0px;padding:0px 5px 0px 0px">
+                                            <div class="small-box bg-blue-gradient">
+                                                <div class="inner">
+                                                    <p>水蒸气流量</p>
+                                                    <p style="font-size:20px;line-height:10px;"><span
+                                                            id="3Q_H2O_val">0</span>
+                                                        <sup
+                                                                style="font-size: 12px">ccm</sup></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="UIchart3">
+                                        <div id="U_I_t_chart3" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tcchart3">
+                                        <div id="Tc_t_chart3" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Tmchart3">
+                                        <div id="Tm_t_chart3" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Vmchart3">
+                                        <div id="Vm_t_chart3" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Qchart3">
+                                        <div id="Q_t_chart3" style="height: 400px;width:800px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+
+{% block js %}
+    <script src="/static/js/bigscreen.js"></script>
+{% endblock js %}
+
